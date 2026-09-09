@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050a15"/>
+      <stop offset="100%" stop-color="#0a1224"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg2)"/>
+
+  <!-- Left: Raw SAR Intensity Window -->
+  <g transform="translate(40, 60)">
+    <rect width="340" height="380" rx="8" fill="#08101d" stroke="rgba(255, 255, 255, 0.1)"/>
+    <text x="20" y="32" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">A. FILTERED SAR INTENSITY</text>
+    
+    <!-- Speckle sea surface -->
+    <rect x="20" y="50" width="300" height="300" rx="6" fill="#0c172a"/>
+    <!-- Simulated dark spot -->
+    <path d="M 80 120 C 130 90, 200 110, 250 150 C 280 180, 290 230, 250 270 C 210 300, 150 290, 100 250 C 60 210, 50 150, 80 120 Z" fill="#030712"/>
+    <path d="M 120 160 C 150 140, 190 150, 220 180 C 230 200, 220 230, 190 250 C 160 260, 130 240, 110 220 C 100 190, 100 170, 120 160 Z" fill="#010307"/>
+    
+    <text x="20" y="368" fill="#94a3b8" font-family="Inter, sans-serif" font-size="11">Radiometrically Calibrated Sigma-0 (dB)</text>
+  </g>
+
+  <!-- Right: Semantic Segmentation Output Mask -->
+  <g transform="translate(420, 60)">
+    <rect width="340" height="380" rx="8" fill="#08101d" stroke="rgba(0, 240, 255, 0.3)"/>
+    <text x="20" y="32" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">B. ADAPTIVE SEGMENTATION MASK</text>
+
+    <!-- Sea background -->
+    <rect x="20" y="50" width="300" height="300" rx="6" fill="#0a192f"/>
+    <!-- Extracted Mask Polygon with Highlighting -->
+    <path d="M 80 120 C 130 90, 200 110, 250 150 C 280 180, 290 230, 250 270 C 210 300, 150 290, 100 250 C 60 210, 50 150, 80 120 Z" 
+          fill="rgba(0, 240, 255, 0.25)" stroke="#00f0ff" stroke-width="2.5"/>
+    <path d="M 120 160 C 150 140, 190 150, 220 180 C 230 200, 220 230, 190 250 C 160 260, 130 240, 110 220 C 100 190, 100 170, 120 160 Z" 
+          fill="rgba(16, 185, 129, 0.35)" stroke="#10b981" stroke-width="2"/>
+
+    <text x="20" y="368" fill="#34d399" font-family="'JetBrains Mono', monospace" font-size="11">Class: Oil Slick (Conf: 0.94)</text>
+  </g>
+
+  <!-- Flow Arrow in middle -->
+  <g transform="translate(383, 230)">
+    <circle cx="17" cy="17" r="18" fill="#111f38" stroke="rgba(56, 189, 248, 0.5)"/>
+    <path d="M 12 17 L 22 17 M 18 12 L 23 17 L 18 22" stroke="#38bdf8" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Legend bottom -->
+  <g transform="translate(40, 455)" font-family="Inter, sans-serif" font-size="11">
+    <rect x="0" y="0" width="12" height="12" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff"/>
+    <text x="20" y="10" fill="#cbd5e1">Boundary Damping Zone</text>
+
+    <rect x="200" y="0" width="12" height="12" fill="rgba(16, 185, 129, 0.35)" stroke="#10b981"/>
+    <text x="220" y="10" fill="#cbd5e1">Dense Core Discharge Area</text>
+
+    <text x="520" y="10" fill="#94a3b8" font-family="'JetBrains Mono', monospace">Resolution: 10m/px</text>
+  </g>
+</svg>

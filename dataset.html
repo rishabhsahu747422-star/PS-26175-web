@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TRACEOIL Dataset Documentation — Sentinel-1 SAR, Sentinel-2 Optical, AIS Transponder Telemetry, and M4D Benchmark Dataset specifications for SIH 2026.">
+  <title>Datasets — TRACEOIL | SIH 2026</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="./index.html" class="nav-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">TRACEOIL</span>
+          <span class="brand-tag">DATASETS</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Home</a></li>
+          <li><a href="./research.html" class="nav-link">Research</a></li>
+          <li><a href="./methodology.html" class="nav-link">Methodology</a></li>
+          <li><a href="./dataset.html" class="nav-link active">Datasets</a></li>
+          <li><a href="./visualizations.html" class="nav-link">Visualizations</a></li>
+          <li><a href="./documentation/index.html" class="nav-link">Documentation</a></li>
+          <li><a href="./references.html" class="nav-link">References</a></li>
+          <li><a href="./about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="./documentation/index.html" class="btn btn-nav btn-primary">
+          <span>Documentation</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Dataset Header -->
+    <section class="section" style="padding-top: 3.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-subtle);">
+      <div class="container-reading">
+        <span class="badge badge-sih" style="margin-bottom: 0.75rem;">SIH 2026 Data Specifications</span>
+        <h1 style="font-size: 2.5rem; margin-bottom: 0.75rem;">Datasets &amp; Satellite Imagery Specifications</h1>
+        <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.6;">
+          Documentation of satellite remote-sensing data, ocean current models, historical AIS vessel tracking records, and standard reference benchmarks utilized in TRACEOIL.
+        </p>
+      </div>
+    </section>
+
+    <!-- Dataset Comparison Matrix -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Comparative Overview</span>
+          <h2 class="section-title">Data Ingestion Matrix</h2>
+          <p class="section-desc">
+            Overview of the primary data sources, sensor modes, spatial resolutions, and functional roles within the TRACEOIL research framework.
+          </p>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Dataset Name</th>
+                <th>Primary Purpose</th>
+                <th>Data Type</th>
+                <th>Resolution</th>
+                <th>Labels / Channels</th>
+                <th>Source</th>
+                <th>Usage in TRACEOIL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="cell-highlight">Sentinel-1 SAR</td>
+                <td>Oil Slick &amp; Vessel Detection</td>
+                <td>Level-1 GRD (C-Band)</td>
+                <td>10m spatial</td>
+                <td>VV, VH backscatter, incidence angle</td>
+                <td>ESA Copernicus</td>
+                <td>Primary all-weather day/night surface damping detection</td>
+              </tr>
+              <tr>
+                <td class="cell-highlight">Sentinel-2 Optical</td>
+                <td>Multispectral Validation</td>
+                <td>Level-2A BOA Reflectance</td>
+                <td>10m – 20m</td>
+                <td>B2 (Blue), B3 (Green), B4 (Red), B8 (NIR)</td>
+                <td>ESA Copernicus</td>
+                <td>Daytime visual cross-verification &amp; cloud screening</td>
+              </tr>
+              <tr>
+                <td class="cell-highlight">AIS Telemetry</td>
+                <td>Vessel Attribution</td>
+                <td>ITU-R M.1371 NMEA 0183</td>
+                <td>Dynamic updates</td>
+                <td>MMSI, IMO, Lat, Lon, SOG, COG, Heading</td>
+                <td>MarineCadastre / AISHub</td>
+                <td>Spatiotemporal vessel tracking &amp; reverse drift intersection</td>
+              </tr>
+              <tr>
+                <td class="cell-highlight">Copernicus CMEMS</td>
+                <td>Hydrodynamic Drift</td>
+                <td>NetCDF-4 Grid Velocity</td>
+                <td>1/12° (~8km) global</td>
+                <td>\(u\) (eastward) &amp; \(v\) (northward) velocities</td>
+                <td>Copernicus Marine</td>
+                <td>Ocean current vectors for Lagrangian reverse trajectory</td>
+              </tr>
+              <tr>
+                <td class="cell-highlight">ECMWF ERA5 / IFS</td>
+                <td>Wind Forcing &amp; Screening</td>
+                <td>GRIB / NetCDF Wind Fields</td>
+                <td>0.25° / 0.1°</td>
+                <td>\(u_{10}\), \(v_{10}\) (10m wind components)</td>
+                <td>ECMWF Open Data</td>
+                <td>Wind leeway calculation &amp; low-wind lookalike filtering</td>
+              </tr>
+              <tr>
+                <td class="cell-highlight">M4D ITI Benchmark</td>
+                <td>Segmentation Baseline</td>
+                <td>SAR Image Patches</td>
+                <td>10m resampled</td>
+                <td>Pixel masks: Spill, Lookalike, Ship, Land, Sea</td>
+                <td>CERTH-ITI</td>
+                <td>Baseline control benchmark for model evaluation</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dataset Deep Dives -->
+    <section class="section section-alt">
+      <div class="container-reading">
+
+        <!-- 1. Sentinel-1 SAR Dataset -->
+        <section class="doc-section">
+          <h2 id="sentinel-1">1. Sentinel-1 Synthetic Aperture Radar (SAR)</h2>
+          <p>
+            The Copernicus Sentinel-1 constellation comprises two polar-orbiting satellites equipped with C-band radar instruments operating at a central frequency of 5.405 GHz.
+          </p>
+
+          <div class="card" style="margin: 1.5rem 0;">
+            <h4 style="margin-top: 0; color: var(--accent-cyan);">Key Ingestion Specifications</h4>
+            <div class="grid-2" style="font-size: 0.9rem; margin-top: 0.75rem;">
+              <div><strong>Acquisition Mode:</strong> Interferometric Wide (IW)</div>
+              <div><strong>Product Type:</strong> Ground Range Detected (GRD)</div>
+              <div><strong>Polarization:</strong> Dual (VV + VH)</div>
+              <div><strong>Pixel Spacing:</strong> 10m &times; 10m</div>
+              <div><strong>Radiometric Depth:</strong> 16-bit unsigned integer</div>
+              <div><strong>Swath Width:</strong> 250 km</div>
+            </div>
+          </div>
+
+          <p>
+            <strong>Geographic Coverage:</strong> Primary focus areas include Indian Exclusive Economic Zone (EEZ) coastal transit lanes, the Arabian Sea tanker highway, the Gulf of Mannar, and the Bay of Bengal international shipping corridors.
+          </p>
+
+          <!-- Sample Figure -->
+          <div class="figure-wrapper">
+            <div class="figure-media" data-lightbox data-src="./assets/figures/fig-01-sar-spill.svg" data-caption="Figure 1: Sentinel-1 SAR Calibration &amp; Damping Ratio">
+              <img src="./assets/figures/fig-01-sar-spill.svg" alt="Sentinel-1 SAR Calibration">
+              <div class="figure-overlay"><span>Click to preview</span></div>
+            </div>
+            <div class="figure-caption">
+              <span class="figure-num">Figure 1:</span> Sample Sentinel-1 C-band SAR patch after radiometric calibration to \(\sigma^0\).
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. AIS Telemetry Dataset -->
+        <section class="doc-section">
+          <h2 id="ais-dataset">2. Automatic Identification System (AIS) Telemetry</h2>
+          <p>
+            The Automatic Identification System is an automated tracking system that uses VHF transceivers on ships. Under IMO SOLAS Regulation V/19, all commercial ships of 300 gross tonnage and upwards engaged on international voyages must broadcast AIS messages.
+          </p>
+          <p>
+            TRACEOIL ingests raw AIS records and builds continuous kinematic trajectory models:
+          </p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem;">
+            <li><strong>Message Types 1, 2, 3:</strong> Position Reports (MMSI, navigational status, rate of turn, SOG, longitude, latitude, COG, true heading, timestamp).</li>
+            <li><strong>Message Type 5:</strong> Ship static and voyage-related data (IMO number, call sign, vessel name, ship type, dimensions, draft, destination).</li>
+          </ul>
+
+          <div class="placeholder-block">
+            <div class="placeholder-block-label">
+              <span>[Add AIS dataset sampling frequency and coverage details here]</span>
+            </div>
+            <p style="margin-bottom:0; font-size:0.9rem; color:var(--text-muted);">
+              Data is pre-filtered to remove corrupt coordinates, duplicate timestamps, and static harbor-anchored vessels. Intermediate positions are calculated using cubic spline trajectory interpolation.
+            </p>
+          </div>
+        </section>
+
+        <!-- 3. M4D ITI Oil Spill Benchmark -->
+        <section class="doc-section">
+          <h2 id="m4d-dataset">3. M4D ITI Oil Spill Benchmark Dataset</h2>
+          <p>
+            To evaluate segmentation algorithms against established scientific literature, TRACEOIL references the publicly available <strong>Oil Spill Detection Dataset</strong> created by the Information Technologies Institute (CERTH-ITI).
+          </p>
+          <p>
+            The dataset contains Sentinel-1 SAR image patches with manually verified ground-truth semantic annotations across 5 distinct classes:
+          </p>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Class ID</th>
+                  <th>Class Name</th>
+                  <th>Description</th>
+                  <th>Pixel Annotation Color</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="cell-highlight">0</td>
+                  <td>Sea Surface</td>
+                  <td>Undisturbed open water background clutter</td>
+                  <td>Black (0, 0, 0)</td>
+                </tr>
+                <tr>
+                  <td class="cell-highlight">1</td>
+                  <td>Oil Spill</td>
+                  <td>Confirmed crude oil / bilge discharge slicks</td>
+                  <td>Cyan (0, 255, 255)</td>
+                </tr>
+                <tr>
+                  <td class="cell-highlight">2</td>
+                  <td>Lookalike</td>
+                  <td>Biogenic slicks, low wind grease, internal waves</td>
+                  <td>Amber (255, 170, 0)</td>
+                </tr>
+                <tr>
+                  <td class="cell-highlight">3</td>
+                  <td>Ship Target</td>
+                  <td>Metallic vessel point reflections</td>
+                  <td>Red (255, 0, 0)</td>
+                </tr>
+                <tr>
+                  <td class="cell-highlight">4</td>
+                  <td>Land / Coast</td>
+                  <td>Terrestrial features, islands, shorelines</td>
+                  <td>Dark Gray (128, 128, 128)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Dataset Sample Placeholder Grid -->
+          <div class="grid-2" style="margin: 2rem 0;">
+            <div class="card" style="padding: 1rem;">
+              <div style="aspect-ratio: 1/1; background: var(--color-surface-soft); border-radius: var(--radius-sm); display:flex; flex-direction:column; align-items:center; justify-content:center; border: 1px dashed var(--color-border-medium); padding: 1.5rem; text-align:center;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🛰️</div>
+                <strong style="color: var(--text-primary);">Satellite Image Patch Sample</strong>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">[Add Sentinel-1 SAR raw crop here]</p>
+                <span class="placeholder-tag">assets/images/sample-sar.png</span>
+              </div>
+              <div style="font-size: 0.825rem; color: var(--text-muted); margin-top: 0.75rem; text-align: center;">
+                Input SAR C-Band VV Polarized Patch
+              </div>
+            </div>
+
+            <div class="card" style="padding: 1rem;">
+              <div style="aspect-ratio: 1/1; background: var(--color-surface-soft); border-radius: var(--radius-sm); display:flex; flex-direction:column; align-items:center; justify-content:center; border: 1px dashed var(--color-border-medium); padding: 1.5rem; text-align:center;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏷️</div>
+                <strong style="color: var(--text-primary);">Ground Truth Semantic Mask</strong>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">[Add annotated mask crop here]</p>
+                <span class="placeholder-tag">assets/images/sample-mask.png</span>
+              </div>
+              <div style="font-size: 0.825rem; color: var(--text-muted); margin-top: 0.75rem; text-align: center;">
+                Multi-Class Verified Ground Truth Mask
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Dataset Splits & Statistics -->
+        <section class="doc-section">
+          <h2 id="dataset-splits">4. Dataset Partitioning &amp; Splits</h2>
+          <p>
+            To avoid spatial data leakage across overlapping satellite swathes, dataset splitting is strictly grouped by orbit acquisition pass and acquisition date:
+          </p>
+
+          <div class="grid-3" style="margin: 1.5rem 0;">
+            <div class="card">
+              <h4 style="color: var(--accent-cyan); margin-top:0;">Training Split</h4>
+              <p class="card-desc">Used for model feature learning and semantic mask backpropagation.</p>
+              <div class="placeholder-tag">[Add training split count here]</div>
+            </div>
+            <div class="card">
+              <h4 style="color: var(--accent-blue); margin-top:0;">Validation Split</h4>
+              <p class="card-desc">Used for hyperparameter tuning and early stopping regularization.</p>
+              <div class="placeholder-tag">[Add validation split count here]</div>
+            </div>
+            <div class="card">
+              <h4 style="color: var(--accent-emerald); margin-top:0;">Test Split</h4>
+              <p class="card-desc">Completely held-out geographical zones for unbiased benchmark evaluation.</p>
+              <div class="placeholder-tag">[Add test split count here]</div>
+            </div>
+          </div>
+
+          <div class="placeholder-block">
+            <div class="placeholder-block-label">
+              <span>[Add dataset statistics here]</span>
+            </div>
+            <p style="margin-bottom:0; font-size:0.9rem; color:var(--text-muted);">
+              Total image counts, slick surface area distributions (km²), and vessel count statistics will be populated upon completion of the regional Indian coastal dataset compilation.
+            </p>
+          </div>
+        </section>
+
+        <!-- 5. Dataset Limitations -->
+        <section class="doc-section">
+          <h2 id="limitations">5. Dataset Limitations</h2>
+          <div class="callout callout-warning">
+            <div class="callout-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            </div>
+            <div class="callout-content">
+              <div class="callout-title">Known Data Constraints</div>
+              <ul style="margin-left: 1rem; margin-top: 0.5rem; margin-bottom: 0; font-size: 0.9rem; line-height: 1.6;">
+                <li><strong>Revisit Latency:</strong> Sentinel-1 single satellite constellation revisit time over Indian waters ranges between 6 to 12 days, necessitating temporal interpolation between successive passes.</li>
+                <li><strong>Cloud Cover in Optical Data:</strong> Sentinel-2 optical verification is frequently obstructed during monsoon seasons, making SAR the solely reliable continuous detection modality.</li>
+                <li><strong>Terrestrial AIS Range Limits:</strong> Terrestrial coastal AIS receiver stations lose vessel coverage beyond 25–40 nautical miles, requiring satellite-AIS aggregators for deep-sea passages.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 TRACEOIL Research Team &bull; Smart India Hackathon 2026.</div>
+        <div><a href="./visualizations.html" class="footer-link">Next: Visualizations &amp; Figures &rarr;</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/project-data.js"></script>
+  <script src="./js/navigation.js"></script>
+  <script src="./js/gallery.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>

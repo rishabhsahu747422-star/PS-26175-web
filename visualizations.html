@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TRACEOIL Visualizations & Figures Gallery — Satellite SAR Outputs, Semantic Masks, CFAR Vessel Target Detections, Reverse Drift Attributions, and Video Demos.">
+  <title>Visualizations &amp; Figures — TRACEOIL | SIH 2026</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="./index.html" class="nav-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">TRACEOIL</span>
+          <span class="brand-tag">VISUAL GALLERY</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Home</a></li>
+          <li><a href="./research.html" class="nav-link">Research</a></li>
+          <li><a href="./methodology.html" class="nav-link">Methodology</a></li>
+          <li><a href="./dataset.html" class="nav-link">Datasets</a></li>
+          <li><a href="./visualizations.html" class="nav-link active">Visualizations</a></li>
+          <li><a href="./documentation/index.html" class="nav-link">Documentation</a></li>
+          <li><a href="./references.html" class="nav-link">References</a></li>
+          <li><a href="./about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="./documentation/index.html" class="btn btn-nav btn-primary">
+          <span>Documentation</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Visualizations Header -->
+    <section class="section" style="padding-top: 3.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-subtle);">
+      <div class="container-reading">
+        <span class="badge badge-sih" style="margin-bottom: 0.75rem;">SIH 2026 Scientific Outputs</span>
+        <h1 style="font-size: 2.5rem; margin-bottom: 0.75rem;">Research Figures &amp; Demonstration Gallery</h1>
+        <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.6;">
+          High-resolution scientific visual outputs, radar backscatter analysis, semantic segmentation masks, CFAR vessel target detections, and demonstration videos. Click any figure to open the fullscreen lightbox.
+        </p>
+      </div>
+    </section>
+
+    <!-- Video Demonstration Section -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Video Demonstration</span>
+          <h2 class="section-title">Automated Detection &amp; Attribution Demo</h2>
+          <p class="section-desc">
+            Video walkthrough of the TRACEOIL pipeline running end-to-end: from satellite product ingestion and dark slick polygon extraction to backward drift modeling and historical AIS transponder intersection.
+          </p>
+        </div>
+
+        <div class="card" style="max-width: 960px; margin: 0 auto; background: var(--color-surface); border-color: var(--border-subtle); box-shadow: var(--shadow-md);">
+          <div style="cursor: pointer; position: relative; border-radius: var(--radius-sm); overflow: hidden;" data-video-trigger data-video-src="./assets/videos/demo-pipeline.mp4" data-video-title="TRACEOIL Automated Detection Pipeline Demonstration" data-video-caption="End-to-end demonstration showing SAR imagery ingestion, slick polygon extraction, CFAR ship target extraction, and time-stamped AIS trajectory correlation.">
+            <img src="./assets/videos/poster-demo.svg" alt="TRACEOIL Video Demonstration Poster">
+            <div class="figure-overlay" style="opacity: 0.85; background: rgba(3, 7, 18, 0.45);">
+              <div style="background: #0284c7; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 24px rgba(2, 132, 199, 0.6);">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="#ffffff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+          </div>
+
+          <div style="padding: 1.5rem 0.5rem 0.5rem 0.5rem; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem; color: var(--text-primary);">TRACEOIL Automated Processing Pipeline</h3>
+              <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted); max-width: 620px;">
+                Supports local MP4 playback (<code>assets/videos/demo-pipeline.mp4</code>) or YouTube embed via configuration in <code>js/project-data.js</code>.
+              </p>
+            </div>
+            <button class="btn btn-primary" data-video-trigger data-video-src="./assets/videos/demo-pipeline.mp4" data-video-title="TRACEOIL Automated Detection Pipeline Demonstration" data-video-caption="SIH 2026 Walkthrough of automated SAR ingestion, oil spill boundary extraction, and AIS ship attribution matching.">
+              <span>Play Video (3:45)</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Figures & Scientific Outputs Gallery -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Figure Catalogue</span>
+          <h2 class="section-title">Scientific Figures &amp; Model Predictions</h2>
+          <p class="section-desc">
+            All research figures are rendered with vector accuracy and annotated with sensor metadata, polarizations, coordinate frames, and confidence levels.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Figure 1 -->
+          <div class="gallery-card">
+            <div class="gallery-thumbnail" data-lightbox data-src="./assets/figures/fig-01-sar-spill.svg" data-caption="Figure 1: Sentinel-1 SAR Oil Spill Damping Signature">
+              <img src="./assets/figures/fig-01-sar-spill.svg" alt="Sentinel-1 SAR Oil Spill Damping Signature">
+            </div>
+            <div class="gallery-body">
+              <div class="gallery-tag">Figure 1.0 &bull; SAR Damping</div>
+              <h3 class="gallery-title">Capillary Wave Damping</h3>
+              <p class="gallery-desc">Synthetic Aperture Radar backscatter visualization contrasting wave-damped dark formations with rough open sea.</p>
+              <div class="card-footer" style="padding: 0.75rem 0 0 0; margin-top: 0.75rem;">
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">Damping: -12.4 dB</span>
+                <span class="badge badge-blue">SAR VV</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Figure 2 -->
+          <div class="gallery-card">
+            <div class="gallery-thumbnail" data-lightbox data-src="./assets/figures/fig-02-segmentation.svg" data-caption="Figure 2: Adaptive Dark Formation Semantic Segmentation">
+              <img src="./assets/figures/fig-02-segmentation.svg" alt="Dark Formation Segmentation">
+            </div>
+            <div class="gallery-body">
+              <div class="gallery-tag">Figure 2.0 &bull; Segmentation</div>
+              <h3 class="gallery-title">Dark Formation Masking</h3>
+              <p class="gallery-desc">Side-by-side comparison of calibrated SAR intensity and semantic segmentation mask isolating the core discharge polygon.</p>
+              <div class="card-footer" style="padding: 0.75rem 0 0 0; margin-top: 0.75rem;">
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-emerald);">Conf: 0.94</span>
+                <span class="badge badge-green">Mask Polygon</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Figure 3 -->
+          <div class="gallery-card">
+            <div class="gallery-thumbnail" data-lightbox data-src="./assets/figures/fig-03-vessel-cfar.svg" data-caption="Figure 3: CFAR Target Detection in Coastal Shipping Corridor">
+              <img src="./assets/figures/fig-03-vessel-cfar.svg" alt="CFAR Vessel Detection">
+            </div>
+            <div class="gallery-body">
+              <div class="gallery-tag">Figure 3.0 &bull; Ship Extraction</div>
+              <h3 class="gallery-title">CFAR Vessel Detection</h3>
+              <p class="gallery-desc">Two-dimensional Cell-Averaging Constant False Alarm Rate detector extracting bright metallic ship reflections.</p>
+              <div class="card-footer" style="padding: 0.75rem 0 0 0; margin-top: 0.75rem;">
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #fbbf24;">P_fa = 10^-6</span>
+                <span class="badge badge-amber">CA-CFAR</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Figure 4 -->
+          <div class="gallery-card">
+            <div class="gallery-thumbnail" data-lightbox data-src="./assets/figures/fig-04-attribution.svg" data-caption="Figure 4: Reverse Lagrangian Drift Trajectory Intersecting AIS Waypoints">
+              <img src="./assets/figures/fig-04-attribution.svg" alt="Lagrangian Reverse Drift Attribution">
+            </div>
+            <div class="gallery-body">
+              <div class="gallery-tag">Figure 4.0 &bull; Attribution</div>
+              <h3 class="gallery-title">Reverse Drift Trajectory</h3>
+              <p class="gallery-desc">Time-stamped backward Lagrangian drift vectors intersecting the historical AIS navigation path of a suspect tanker.</p>
+              <div class="card-footer" style="padding: 0.75rem 0 0 0; margin-top: 0.75rem;">
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">P(A) = 96.8%</span>
+                <span class="badge badge-purple">Forensics</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Figure 5 -->
+          <div class="gallery-card">
+            <div class="gallery-thumbnail" data-lightbox data-src="./assets/figures/fig-05-drift-vectors.svg" data-caption="Figure 5: Copernicus CMEMS Ocean Surface Current and ECMWF 10m Wind Fields">
+              <img src="./assets/figures/fig-05-drift-vectors.svg" alt="Ocean Current & Wind Vectors">
+            </div>
+            <div class="gallery-body">
+              <div class="gallery-tag">Figure 5.0 &bull; Hydrodynamics</div>
+              <h3 class="gallery-title">MetOcean Vector Fields</h3>
+              <p class="gallery-desc">Quiver plot representing surface ocean current velocities (u, v) combined with 10-meter wind leeway forcing vectors.</p>
+              <div class="card-footer" style="padding: 0.75rem 0 0 0; margin-top: 0.75rem;">
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-blue);">CMEMS + ECMWF</span>
+                <span class="badge badge-cyan">Vector Field</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Figure 6 -->
+          <div class="gallery-card">
+            <div class="gallery-thumbnail" data-lightbox data-src="./assets/diagrams/pipeline-architecture.svg" data-caption="Figure 6: Complete TRACEOIL Multi-Modal Processing Pipeline">
+              <img src="./assets/diagrams/pipeline-architecture.svg" alt="System Architecture Diagram">
+            </div>
+            <div class="gallery-body">
+              <div class="gallery-tag">Figure 6.0 &bull; Architecture</div>
+              <h3 class="gallery-title">System Architecture</h3>
+              <p class="gallery-desc">Complete end-to-end data pipeline detailing satellite downlinks, preprocessing modules, and forensic report generation.</p>
+              <div class="card-footer" style="padding: 0.75rem 0 0 0; margin-top: 0.75rem;">
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-primary);">8 Pipeline Stages</span>
+                <span class="badge badge-blue">Flowchart</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Placeholders for Future Experiments -->
+        <div class="section-header" style="margin-top: 4rem; margin-bottom: 2rem;">
+          <span class="section-subtitle">Upcoming Benchmarks</span>
+          <h2 class="section-title" style="font-size: 1.75rem;">Experimental Benchmarking Outputs</h2>
+          <p class="section-desc">Placeholder figure slots reserved for upcoming evaluation runs and model comparisons during SIH 2026 development.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card" style="border-style: dashed; text-align: center; padding: 2rem 1.5rem;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>
+            <h4 style="margin: 0 0 0.5rem 0; color: var(--text-primary);">Model Confusion Matrix</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">[Add model confusion matrix graphic here]</p>
+            <span class="placeholder-tag">assets/figures/confusion-matrix.png</span>
+          </div>
+
+          <div class="card" style="border-style: dashed; text-align: center; padding: 2rem 1.5rem;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🗺️</div>
+            <h4 style="margin: 0 0 0.5rem 0; color: var(--text-primary);">Geospatial GIS Map Output</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">[Add interactive GIS map export here]</p>
+            <span class="placeholder-tag">assets/figures/gis-spill-map.png</span>
+          </div>
+
+          <div class="card" style="border-style: dashed; text-align: center; padding: 2rem 1.5rem;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📑</div>
+            <h4 style="margin: 0 0 0.5rem 0; color: var(--text-primary);">Automated PDF Forensic Dossier</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">[Add forensic legal dossier preview here]</p>
+            <span class="placeholder-tag">assets/figures/forensic-report-sample.png</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 TRACEOIL Research Team &bull; Smart India Hackathon 2026.</div>
+        <div><a href="./documentation/index.html" class="footer-link">Next: Documentation Hub &rarr;</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/project-data.js"></script>
+  <script src="./js/navigation.js"></script>
+  <script src="./js/gallery.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>

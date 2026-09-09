@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TRACEOIL Technical Methodology — Satellite Preprocessing, Oil Spill Detection, CFAR Ship Extraction, Lagrangian Reverse Drift, and Vessel Attribution Pipeline.">
+  <title>Technical Methodology — TRACEOIL | SIH 2026</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="./index.html" class="nav-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">TRACEOIL</span>
+          <span class="brand-tag">METHODOLOGY</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Home</a></li>
+          <li><a href="./research.html" class="nav-link">Research</a></li>
+          <li><a href="./methodology.html" class="nav-link active">Methodology</a></li>
+          <li><a href="./dataset.html" class="nav-link">Datasets</a></li>
+          <li><a href="./visualizations.html" class="nav-link">Visualizations</a></li>
+          <li><a href="./documentation/index.html" class="nav-link">Documentation</a></li>
+          <li><a href="./references.html" class="nav-link">References</a></li>
+          <li><a href="./about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="./documentation/index.html" class="btn btn-nav btn-primary">
+          <span>Documentation</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Methodology Header -->
+    <section class="section" style="padding-top: 3.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-subtle);">
+      <div class="container-reading">
+        <span class="badge badge-sih" style="margin-bottom: 0.75rem;">SIH 2026 Technical Architecture</span>
+        <h1 style="font-size: 2.5rem; margin-bottom: 0.75rem;">Engineering Methodology &amp; Analytical Pipeline</h1>
+        <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.6;">
+          Detailed step-by-step description of data acquisition, calibration filters, dark slick segmentation, Constant False Alarm Rate vessel extraction, Lagrangian drift simulation, and probabilistic attribution scoring.
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Pipeline Diagram Banner -->
+    <section class="section section-alt" style="padding: 3rem 0;">
+      <div class="container">
+        <div class="section-header text-center" style="margin-bottom: 2rem;">
+          <span class="section-subtitle">System Pipeline Flow</span>
+          <h2 class="section-title">End-to-End Processing Architecture</h2>
+          <p class="section-desc">
+            Input Data &rarr; Preprocessing &rarr; Oil-Spill Detection &rarr; Feature Extraction &rarr; Vessel Detection &rarr; Vessel Attribution &rarr; Geospatial Analysis &rarr; Research Output
+          </p>
+        </div>
+
+        <div class="pipeline-grid">
+          <div class="pipeline-step">
+            <div class="pipeline-step-num">Step 01</div>
+            <h3 class="pipeline-step-title">Data Ingestion</h3>
+            <p class="pipeline-step-desc">Ingestion of Sentinel-1 C-band SAR products, Sentinel-2 MSI optical tiles, and NMEA AIS historical broadcasts.</p>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-step-num">Step 02</div>
+            <h3 class="pipeline-step-title">Preprocessing</h3>
+            <p class="pipeline-step-desc">Precise orbit calibration, thermal noise correction, Refined Lee speckle filtering, and GSHHG coastline masking.</p>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-step-num">Step 03</div>
+            <h3 class="pipeline-step-title">Spill Detection</h3>
+            <p class="pipeline-step-desc">Adaptive spatial intensity thresholding and deep semantic segmentation isolating dark formation polygons.</p>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-step-num">Step 04</div>
+            <h3 class="pipeline-step-title">Feature Extraction</h3>
+            <p class="pipeline-step-desc">Geometric aspect ratio, damping ratio \(\Delta \sigma^0\), edge gradients, and ECMWF local wind speed validation.</p>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-step-num">Step 05</div>
+            <h3 class="pipeline-step-title">Vessel Detection</h3>
+            <p class="pipeline-step-desc">Adaptive 2D CA-CFAR filter extracting bright point target radar signatures against surrounding sea clutter.</p>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-step-num">Step 06</div>
+            <h3 class="pipeline-step-title">Vessel Identification</h3>
+            <p class="pipeline-step-desc">Spatial correlation with decoded AIS positions, matching MMSI/IMO identifiers, vessel dimensions, and track headers.</p>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-step-num">Step 07</div>
+            <h3 class="pipeline-step-title">Geospatial Drift</h3>
+            <p class="pipeline-step-desc">Lagrangian reverse hydrodynamic particle advection integrating CMEMS surface currents and wind drift factor \(\gamma\).</p>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-step-num">Step 08</div>
+            <h3 class="pipeline-step-title">Attribution &amp; Dossier</h3>
+            <p class="pipeline-step-desc">Probabilistic attribution scoring, confidence ranking, and legal evidentiary GeoJSON/PDF dossier packaging.</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <div class="figure-wrapper">
+            <div class="figure-media" data-lightbox data-src="./assets/diagrams/pipeline-architecture.svg" data-caption="Figure 1: Full Technical Pipeline Architecture Diagram">
+              <img src="./assets/diagrams/pipeline-architecture.svg" alt="Full Pipeline Architecture">
+              <div class="figure-overlay"><span>Click to view fullscreen diagram</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Technical Sections -->
+    <section class="section">
+      <div class="container-reading">
+
+        <!-- Stage 1: Data Acquisition -->
+        <section class="doc-section">
+          <h2 id="data-acquisition">1. Data Acquisition &amp; Multi-Modal Feeds</h2>
+          <p>
+            TRACEOIL interfaces with public earth observation catalogues and maritime telemetry streams. Primary feeds include:
+          </p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><strong>Copernicus Sentinel-1 SAR:</strong> Level-1 Ground Range Detected (GRD) in Interferometric Wide (IW) swath mode, featuring dual polarization (VV + VH) with a 10-meter pixel spacing and 250 km swath width.</li>
+            <li><strong>Copernicus Sentinel-2 Optical:</strong> Level-2A Bottom-Of-Atmosphere (BOA) reflectance across 13 spectral bands for daytime optical confirmation.</li>
+            <li><strong>Terrestrial &amp; Satellite AIS:</strong> Standard ITU-R M.1371 NMEA 0183 decoded messages supplying timestamped latitude, longitude, speed over ground (SOG), course over ground (COG), ship type, MMSI, and dimensions.</li>
+            <li><strong>MetOcean Hydrodynamics:</strong> Copernicus Marine (CMEMS) Global Ocean Analysis and Forecast (hourly surface current velocities \(u, v\)) and ECMWF ERA5/IFS 10-meter surface wind vectors.</li>
+          </ul>
+
+          <div class="placeholder-block">
+            <div class="placeholder-block-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <span>[Add data acquisition API specifications here]</span>
+            </div>
+            <p style="margin-bottom:0; font-size:0.9rem; color:var(--text-muted);">
+              Automated ingestion workers poll the Copernicus Data Space Ecosystem (CDSE) OData REST API using temporal and geographic bounding box parameters.
+            </p>
+          </div>
+        </section>
+
+        <!-- Stage 2: Preprocessing -->
+        <section class="doc-section">
+          <h2 id="preprocessing">2. Satellite Imagery Preprocessing</h2>
+          <p>
+            Raw SAR intensity files cannot be used directly for computer vision segmentation due to speckle noise and radiometric distortions. The preprocessing pipeline applies five sequential transformations:
+          </p>
+
+          <div class="grid-2" style="margin: 1.5rem 0;">
+            <div class="card">
+              <h4 style="color: var(--accent-cyan); margin-top:0;">Orbit File Correction</h4>
+              <p class="card-desc">Applies precise restituted orbit state vectors from ESA to fix geometric satellite positioning down to centimeter precision.</p>
+            </div>
+            <div class="card">
+              <h4 style="color: var(--accent-cyan); margin-top:0;">Thermal Noise Removal</h4>
+              <p class="card-desc">Normalizes background thermal noise across sub-swath boundaries in both co- and cross-polarization channels.</p>
+            </div>
+            <div class="card">
+              <h4 style="color: var(--accent-cyan); margin-top:0;">Radiometric Calibration</h4>
+              <p class="card-desc">Converts raw digital pixel numbers into physical radar backscatter coefficient \(\sigma^0\) (Sigma Naught) in decibels (dB).</p>
+            </div>
+            <div class="card">
+              <h4 style="color: var(--accent-cyan); margin-top:0;">Speckle Filtering</h4>
+              <p class="card-desc">Applies a Refined Lee filter (7x7 window) to suppress granular multiplicative speckle while preserving sharp linear slick boundaries.</p>
+            </div>
+          </div>
+
+          <p>
+            Finally, a land-masking pass removes terrestrial and shallow estuarine reflections using high-resolution Global Self-consistent, Hierarchical, High-resolution Geography (GSHHG) coastline shapefiles buffered by 500 meters.
+          </p>
+
+          <div class="placeholder-block">
+            <div class="placeholder-block-label">
+              <span>[Add preprocessing calibration parameters here]</span>
+            </div>
+            <p style="margin-bottom:0; font-size:0.9rem; color:var(--text-muted);">
+              Target filter window: 7&times;7 Refined Lee | DEM Source: Copernicus 30m Global DEM | Polarization: VV primary, VH secondary.
+            </p>
+          </div>
+        </section>
+
+        <!-- Stage 3: Oil Spill Detection -->
+        <section class="doc-section">
+          <h2 id="oil-spill-detection">3. Dark Formation &amp; Oil Spill Detection</h2>
+          <p>
+            Because oil slicks dampen capillary waves, their backscatter intensity is significantly lower than that of the surrounding undisturbed sea. The detection stage extracts candidate dark formations:
+          </p>
+
+          <div class="figure-wrapper">
+            <div class="figure-media" data-lightbox data-src="./assets/figures/fig-02-segmentation.svg" data-caption="Figure 2: Dark Formation Adaptive Segmentation">
+              <img src="./assets/figures/fig-02-segmentation.svg" alt="Dark Formation Adaptive Segmentation">
+              <div class="figure-overlay"><span>Click to preview</span></div>
+            </div>
+            <div class="figure-caption">
+              <span class="figure-num">Figure 2:</span> Adaptive intensity thresholding segmenting oil spill core from the background clutter.
+            </div>
+          </div>
+
+          <p>
+            An adaptive local threshold \(T\) is evaluated across moving regional sub-windows:
+          </p>
+
+          <div style="background: var(--color-surface-soft); border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 1.25rem 1.5rem; margin: 1.5rem 0; font-family: var(--font-mono); font-size: 0.95rem; color: var(--color-primary); text-align: center; box-shadow: var(--shadow-sm);">
+            \(T = \mu_{\text{local}} - k \cdot \sigma_{\text{local}}\)
+          </div>
+
+          <p>
+            Where \(\mu_{\text{local}}\) and \(\sigma_{\text{local}}\) are the mean and standard deviation of background sea clutter, and \(k\) is a sensitivity parameter calibrated to local wind speeds.
+          </p>
+
+          <div class="placeholder-block">
+            <div class="placeholder-block-label">
+              <span>[Add model name and segmentation architecture here]</span>
+            </div>
+            <p style="margin-bottom:0; font-size:0.9rem; color:var(--text-muted);">
+              Ongoing benchmarking evaluates lightweight U-Net and DeepLabV3+ semantic backbones with ResNet-34 encoders trained on Sentinel-1 SAR tiles. Final model selection and mIoU scores will be posted following test suite completion.
+            </p>
+          </div>
+        </section>
+
+        <!-- Stage 4: Feature Extraction -->
+        <section class="doc-section">
+          <h2 id="feature-extraction">4. Morphological &amp; Polarimetric Feature Extraction</h2>
+          <p>
+            Once candidate dark formations are segmented, a feature descriptor vector \(\vec{F}\) is computed for each polygon to discriminate true oil spills from natural lookalikes:
+          </p>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Feature Category</th>
+                  <th>Extracted Metric</th>
+                  <th>Relevance in Discrimination</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="cell-highlight">Geometric</td>
+                  <td>Area, Perimeter, Compactness \((P^2 / 4\pi A)\)</td>
+                  <td>Separates elongated plume discharges from round biogenic patches</td>
+                </tr>
+                <tr>
+                  <td class="cell-highlight">Morphological</td>
+                  <td>Elongation, Skeleton Major Axis, Curvature</td>
+                  <td>Reflects trailing wake patterns typical of moving ship discharges</td>
+                </tr>
+                <tr>
+                  <td class="cell-highlight">Physical / Radiometric</td>
+                  <td>Damping Ratio: \(\Delta \sigma^0 = \sigma^0_{\text{sea}} - \sigma^0_{\text{slick}}\)</td>
+                  <td>True oil exhibits &gt;7 dB damping; biogenic film typically 3–6 dB</td>
+                </tr>
+                <tr>
+                  <td class="cell-highlight">Polarimetric</td>
+                  <td>VV/VH Dual-Polarization Ratio</td>
+                  <td>Cross-polar channel discriminates rough water volume scattering</td>
+                </tr>
+                <tr>
+                  <td class="cell-highlight">Environmental</td>
+                  <td>ECMWF 10m Wind Velocity Magnitude</td>
+                  <td>Filters out zero-wind zones (&lt;2.5 m/s) where lookalikes dominate</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Stage 5 & 6: Vessel Detection & Identification -->
+        <section class="doc-section">
+          <h2 id="vessel-detection">5. Vessel Detection &amp; AIS Identification</h2>
+          <p>
+            Metallic ships act as strong trihedral corner reflectors in SAR imagery, generating intensely bright backscatter spikes that contrast sharply with the sea surface.
+          </p>
+
+          <div class="figure-wrapper">
+            <div class="figure-media" data-lightbox data-src="./assets/figures/fig-03-vessel-cfar.svg" data-caption="Figure 3: CFAR Vessel Extraction Window">
+              <img src="./assets/figures/fig-03-vessel-cfar.svg" alt="CFAR Vessel Extraction">
+              <div class="figure-overlay"><span>Click to preview</span></div>
+            </div>
+            <div class="figure-caption">
+              <span class="figure-num">Figure 3:</span> 2D Cell-Averaging Constant False Alarm Rate (CA-CFAR) filter isolating maritime ship targets.
+            </div>
+          </div>
+
+          <p>
+            A two-dimensional Cell-Averaging Constant False Alarm Rate (CA-CFAR) detector slides across the image. The target Cell Under Test (CUT) is declared a ship if its backscatter exceeds the threshold computed from adjacent training cells (while skipping immediate guard cells to prevent target energy leakage).
+          </p>
+
+          <div class="placeholder-block">
+            <div class="placeholder-block-label">
+              <span>[Add vessel detection model specifications here]</span>
+            </div>
+            <p style="margin-bottom:0; font-size:0.9rem; color:var(--text-muted);">
+              CFAR detected bounding boxes are paired with optical verification. Detected coordinates are cross-referenced with AIS transponder positions interpolated to the exact satellite acquisition second.
+            </p>
+          </div>
+        </section>
+
+        <!-- Stage 7 & 8: Reverse Drift & Attribution -->
+        <section class="doc-section">
+          <h2 id="attribution">6. Reverse Drift Modeling &amp; Attribution Scoring</h2>
+          <p>
+            Because oil drifts downwind and with ocean currents, its observed location at time \(T_{\text{sat}}\) does not correspond to its release point. TRACEOIL executes a <strong>reverse Lagrangian particle tracking simulation</strong>:
+          </p>
+
+          <div class="figure-wrapper">
+            <div class="figure-media" data-lightbox data-src="./assets/figures/fig-05-drift-vectors.svg" data-caption="Figure 4: MetOcean Hydrodynamic Vector Fields">
+              <img src="./assets/figures/fig-05-drift-vectors.svg" alt="MetOcean Hydrodynamic Vector Fields">
+              <div class="figure-overlay"><span>Click to preview</span></div>
+            </div>
+            <div class="figure-caption">
+              <span class="figure-num">Figure 4:</span> Copernicus CMEMS ocean surface currents \((u, v)\) coupled with ECMWF 10m wind fields forcing reverse slick trajectory.
+            </div>
+          </div>
+
+          <p>
+            The slick polygon is discretized into an ensemble of 500 virtual particles. Each particle is advected backward in time through numerical integration of hourly Copernicus current vectors and 3.2% wind leeway. The resulting backward trajectory forms a <strong>probability corridor of genesis</strong>.
+          </p>
+          <p>
+            Every vessel whose AIS track crosses this spatiotemporal corridor within a time tolerance \(\Delta t \le 30\) minutes is scored using the attribution probability metric:
+          </p>
+
+          <div style="background: var(--color-surface-soft); border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 1.25rem 1.5rem; margin: 1.5rem 0; font-family: var(--font-mono); font-size: 0.95rem; color: var(--color-primary); text-align: center; box-shadow: var(--shadow-sm);">
+            \(P_{\text{attribution}}(V_i) = \exp\left( - \frac{d(\vec{x}_{\text{back}}(t), \vec{x}_{\text{vessel}}(t))^2}{2\sigma_s^2} \right) \cdot \exp\left( - \frac{\Delta t^2}{2\sigma_t^2} \right) \cdot K_{\text{anomaly}}\)
+          </div>
+
+          <div class="placeholder-block">
+            <div class="placeholder-block-label">
+              <span>[Add final methodology details here]</span>
+            </div>
+            <p style="margin-bottom:0; font-size:0.9rem; color:var(--text-muted);">
+              Specific parameter tunings, empirical leeway angles for Arabian Sea / Bay of Bengal waters, and automated reporting formats will be added as experimental validation progresses.
+            </p>
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 TRACEOIL Research Team &bull; Smart India Hackathon 2026.</div>
+        <div><a href="./dataset.html" class="footer-link">Next: Dataset Documentation &rarr;</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/project-data.js"></script>
+  <script src="./js/navigation.js"></script>
+  <script src="./js/gallery.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>

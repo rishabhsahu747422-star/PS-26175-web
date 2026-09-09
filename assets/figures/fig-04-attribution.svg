@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050a14"/>
+      <stop offset="100%" stop-color="#0a1528"/>
+    </linearGradient>
+    <marker id="arrRed" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f43f5e"/>
+    </marker>
+    <marker id="arrCyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#00f0ff"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg4)"/>
+
+  <!-- Nautical Map Grid -->
+  <g stroke="rgba(56, 189, 248, 0.07)" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="500"/>
+    <line x1="250" y1="0" x2="250" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="550" y1="0" x2="550" y2="500"/>
+    <line x1="700" y1="0" x2="700" y2="500"/>
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+  </g>
+
+  <!-- Title Header -->
+  <text x="40" y="45" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="12" letter-spacing="2">LAGRANGIAN REVERSE DRIFT &amp; AIS CORRIDOR MATCHING</text>
+  <text x="40" y="68" fill="#ffffff" font-family="Inter, sans-serif" font-weight="700" font-size="17">Hydrodynamic Back-Trajectory Correlated with Historical Vessel AIS Waypoints</text>
+
+  <!-- Current Slick Position (Observation Time T0 = 06:14 UTC) -->
+  <g transform="translate(540, 260)">
+    <ellipse cx="0" cy="0" rx="70" ry="32" fill="#010307" stroke="#00f0ff" stroke-width="2"/>
+    <circle cx="0" cy="0" r="4" fill="#00f0ff"/>
+    <text x="15" y="-15" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">OBSERVED SLICK (T0)</text>
+    <text x="15" y="0" fill="#cbd5e1" font-family="Inter, sans-serif" font-size="10">Time: 06:14 UTC (Sentinel-1 Pass)</text>
+  </g>
+
+  <!-- Reverse Lagrangian Drift Trajectory Curve (T0 -> T-2h -> T-4h -> T-6h) -->
+  <!-- Drift Envelope Corridor -->
+  <path d="M 540 240 Q 430 200, 320 220 T 160 170 L 160 210 Q 320 250, 430 230 T 540 280 Z" fill="rgba(6, 182, 212, 0.08)"/>
+  
+  <!-- Back-Trajectory Center Line -->
+  <path d="M 540 260 C 430 220, 310 240, 160 190" fill="none" stroke="#00f0ff" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#arrCyan)"/>
+  
+  <!-- Waypoints along drift -->
+  <circle cx="430" cy="230" r="4" fill="#38bdf8"/>
+  <text x="410" y="215" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10">T - 2h (04:14)</text>
+
+  <circle cx="310" cy="235" r="4" fill="#38bdf8"/>
+  <text x="290" y="260" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10">T - 4h (02:14)</text>
+
+  <circle cx="160" cy="190" r="5" fill="#f43f5e"/>
+  <text x="80" y="160" fill="#f43f5e" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">ORIGIN SLICK SPRAY (T - 6h)</text>
+  <text x="80" y="176" fill="#cbd5e1" font-family="Inter, sans-serif" font-size="10">Estimated Discharge Point: 00:15 UTC</text>
+
+  <!-- AIS Vessel Track Corridor (Ship MMSI 413289000) -->
+  <path d="M 80 340 L 160 190 L 260 70" fill="none" stroke="#f59e0b" stroke-width="3"/>
+
+  <!-- Intersection Point (Discharge Intercept) -->
+  <circle cx="160" cy="190" r="16" fill="none" stroke="#f43f5e" stroke-width="2.5"/>
+  <circle cx="160" cy="190" r="28" fill="none" stroke="#f43f5e" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+  <!-- Vessel Position at Intercept -->
+  <g transform="translate(160, 190)">
+    <!-- Ship Icon -->
+    <path d="M -8 -12 L 8 -12 L 4 14 L -4 14 Z" fill="#f59e0b" transform="rotate(32)"/>
+  </g>
+
+  <!-- Callout Dossier Card -->
+  <g transform="translate(460, 340)">
+    <rect width="300" height="120" rx="8" fill="rgba(15, 23, 42, 0.95)" stroke="rgba(244, 63, 94, 0.5)" stroke-width="1.5"/>
+    <text x="16" y="24" fill="#f43f5e" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">ATTRIBUTION MATCH: HIGH CONFIDENCE</text>
+    <text x="16" y="44" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Candidate Vessel: Tanker (MMSI: 413289000)</text>
+    <text x="16" y="62" fill="#cbd5e1" font-family="Inter, sans-serif" font-size="11">Time Delta: &plusmn; 4.2 mins | Spatial Delta: 320m</text>
+    <text x="16" y="80" fill="#cbd5e1" font-family="Inter, sans-serif" font-size="11">Kinematic Anomaly: Sudden SOG drop (14.2 &rarr; 8.1 kn)</text>
+    <text x="16" y="104" fill="#34d399" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">Attribution Probability P(A) = 96.8%</text>
+  </g>
+
+  <!-- Coordinate annotations -->
+  <text x="40" y="480" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">ECMWF Wind: 6.8 m/s @ 235° | CMEMS Surface Current: 0.42 m/s @ 062°</text>
+</svg>

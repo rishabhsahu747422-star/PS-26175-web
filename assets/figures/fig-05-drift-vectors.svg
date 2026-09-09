@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060c19"/>
+      <stop offset="100%" stop-color="#0a162b"/>
+    </linearGradient>
+    <marker id="vArr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="wArr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg5)"/>
+
+  <!-- Title Header -->
+  <text x="40" y="45" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="12" letter-spacing="2">METOCEAN VECTOR FIELDS &amp; HYDRODYNAMICS</text>
+  <text x="40" y="68" fill="#ffffff" font-family="Inter, sans-serif" font-weight="700" font-size="17">Copernicus Marine Surface Velocity (u, v) &amp; ECMWF 10m Wind Forcing</text>
+
+  <!-- Vector Quiver Grid Field -->
+  <g stroke="#38bdf8" stroke-width="1.25" opacity="0.6">
+    <!-- Row 1 -->
+    <line x1="80" y1="120" x2="115" y2="135" marker-end="url(#vArr)"/>
+    <line x1="160" y1="120" x2="198" y2="130" marker-end="url(#vArr)"/>
+    <line x1="240" y1="120" x2="280" y2="128" marker-end="url(#vArr)"/>
+    <line x1="320" y1="120" x2="362" y2="132" marker-end="url(#vArr)"/>
+    <line x1="400" y1="120" x2="440" y2="140" marker-end="url(#vArr)"/>
+    <line x1="480" y1="120" x2="520" y2="145" marker-end="url(#vArr)"/>
+    <line x1="560" y1="120" x2="600" y2="140" marker-end="url(#vArr)"/>
+    <line x1="640" y1="120" x2="680" y2="135" marker-end="url(#vArr)"/>
+
+    <!-- Row 2 -->
+    <line x1="80" y1="180" x2="120" y2="195" marker-end="url(#vArr)"/>
+    <line x1="160" y1="180" x2="205" y2="190" marker-end="url(#vArr)"/>
+    <line x1="240" y1="180" x2="285" y2="185" marker-end="url(#vArr)"/>
+    <line x1="320" y1="180" x2="368" y2="192" marker-end="url(#vArr)"/>
+    <line x1="400" y1="180" x2="445" y2="200" marker-end="url(#vArr)"/>
+    <line x1="480" y1="180" x2="525" y2="205" marker-end="url(#vArr)"/>
+    <line x1="560" y1="180" x2="602" y2="198" marker-end="url(#vArr)"/>
+    <line x1="640" y1="180" x2="682" y2="190" marker-end="url(#vArr)"/>
+
+    <!-- Row 3 -->
+    <line x1="80" y1="240" x2="125" y2="252" marker-end="url(#vArr)"/>
+    <line x1="160" y1="240" x2="210" y2="248" marker-end="url(#vArr)"/>
+    <line x1="240" y1="240" x2="290" y2="242" marker-end="url(#vArr)"/>
+    <line x1="320" y1="240" x2="370" y2="250" marker-end="url(#vArr)"/>
+    <line x1="400" y1="240" x2="450" y2="260" marker-end="url(#vArr)"/>
+    <line x1="480" y1="240" x2="528" y2="265" marker-end="url(#vArr)"/>
+    <line x1="560" y1="240" x2="605" y2="258" marker-end="url(#vArr)"/>
+    <line x1="640" y1="240" x2="685" y2="250" marker-end="url(#vArr)"/>
+
+    <!-- Row 4 -->
+    <line x1="80" y1="300" x2="122" y2="310" marker-end="url(#vArr)"/>
+    <line x1="160" y1="300" x2="208" y2="305" marker-end="url(#vArr)"/>
+    <line x1="240" y1="300" x2="288" y2="302" marker-end="url(#vArr)"/>
+    <line x1="320" y1="300" x2="368" y2="308" marker-end="url(#vArr)"/>
+    <line x1="400" y1="300" x2="448" y2="318" marker-end="url(#vArr)"/>
+    <line x1="480" y1="300" x2="525" y2="322" marker-end="url(#vArr)"/>
+    <line x1="560" y1="300" x2="602" y2="315" marker-end="url(#vArr)"/>
+    <line x1="640" y1="300" x2="682" y2="308" marker-end="url(#vArr)"/>
+  </g>
+
+  <!-- Wind Vectors Overlay (Green) -->
+  <g stroke="#10b981" stroke-width="2" opacity="0.8">
+    <line x1="120" y1="150" x2="180" y2="190" marker-end="url(#wArr)"/>
+    <line x1="280" y1="150" x2="340" y2="190" marker-end="url(#wArr)"/>
+    <line x1="440" y1="150" x2="500" y2="190" marker-end="url(#wArr)"/>
+    <line x1="600" y1="150" x2="660" y2="190" marker-end="url(#wArr)"/>
+
+    <line x1="120" y1="270" x2="180" y2="310" marker-end="url(#wArr)"/>
+    <line x1="280" y1="270" x2="340" y2="310" marker-end="url(#wArr)"/>
+    <line x1="440" y1="270" x2="500" y2="310" marker-end="url(#wArr)"/>
+    <line x1="600" y1="270" x2="660" y2="310" marker-end="url(#wArr)"/>
+  </g>
+
+  <!-- Slick drift displacement example -->
+  <g transform="translate(240, 360)">
+    <rect width="320" height="90" rx="8" fill="rgba(15, 23, 42, 0.9)" stroke="rgba(56, 189, 248, 0.3)"/>
+    <text x="16" y="24" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">DRIFT EQUATION DECOMPOSITION</text>
+    <text x="16" y="44" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">V_spill = V_current + (&gamma; &middot; V_wind) + V_diff</text>
+    <text x="16" y="62" fill="#cbd5e1" font-family="Inter, sans-serif" font-size="10">&gamma; = 0.030 – 0.035 (Standard Wind Leeway Factor)</text>
+    <text x="16" y="78" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">CMEMS Model: GLOBAL_ANALYSISFORECAST_PHY_001_024</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(40, 460)" font-family="Inter, sans-serif" font-size="11">
+    <line x1="0" y1="8" x2="25" y2="8" stroke="#38bdf8" stroke-width="2"/>
+    <text x="35" y="11" fill="#cbd5e1">CMEMS Ocean Current (u, v)</text>
+
+    <line x1="240" y1="8" x2="265" y2="8" stroke="#10b981" stroke-width="2"/>
+    <text x="275" y="11" fill="#cbd5e1">ECMWF 10m Wind Direction</text>
+  </g>
+</svg>

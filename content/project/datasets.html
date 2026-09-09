@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TRACEOIL Documentation: Dataset Documentation & Benchmarks — SIH 2026 Research Project.">
+  <title>Dataset Documentation & Benchmarks — TRACEOIL Documentation | SIH 2026</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../../index.html" class="nav-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">TRACEOIL</span>
+          <span class="brand-tag">DOCUMENTATION</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../../index.html" class="nav-link">Home</a></li>
+          <li><a href="../../research.html" class="nav-link">Research</a></li>
+          <li><a href="../../methodology.html" class="nav-link">Methodology</a></li>
+          <li><a href="../../dataset.html" class="nav-link">Datasets</a></li>
+          <li><a href="../../visualizations.html" class="nav-link">Visualizations</a></li>
+          <li><a href="../../documentation/index.html" class="nav-link active">Documentation</a></li>
+          <li><a href="../../references.html" class="nav-link">References</a></li>
+          <li><a href="../../about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="../../documentation/index.html" class="btn btn-nav btn-secondary">
+          <span>Docs Hub</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="doc-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="doc-sidebar"><nav><div class="doc-sidebar-group"><div class="doc-sidebar-title">1. Foundations</div><ul class="doc-sidebar-list"><li><a href="overview.html" class="doc-sidebar-link">01. Project Overview</a></li><li><a href="problem.html" class="doc-sidebar-link">02. Problem Statement</a></li><li><a href="architecture.html" class="doc-sidebar-link">03. System Architecture</a></li></ul></div><div class="doc-sidebar-group"><div class="doc-sidebar-title">2. Methods & Algorithms</div><ul class="doc-sidebar-list"><li><a href="methodology.html" class="doc-sidebar-link">04. Technical Methodology</a></li><li><a href="datasets.html" class="doc-sidebar-link active">05. Dataset Documentation</a></li><li><a href="oil-spill-detection.html" class="doc-sidebar-link">06. Oil-Spill Detection</a></li></ul></div><div class="doc-sidebar-group"><div class="doc-sidebar-title">3. Vessel & Attribution</div><ul class="doc-sidebar-list"><li><a href="vessel-detection.html" class="doc-sidebar-link">07. Vessel Detection</a></li><li><a href="vessel-attribution.html" class="doc-sidebar-link">08. Vessel Attribution</a></li><li><a href="geospatial-analysis.html" class="doc-sidebar-link">09. Geospatial Analysis</a></li></ul></div><div class="doc-sidebar-group"><div class="doc-sidebar-title">4. Evaluation & Roadmap</div><ul class="doc-sidebar-list"><li><a href="experiments.html" class="doc-sidebar-link">10. Experiments</a></li><li><a href="evaluation.html" class="doc-sidebar-link">11. Evaluation</a></li><li><a href="limitations.html" class="doc-sidebar-link">12. Limitations</a></li><li><a href="future-work.html" class="doc-sidebar-link">13. Future Work</a></li><li><a href="references.html" class="doc-sidebar-link">14. References</a></li><li><a href="team.html" class="doc-sidebar-link">15. Team & Credits</a></li></ul></div></nav></aside>
+
+        <!-- Main Documentation Content -->
+        <div class="doc-content">
+          <div class="doc-breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>/</span>
+            <a href="../../documentation/index.html">Documentation</a>
+            <span>/</span>
+            <span>Dataset Documentation & Benchmarks</span>
+          </div>
+
+          <article class="doc-article">
+            <div style="margin-bottom: 2rem;">
+              <span class="badge badge-cyan" style="margin-bottom: 0.5rem;">2. Methods & Algorithms</span>
+              <h1 style="font-size: 2.3rem; margin-bottom: 0.5rem;">Dataset Documentation & Benchmarks</h1>
+              <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.6;">Sentinel-1/2 products, AIS NMEA decoding, ground truth annotations, and splits</p>
+            </div>
+
+            <!-- Auto Table of Contents -->
+            <div class="doc-toc-card" data-doc-toc></div>
+
+            <!-- Article Body -->
+            
+      <section class="doc-section">
+        <h2 id="sources">1. Data Sources & Sensor Specifications</h2>
+        <p>
+          TRACEOIL integrates satellite observations, metocean models, and vessel tracking broadcasts:
+        </p>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Dataset</th>
+                <th>Sensor / Constellation</th>
+                <th>Band / Polarization</th>
+                <th>Resolution</th>
+                <th>Provider</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="cell-highlight">Sentinel-1 GRD</td>
+                <td>C-Band Synthetic Aperture Radar</td>
+                <td>VV + VH Dual-Pol</td>
+                <td>10m</td>
+                <td>ESA Copernicus</td>
+              </tr>
+              <tr>
+                <td class="cell-highlight">Sentinel-2 L2A</td>
+                <td>Multi-Spectral Instrument (MSI)</td>
+                <td>B2, B3, B4, B8</td>
+                <td>10m – 20m</td>
+                <td>ESA Copernicus</td>
+              </tr>
+              <tr>
+                <td class="cell-highlight">AIS Streams</td>
+                <td>VHF Maritime Transceivers</td>
+                <td>NMEA 0183 Messages</td>
+                <td>Sub-minute updates</td>
+                <td>MarineCadastre / Spire</td>
+              </tr>
+              <tr>
+                <td class="cell-highlight">Copernicus CMEMS</td>
+                <td>Numerical Ocean Model</td>
+                <td>Surface Velocity (u, v)</td>
+                <td>1/12° (~8km)</td>
+                <td>Mercator Ocean</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="doc-section">
+        <h2 id="m4d-benchmark">2. M4D ITI Oil Spill Benchmark</h2>
+        <p>
+          For algorithm validation, TRACEOIL utilizes the <strong>M4D ITI Oil Spill Detection Dataset</strong>, containing verified Sentinel-1 SAR crops labeled across 5 semantic classes: Sea Surface, Oil Spill, Lookalike, Ship, and Land.
+        </p>
+        <div class="placeholder-block">
+          <div class="placeholder-block-label"><span>[Add dataset statistics here]</span></div>
+          <p style="margin-bottom:0; font-size:0.9rem; color:var(--text-muted);">
+            Image patch dimensions: 1250x1250 / 256x256 crops. Training, validation, and test split ratios to be finalized upon complete dataset compilation.
+          </p>
+        </div>
+      </section>
+    
+
+            <!-- Prev / Next Pagination -->
+            <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-dim); letter-spacing: 0.08em; display:block;">Previous</span>
+                <a href="methodology.html" class="btn btn-secondary btn-sm" style="margin-top: 0.25rem;">&larr; Technical Methodology</a>
+              </div>
+              <div style="text-align: right;">
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-dim); letter-spacing: 0.08em; display:block;">Next</span>
+                <a href="oil-spill-detection.html" class="btn btn-primary btn-sm" style="margin-top: 0.25rem;">Oil-Spill Detection &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 TRACEOIL Research Team &bull; Smart India Hackathon 2026.</div>
+        <div><a href="../../documentation/index.html" class="footer-link">Documentation Hub &uarr;</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/project-data.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script src="../../js/gallery.js"></script>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

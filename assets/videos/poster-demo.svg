@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%">
+  <defs>
+    <linearGradient id="vidBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <radialGradient id="playGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#vidBg)"/>
+  <rect width="1280" height="720" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- Radar sweep / Wave rings -->
+  <circle cx="640" cy="360" r="280" fill="none" stroke="rgba(37, 99, 235, 0.08)" stroke-width="2"/>
+  <circle cx="640" cy="360" r="200" fill="none" stroke="rgba(37, 99, 235, 0.12)" stroke-width="2"/>
+  <circle cx="640" cy="360" r="120" fill="none" stroke="rgba(37, 99, 235, 0.16)" stroke-width="2"/>
+
+  <!-- Play Glow -->
+  <circle cx="640" cy="360" r="110" fill="url(#playGlow)"/>
+
+  <!-- Play Button Circle -->
+  <circle cx="640" cy="360" r="54" fill="#2563eb" stroke="#ffffff" stroke-width="4" filter="url(#cardShadow)"/>
+  <polygon points="630,335 665,360 630,385" fill="#ffffff"/>
+
+  <!-- Top Badge -->
+  <g transform="translate(60, 60)">
+    <rect width="250" height="36" rx="18" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5"/>
+    <text x="125" y="23" fill="#c2410c" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" text-anchor="middle">SIH 2026 RESEARCH DEMO</text>
+  </g>
+
+  <!-- Bottom Title Box -->
+  <g transform="translate(60, 560)">
+    <rect width="700" height="110" rx="10" fill="rgba(255, 255, 255, 0.92)" stroke="#e2e8f0" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <text x="24" y="32" fill="#2563eb" font-family="'JetBrains Mono', monospace" font-size="13" letter-spacing="2" font-weight="700">TRACEOIL AUTOMATED PIPELINE</text>
+    <text x="24" y="65" fill="#0f172a" font-family="Inter, sans-serif" font-size="24" font-weight="800">Satellite Oil Spill Detection &amp; Vessel Attribution Demo</text>
+    <text x="24" y="92" fill="#64748b" font-family="Inter, sans-serif" font-size="14">Click to play demonstration video or view experimental walkthrough</text>
+  </g>
+
+  <!-- Video Duration / Format Badge -->
+  <g transform="translate(1080, 615)">
+    <rect width="140" height="42" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <text x="70" y="26" fill="#0f172a" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" text-anchor="middle">03:45 | 1080p</text>
+  </g>
+</svg>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TRACEOIL Documentation: Oil-Spill Detection & Lookalike Discrimination — SIH 2026 Research Project.">
+  <title>Oil-Spill Detection & Lookalike Discrimination — TRACEOIL Documentation | SIH 2026</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../../index.html" class="nav-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">TRACEOIL</span>
+          <span class="brand-tag">DOCUMENTATION</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../../index.html" class="nav-link">Home</a></li>
+          <li><a href="../../research.html" class="nav-link">Research</a></li>
+          <li><a href="../../methodology.html" class="nav-link">Methodology</a></li>
+          <li><a href="../../dataset.html" class="nav-link">Datasets</a></li>
+          <li><a href="../../visualizations.html" class="nav-link">Visualizations</a></li>
+          <li><a href="../../documentation/index.html" class="nav-link active">Documentation</a></li>
+          <li><a href="../../references.html" class="nav-link">References</a></li>
+          <li><a href="../../about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="../../documentation/index.html" class="btn btn-nav btn-secondary">
+          <span>Docs Hub</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="doc-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="doc-sidebar"><nav><div class="doc-sidebar-group"><div class="doc-sidebar-title">1. Foundations</div><ul class="doc-sidebar-list"><li><a href="overview.html" class="doc-sidebar-link">01. Project Overview</a></li><li><a href="problem.html" class="doc-sidebar-link">02. Problem Statement</a></li><li><a href="architecture.html" class="doc-sidebar-link">03. System Architecture</a></li></ul></div><div class="doc-sidebar-group"><div class="doc-sidebar-title">2. Methods & Algorithms</div><ul class="doc-sidebar-list"><li><a href="methodology.html" class="doc-sidebar-link">04. Technical Methodology</a></li><li><a href="datasets.html" class="doc-sidebar-link">05. Dataset Documentation</a></li><li><a href="oil-spill-detection.html" class="doc-sidebar-link active">06. Oil-Spill Detection</a></li></ul></div><div class="doc-sidebar-group"><div class="doc-sidebar-title">3. Vessel & Attribution</div><ul class="doc-sidebar-list"><li><a href="vessel-detection.html" class="doc-sidebar-link">07. Vessel Detection</a></li><li><a href="vessel-attribution.html" class="doc-sidebar-link">08. Vessel Attribution</a></li><li><a href="geospatial-analysis.html" class="doc-sidebar-link">09. Geospatial Analysis</a></li></ul></div><div class="doc-sidebar-group"><div class="doc-sidebar-title">4. Evaluation & Roadmap</div><ul class="doc-sidebar-list"><li><a href="experiments.html" class="doc-sidebar-link">10. Experiments</a></li><li><a href="evaluation.html" class="doc-sidebar-link">11. Evaluation</a></li><li><a href="limitations.html" class="doc-sidebar-link">12. Limitations</a></li><li><a href="future-work.html" class="doc-sidebar-link">13. Future Work</a></li><li><a href="references.html" class="doc-sidebar-link">14. References</a></li><li><a href="team.html" class="doc-sidebar-link">15. Team & Credits</a></li></ul></div></nav></aside>
+
+        <!-- Main Documentation Content -->
+        <div class="doc-content">
+          <div class="doc-breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>/</span>
+            <a href="../../documentation/index.html">Documentation</a>
+            <span>/</span>
+            <span>Oil-Spill Detection & Lookalike Discrimination</span>
+          </div>
+
+          <article class="doc-article">
+            <div style="margin-bottom: 2rem;">
+              <span class="badge badge-cyan" style="margin-bottom: 0.5rem;">2. Methods & Algorithms</span>
+              <h1 style="font-size: 2.3rem; margin-bottom: 0.5rem;">Oil-Spill Detection & Lookalike Discrimination</h1>
+              <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.6;">Capillary wave damping physics, adaptive thresholding, and lookalike rejection</p>
+            </div>
+
+            <!-- Auto Table of Contents -->
+            <div class="doc-toc-card" data-doc-toc></div>
+
+            <!-- Article Body -->
+            
+      <section class="doc-section">
+        <h2 id="radar-physics">1. Radar Capillary Wave Damping Physics</h2>
+        <p>
+          Microwave radar backscatter from sea surfaces is primarily governed by Bragg scattering with short centimeter-scale surface capillary waves. Hydrocarbon films dampen these high-frequency capillary waves, dramatically reducing backscatter return.
+        </p>
+        <div class="figure-wrapper">
+          <div class="figure-media" data-lightbox data-src="../../assets/figures/fig-01-sar-spill.svg" data-caption="SAR Oil Spill Damping Mechanism">
+            <img src="../../assets/figures/fig-01-sar-spill.svg" alt="SAR Damping">
+            <div class="figure-overlay"><span>Click to view fullscreen</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="doc-section">
+        <h2 id="lookalike-challenge">2. The Lookalike Discrimination Challenge</h2>
+        <p>
+          Natural biogenic slicks (algal blooms, fish oils), low-wind calm patches, grease ice, and internal waves also appear as dark formations in SAR imagery. TRACEOIL filters out lookalikes using:
+        </p>
+        <ul style="margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+          <li><strong>Dual-Polarization Ratios:</strong> Mineral oil alters the cross-polarization ratio distinctly from natural monomolecular films.</li>
+          <li><strong>ECMWF Wind Screening:</strong> Rejecting calm areas where ambient 10m wind speed is below 2.5 m/s.</li>
+          <li><strong>Morphological Plume Metrics:</strong> Assessing elongation and tail tapering typical of moving vessel discharge plumes.</li>
+        </ul>
+        <div class="placeholder-block">
+          <div class="placeholder-block-label"><span>[Add model name here]</span></div>
+          <p style="margin-bottom:0; font-size:0.9rem; color:var(--text-muted);">
+            Neural segmentation backbone and benchmark IoU performance on oil slick vs lookalike classification will be added here.
+          </p>
+        </div>
+      </section>
+    
+
+            <!-- Prev / Next Pagination -->
+            <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-dim); letter-spacing: 0.08em; display:block;">Previous</span>
+                <a href="datasets.html" class="btn btn-secondary btn-sm" style="margin-top: 0.25rem;">&larr; Dataset Documentation</a>
+              </div>
+              <div style="text-align: right;">
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-dim); letter-spacing: 0.08em; display:block;">Next</span>
+                <a href="vessel-detection.html" class="btn btn-primary btn-sm" style="margin-top: 0.25rem;">Vessel Detection &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 TRACEOIL Research Team &bull; Smart India Hackathon 2026.</div>
+        <div><a href="../../documentation/index.html" class="footer-link">Documentation Hub &uarr;</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/project-data.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script src="../../js/gallery.js"></script>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

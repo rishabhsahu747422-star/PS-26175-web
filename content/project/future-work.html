@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TRACEOIL Documentation: Future Directions & Research Roadmap — SIH 2026 Research Project.">
+  <title>Future Directions & Research Roadmap — TRACEOIL Documentation | SIH 2026</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../../index.html" class="nav-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">TRACEOIL</span>
+          <span class="brand-tag">DOCUMENTATION</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../../index.html" class="nav-link">Home</a></li>
+          <li><a href="../../research.html" class="nav-link">Research</a></li>
+          <li><a href="../../methodology.html" class="nav-link">Methodology</a></li>
+          <li><a href="../../dataset.html" class="nav-link">Datasets</a></li>
+          <li><a href="../../visualizations.html" class="nav-link">Visualizations</a></li>
+          <li><a href="../../documentation/index.html" class="nav-link active">Documentation</a></li>
+          <li><a href="../../references.html" class="nav-link">References</a></li>
+          <li><a href="../../about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="../../documentation/index.html" class="btn btn-nav btn-secondary">
+          <span>Docs Hub</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="doc-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="doc-sidebar"><nav><div class="doc-sidebar-group"><div class="doc-sidebar-title">1. Foundations</div><ul class="doc-sidebar-list"><li><a href="overview.html" class="doc-sidebar-link">01. Project Overview</a></li><li><a href="problem.html" class="doc-sidebar-link">02. Problem Statement</a></li><li><a href="architecture.html" class="doc-sidebar-link">03. System Architecture</a></li></ul></div><div class="doc-sidebar-group"><div class="doc-sidebar-title">2. Methods & Algorithms</div><ul class="doc-sidebar-list"><li><a href="methodology.html" class="doc-sidebar-link">04. Technical Methodology</a></li><li><a href="datasets.html" class="doc-sidebar-link">05. Dataset Documentation</a></li><li><a href="oil-spill-detection.html" class="doc-sidebar-link">06. Oil-Spill Detection</a></li></ul></div><div class="doc-sidebar-group"><div class="doc-sidebar-title">3. Vessel & Attribution</div><ul class="doc-sidebar-list"><li><a href="vessel-detection.html" class="doc-sidebar-link">07. Vessel Detection</a></li><li><a href="vessel-attribution.html" class="doc-sidebar-link">08. Vessel Attribution</a></li><li><a href="geospatial-analysis.html" class="doc-sidebar-link">09. Geospatial Analysis</a></li></ul></div><div class="doc-sidebar-group"><div class="doc-sidebar-title">4. Evaluation & Roadmap</div><ul class="doc-sidebar-list"><li><a href="experiments.html" class="doc-sidebar-link">10. Experiments</a></li><li><a href="evaluation.html" class="doc-sidebar-link">11. Evaluation</a></li><li><a href="limitations.html" class="doc-sidebar-link">12. Limitations</a></li><li><a href="future-work.html" class="doc-sidebar-link active">13. Future Work</a></li><li><a href="references.html" class="doc-sidebar-link">14. References</a></li><li><a href="team.html" class="doc-sidebar-link">15. Team & Credits</a></li></ul></div></nav></aside>
+
+        <!-- Main Documentation Content -->
+        <div class="doc-content">
+          <div class="doc-breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>/</span>
+            <a href="../../documentation/index.html">Documentation</a>
+            <span>/</span>
+            <span>Future Directions & Research Roadmap</span>
+          </div>
+
+          <article class="doc-article">
+            <div style="margin-bottom: 2rem;">
+              <span class="badge badge-cyan" style="margin-bottom: 0.5rem;">4. Evaluation & Roadmap</span>
+              <h1 style="font-size: 2.3rem; margin-bottom: 0.5rem;">Future Directions & Research Roadmap</h1>
+              <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.6;">Hyperspectral integration, PINN physics drift modeling, and command-center webhooks</p>
+            </div>
+
+            <!-- Auto Table of Contents -->
+            <div class="doc-toc-card" data-doc-toc></div>
+
+            <!-- Article Body -->
+            
+      <section class="doc-section">
+        <h2 id="hyperspectral">1. Hyperspectral Chemical Fingerprinting</h2>
+        <p>
+          Future phases will integrate next-generation spaceborne hyperspectral sensors (e.g., Italian PRISMA and German EnMAP). By measuring narrow absorption features across the 400–2500 nm range, the system can estimate slick thickness and distinguish light diesel fuels from heavy crude emulsions.
+        </p>
+      </section>
+
+      <section class="doc-section">
+        <h2 id="pinns">2. Physics-Informed Neural Networks (PINNs)</h2>
+        <p>
+          To overcome spatial resolution limits of numerical ocean models in coastal straits, future work will couple Physics-Informed Neural Networks (PINNs) directly with shallow-water Navier-Stokes equations to achieve sub-kilometer drift accuracy.
+        </p>
+      </section>
+
+      <section class="doc-section">
+        <h2 id="icg-integration">3. Direct Maritime Command Integration</h2>
+        <p>
+          Developing automated real-time alert webhooks to interface with Indian Coast Guard Maritime Rescue Coordination Centres (MRCC) for immediate intercept tasking.
+        </p>
+      </section>
+    
+
+            <!-- Prev / Next Pagination -->
+            <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-dim); letter-spacing: 0.08em; display:block;">Previous</span>
+                <a href="limitations.html" class="btn btn-secondary btn-sm" style="margin-top: 0.25rem;">&larr; Limitations</a>
+              </div>
+              <div style="text-align: right;">
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-dim); letter-spacing: 0.08em; display:block;">Next</span>
+                <a href="references.html" class="btn btn-primary btn-sm" style="margin-top: 0.25rem;">References &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 TRACEOIL Research Team &bull; Smart India Hackathon 2026.</div>
+        <div><a href="../../documentation/index.html" class="footer-link">Documentation Hub &uarr;</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/project-data.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script src="../../js/gallery.js"></script>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

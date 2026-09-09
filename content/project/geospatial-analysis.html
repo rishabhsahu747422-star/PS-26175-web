@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TRACEOIL Documentation: Geospatial Analysis & MetOcean Forcing — SIH 2026 Research Project.">
+  <title>Geospatial Analysis & MetOcean Forcing — TRACEOIL Documentation | SIH 2026</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../../index.html" class="nav-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">TRACEOIL</span>
+          <span class="brand-tag">DOCUMENTATION</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../../index.html" class="nav-link">Home</a></li>
+          <li><a href="../../research.html" class="nav-link">Research</a></li>
+          <li><a href="../../methodology.html" class="nav-link">Methodology</a></li>
+          <li><a href="../../dataset.html" class="nav-link">Datasets</a></li>
+          <li><a href="../../visualizations.html" class="nav-link">Visualizations</a></li>
+          <li><a href="../../documentation/index.html" class="nav-link active">Documentation</a></li>
+          <li><a href="../../references.html" class="nav-link">References</a></li>
+          <li><a href="../../about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="../../documentation/index.html" class="btn btn-nav btn-secondary">
+          <span>Docs Hub</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="doc-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="doc-sidebar"><nav><div class="doc-sidebar-group"><div class="doc-sidebar-title">1. Foundations</div><ul class="doc-sidebar-list"><li><a href="overview.html" class="doc-sidebar-link">01. Project Overview</a></li><li><a href="problem.html" class="doc-sidebar-link">02. Problem Statement</a></li><li><a href="architecture.html" class="doc-sidebar-link">03. System Architecture</a></li></ul></div><div class="doc-sidebar-group"><div class="doc-sidebar-title">2. Methods & Algorithms</div><ul class="doc-sidebar-list"><li><a href="methodology.html" class="doc-sidebar-link">04. Technical Methodology</a></li><li><a href="datasets.html" class="doc-sidebar-link">05. Dataset Documentation</a></li><li><a href="oil-spill-detection.html" class="doc-sidebar-link">06. Oil-Spill Detection</a></li></ul></div><div class="doc-sidebar-group"><div class="doc-sidebar-title">3. Vessel & Attribution</div><ul class="doc-sidebar-list"><li><a href="vessel-detection.html" class="doc-sidebar-link">07. Vessel Detection</a></li><li><a href="vessel-attribution.html" class="doc-sidebar-link">08. Vessel Attribution</a></li><li><a href="geospatial-analysis.html" class="doc-sidebar-link active">09. Geospatial Analysis</a></li></ul></div><div class="doc-sidebar-group"><div class="doc-sidebar-title">4. Evaluation & Roadmap</div><ul class="doc-sidebar-list"><li><a href="experiments.html" class="doc-sidebar-link">10. Experiments</a></li><li><a href="evaluation.html" class="doc-sidebar-link">11. Evaluation</a></li><li><a href="limitations.html" class="doc-sidebar-link">12. Limitations</a></li><li><a href="future-work.html" class="doc-sidebar-link">13. Future Work</a></li><li><a href="references.html" class="doc-sidebar-link">14. References</a></li><li><a href="team.html" class="doc-sidebar-link">15. Team & Credits</a></li></ul></div></nav></aside>
+
+        <!-- Main Documentation Content -->
+        <div class="doc-content">
+          <div class="doc-breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>/</span>
+            <a href="../../documentation/index.html">Documentation</a>
+            <span>/</span>
+            <span>Geospatial Analysis & MetOcean Forcing</span>
+          </div>
+
+          <article class="doc-article">
+            <div style="margin-bottom: 2rem;">
+              <span class="badge badge-cyan" style="margin-bottom: 0.5rem;">3. Vessel & Attribution</span>
+              <h1 style="font-size: 2.3rem; margin-bottom: 0.5rem;">Geospatial Analysis & MetOcean Forcing</h1>
+              <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.6;">Copernicus CMEMS ocean currents, ECMWF wind fields, and spatial coordinate projections</p>
+            </div>
+
+            <!-- Auto Table of Contents -->
+            <div class="doc-toc-card" data-doc-toc></div>
+
+            <!-- Article Body -->
+            
+      <section class="doc-section">
+        <h2 id="metocean-fields">1. MetOcean Environmental Forcing Data</h2>
+        <p>
+          Reverse drift accuracy is directly tied to the fidelity of oceanic surface current and atmospheric wind forcing models:
+        </p>
+        <div class="figure-wrapper">
+          <div class="figure-media" data-lightbox data-src="../../assets/figures/fig-05-drift-vectors.svg" data-caption="MetOcean Current & Wind Vectors">
+            <img src="../../assets/figures/fig-05-drift-vectors.svg" alt="MetOcean Current & Wind Vectors">
+            <div class="figure-overlay"><span>Click to view fullscreen</span></div>
+          </div>
+        </div>
+        <ul style="margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+          <li><strong>Copernicus CMEMS:</strong> Global Analysis Forecast product delivering hourly surface eastward (u) and northward (v) currents at 1/12° resolution.</li>
+          <li><strong>ECMWF 10m Winds:</strong> Hourly surface wind vector components driving the surface leeway shear layer.</li>
+        </ul>
+      </section>
+
+      <section class="doc-section">
+        <h2 id="gis-projections">2. Spatial Coordinate Transformations</h2>
+        <p>
+          Raw Sentinel-1 orbit geometry is projected from SAR slant range to ground range (EPSG:4326 WGS84 geographic coordinates). For local distance and drift computations, coordinates are dynamically reprojected to the corresponding Universal Transverse Mercator (UTM) zone (e.g., UTM Zone 43N for Western Indian Coastline) to preserve metric distances.
+        </p>
+        <div class="placeholder-block">
+          <div class="placeholder-block-label"><span>[Add spatial indexing and database schema details here]</span></div>
+          <p style="margin-bottom:0; font-size:0.9rem; color:var(--text-muted);">
+            R-Tree spatial indexing and PostGIS / DuckDB spatial querying parameters.
+          </p>
+        </div>
+      </section>
+    
+
+            <!-- Prev / Next Pagination -->
+            <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-dim); letter-spacing: 0.08em; display:block;">Previous</span>
+                <a href="vessel-attribution.html" class="btn btn-secondary btn-sm" style="margin-top: 0.25rem;">&larr; Vessel Attribution</a>
+              </div>
+              <div style="text-align: right;">
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-dim); letter-spacing: 0.08em; display:block;">Next</span>
+                <a href="experiments.html" class="btn btn-primary btn-sm" style="margin-top: 0.25rem;">Experiments &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 TRACEOIL Research Team &bull; Smart India Hackathon 2026.</div>
+        <div><a href="../../documentation/index.html" class="footer-link">Documentation Hub &uarr;</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/project-data.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script src="../../js/gallery.js"></script>
+  <script src="../../js/main.js"></script>
+</body>
+</html>
