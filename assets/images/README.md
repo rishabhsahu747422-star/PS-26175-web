@@ -1,9 +1,7 @@
 # Assets Images Directory
 
-Drop project logos, UI screenshots, satellite crops, and team photos here.
+Contains sample optical satellite imagery, elevation heatmaps, and reconstructed 3D terrain renders.
 
-Recommended file naming conventions:
-- `logo.svg` or `logo.png`
-- `sample-sar.png`
-- `sample-mask.png`
-- `team-member-1.jpg`
+Included sample assets:
+- `terrain-sample-1.png`: Urban fabric optical crop and estimated heightmap
+- `terrain-sample-2.png`: Mixed urban and vegetation canopy 3D perspective render

@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TRACEOIL Visualizations & Figures Gallery — Satellite SAR Outputs, Semantic Masks, CFAR Vessel Target Detections, Reverse Drift Attributions, and Video Demos.">
-  <title>Visualizations &amp; Figures — TRACEOIL | SIH 2026</title>
+  <meta name="description" content="DepthWizard 3D Visualizations — Interactive Terrain Flythrough, Height Profile Tools, Confidence Overlays, and Research Figures.">
+  <title>3D Visualizations &amp; Flythrough — DepthWizard</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
-  <!-- Site Header -->
   <header class="site-header">
     <div class="nav-container">
       <a href="./index.html" class="nav-brand">
         <div class="brand-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
           </svg>
         </div>
         <div class="brand-text">
-          <span class="brand-title">TRACEOIL</span>
-          <span class="brand-tag">VISUAL GALLERY</span>
+          <span class="brand-title">DEPTHWIZARD</span>
+          <span class="brand-tag">3D VISUALIZATION</span>
         </div>
       </a>
 
@@ -30,7 +31,7 @@
           <li><a href="./research.html" class="nav-link">Research</a></li>
           <li><a href="./methodology.html" class="nav-link">Methodology</a></li>
           <li><a href="./dataset.html" class="nav-link">Datasets</a></li>
-          <li><a href="./visualizations.html" class="nav-link active">Visualizations</a></li>
+          <li><a href="./visualizations.html" class="nav-link active">3D Visualization</a></li>
           <li><a href="./documentation/index.html" class="nav-link">Documentation</a></li>
           <li><a href="./references.html" class="nav-link">References</a></li>
           <li><a href="./about.html" class="nav-link">About</a></li>
@@ -49,201 +50,221 @@
   </header>
 
   <main>
-    <!-- Visualizations Header -->
     <section class="section" style="padding-top: 3.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-subtle);">
       <div class="container-reading">
-        <span class="badge badge-sih" style="margin-bottom: 0.75rem;">SIH 2026 Scientific Outputs</span>
-        <h1 style="font-size: 2.5rem; margin-bottom: 0.75rem;">Research Figures &amp; Demonstration Gallery</h1>
+        <span class="badge badge-indigo" style="margin-bottom: 0.75rem;">Interactive 3D Engine</span>
+        <h1 style="font-size: 2.5rem; margin-bottom: 0.75rem;">3D Terrain Visualization &amp; Flythrough</h1>
         <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.6;">
-          High-resolution scientific visual outputs, radar backscatter analysis, semantic segmentation masks, CFAR vessel target detections, and demonstration videos. Click any figure to open the fullscreen lightbox.
+          Real-time browser-based 3D terrain rendering powered by Three.js. Includes first-person flythrough navigation, cross-section elevation profiling, point elevation inspection, and toggleable Monte Carlo uncertainty overlays.
         </p>
       </div>
     </section>
 
-    <!-- Video Demonstration Section -->
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="section-subtitle">Video Demonstration</span>
-          <h2 class="section-title">Automated Detection &amp; Attribution Demo</h2>
-          <p class="section-desc">
-            Video walkthrough of the TRACEOIL pipeline running end-to-end: from satellite product ingestion and dark slick polygon extraction to backward drift modeling and historical AIS transponder intersection.
-          </p>
-        </div>
-
-        <div class="card" style="max-width: 960px; margin: 0 auto; background: var(--color-surface); border-color: var(--border-subtle); box-shadow: var(--shadow-md);">
-          <div style="cursor: pointer; position: relative; border-radius: var(--radius-sm); overflow: hidden;" data-video-trigger data-video-src="./assets/videos/demo-pipeline.mp4" data-video-title="TRACEOIL Automated Detection Pipeline Demonstration" data-video-caption="End-to-end demonstration showing SAR imagery ingestion, slick polygon extraction, CFAR ship target extraction, and time-stamped AIS trajectory correlation.">
-            <img src="./assets/videos/poster-demo.svg" alt="TRACEOIL Video Demonstration Poster">
-            <div class="figure-overlay" style="opacity: 0.85; background: rgba(3, 7, 18, 0.45);">
-              <div style="background: #0284c7; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 24px rgba(2, 132, 199, 0.6);">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="#ffffff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-              </div>
-            </div>
-          </div>
-
-          <div style="padding: 1.5rem 0.5rem 0.5rem 0.5rem; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
-            <div>
-              <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem; color: var(--text-primary);">TRACEOIL Automated Processing Pipeline</h3>
-              <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted); max-width: 620px;">
-                Supports local MP4 playback (<code>assets/videos/demo-pipeline.mp4</code>) or YouTube embed via configuration in <code>js/project-data.js</code>.
-              </p>
-            </div>
-            <button class="btn btn-primary" data-video-trigger data-video-src="./assets/videos/demo-pipeline.mp4" data-video-title="TRACEOIL Automated Detection Pipeline Demonstration" data-video-caption="SIH 2026 Walkthrough of automated SAR ingestion, oil spill boundary extraction, and AIS ship attribution matching.">
-              <span>Play Video (3:45)</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Figures & Scientific Outputs Gallery -->
+    <!-- Interactive Viewport Showcase Banner -->
     <section class="section">
       <div class="container">
-        <div class="section-header text-center">
-          <span class="section-subtitle">Figure Catalogue</span>
-          <h2 class="section-title">Scientific Figures &amp; Model Predictions</h2>
-          <p class="section-desc">
-            All research figures are rendered with vector accuracy and annotated with sensor metadata, polarizations, coordinate frames, and confidence levels.
-          </p>
+        <div class="card" style="padding: 1.5rem; background: var(--color-surface); border: 1px solid var(--color-border); box-shadow: var(--shadow-lg); margin-bottom: 3rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem;">
+            <div>
+              <h2 style="font-size: 1.4rem; color: var(--text-primary); margin: 0;">Interactive 3D Viewport Demonstration</h2>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.25rem 0 0 0;">GPU vertex displacement from 16-bit decoded heightmaps textured with optical RGB</p>
+            </div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <span class="badge badge-teal">Three.js Engine</span>
+              <span class="badge badge-blue">PointerLock Controls</span>
+              <span class="badge badge-indigo">Uncertainty Overlay</span>
+            </div>
+          </div>
+
+          <!-- Poster / Canvas Demonstration Container -->
+          <div style="position: relative; width: 100%; border-radius: var(--radius-md); overflow: hidden; border: 1px solid #cbd5e1;">
+            <img src="./assets/videos/poster-demo.svg" alt="DepthWizard 3D Flythrough Viewport" style="width: 100%; height: auto; display: block;">
+            
+            <a href="#" data-video-trigger data-video-title="DepthWizard 3D Flythrough Viewport" data-video-caption="Real-time navigation of reconstructed 3D terrain surface, showcasing building elevation profiles, tree canopy height variations, and toggleable confidence overlays." style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+              <div style="width: 80px; height: 80px; border-radius: 50%; background: #2563eb; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(37,99,235,0.4); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#ffffff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </a>
+          </div>
+
+          <!-- Controls HUD Legend -->
+          <div class="grid-4" style="margin-top: 1.5rem; gap: 1rem;">
+            <div style="background: var(--color-surface-soft); padding: 1rem; border-radius: 6px; border: 1px solid var(--color-border);">
+              <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Navigation</div>
+              <div style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-top: 0.25rem;">WASD + Mouse</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">First-person aerial flythrough</div>
+            </div>
+
+            <div style="background: var(--color-surface-soft); padding: 1rem; border-radius: 6px; border: 1px solid var(--color-border);">
+              <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Camera Mode</div>
+              <div style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-top: 0.25rem;">Flythrough &harr; Orbit</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Toggle 360&deg; spatial overview</div>
+            </div>
+
+            <div style="background: var(--color-surface-soft); padding: 1rem; border-radius: 6px; border: 1px solid var(--color-border);">
+              <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Exaggeration</div>
+              <div style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-top: 0.25rem;">1.0x &mdash; 5.0x Slider</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Vertical scaling amplification</div>
+            </div>
+
+            <div style="background: var(--color-surface-soft); padding: 1rem; border-radius: 6px; border: 1px solid var(--color-border);">
+              <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Uncertainty</div>
+              <div style="font-size: 0.95rem; font-weight: 600; color: #7c3aed; margin-top: 0.25rem;">Confidence Swap</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Toggle RGB vs Variance Map</div>
+            </div>
+          </div>
         </div>
 
-        <div class="gallery-grid">
-          <!-- Figure 1 -->
-          <div class="gallery-card">
-            <div class="gallery-thumbnail" data-lightbox data-src="./assets/figures/fig-01-sar-spill.svg" data-caption="Figure 1: Sentinel-1 SAR Oil Spill Damping Signature">
-              <img src="./assets/figures/fig-01-sar-spill.svg" alt="Sentinel-1 SAR Oil Spill Damping Signature">
-            </div>
-            <div class="gallery-body">
-              <div class="gallery-tag">Figure 1.0 &bull; SAR Damping</div>
-              <h3 class="gallery-title">Capillary Wave Damping</h3>
-              <p class="gallery-desc">Synthetic Aperture Radar backscatter visualization contrasting wave-damped dark formations with rough open sea.</p>
-              <div class="card-footer" style="padding: 0.75rem 0 0 0; margin-top: 0.75rem;">
-                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">Damping: -12.4 dB</span>
-                <span class="badge badge-blue">SAR VV</span>
-              </div>
-            </div>
+        <!-- Real Terrain Reconstruction Samples -->
+        <div style="margin-bottom: 3.5rem;">
+          <div class="section-header">
+            <span class="badge badge-teal">Benchmark Samples</span>
+            <h2 class="section-title">Optical Input &amp; 3D Surface Outputs</h2>
+            <p class="section-desc">Sample paired outputs processed through Depth Anything V2 and semantic scale calibration.</p>
           </div>
 
-          <!-- Figure 2 -->
-          <div class="gallery-card">
-            <div class="gallery-thumbnail" data-lightbox data-src="./assets/figures/fig-02-segmentation.svg" data-caption="Figure 2: Adaptive Dark Formation Semantic Segmentation">
-              <img src="./assets/figures/fig-02-segmentation.svg" alt="Dark Formation Segmentation">
-            </div>
-            <div class="gallery-body">
-              <div class="gallery-tag">Figure 2.0 &bull; Segmentation</div>
-              <h3 class="gallery-title">Dark Formation Masking</h3>
-              <p class="gallery-desc">Side-by-side comparison of calibrated SAR intensity and semantic segmentation mask isolating the core discharge polygon.</p>
-              <div class="card-footer" style="padding: 0.75rem 0 0 0; margin-top: 0.75rem;">
-                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-emerald);">Conf: 0.94</span>
-                <span class="badge badge-green">Mask Polygon</span>
+          <div class="grid-2" style="gap: 2rem; margin-top: 1.5rem;">
+            <div class="card" style="padding: 1rem;">
+              <a href="#" data-lightbox data-src="./assets/images/terrain-sample-1.png" data-caption="DepthWizard Optical Satellite Crop &amp; Estimated 3D Heightmap">
+                <img src="./assets/images/terrain-sample-1.png" alt="DepthWizard Terrain Reconstruction Sample 1" style="width: 100%; height: 260px; object-fit: cover; border-radius: 6px;">
+              </a>
+              <div style="margin-top: 0.75rem;">
+                <h4 style="margin: 0; font-size: 1.05rem; color: var(--text-primary);">Urban Fabric Elevation Reconstruction</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.25rem 0 0 0;">
+                  Dense commercial structures with sharp rooftop boundaries. Building height error reduced by ~44% via per-class calibration.
+                </p>
               </div>
             </div>
-          </div>
 
-          <!-- Figure 3 -->
-          <div class="gallery-card">
-            <div class="gallery-thumbnail" data-lightbox data-src="./assets/figures/fig-03-vessel-cfar.svg" data-caption="Figure 3: CFAR Target Detection in Coastal Shipping Corridor">
-              <img src="./assets/figures/fig-03-vessel-cfar.svg" alt="CFAR Vessel Detection">
-            </div>
-            <div class="gallery-body">
-              <div class="gallery-tag">Figure 3.0 &bull; Ship Extraction</div>
-              <h3 class="gallery-title">CFAR Vessel Detection</h3>
-              <p class="gallery-desc">Two-dimensional Cell-Averaging Constant False Alarm Rate detector extracting bright metallic ship reflections.</p>
-              <div class="card-footer" style="padding: 0.75rem 0 0 0; margin-top: 0.75rem;">
-                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #fbbf24;">P_fa = 10^-6</span>
-                <span class="badge badge-amber">CA-CFAR</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Figure 4 -->
-          <div class="gallery-card">
-            <div class="gallery-thumbnail" data-lightbox data-src="./assets/figures/fig-04-attribution.svg" data-caption="Figure 4: Reverse Lagrangian Drift Trajectory Intersecting AIS Waypoints">
-              <img src="./assets/figures/fig-04-attribution.svg" alt="Lagrangian Reverse Drift Attribution">
-            </div>
-            <div class="gallery-body">
-              <div class="gallery-tag">Figure 4.0 &bull; Attribution</div>
-              <h3 class="gallery-title">Reverse Drift Trajectory</h3>
-              <p class="gallery-desc">Time-stamped backward Lagrangian drift vectors intersecting the historical AIS navigation path of a suspect tanker.</p>
-              <div class="card-footer" style="padding: 0.75rem 0 0 0; margin-top: 0.75rem;">
-                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">P(A) = 96.8%</span>
-                <span class="badge badge-purple">Forensics</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Figure 5 -->
-          <div class="gallery-card">
-            <div class="gallery-thumbnail" data-lightbox data-src="./assets/figures/fig-05-drift-vectors.svg" data-caption="Figure 5: Copernicus CMEMS Ocean Surface Current and ECMWF 10m Wind Fields">
-              <img src="./assets/figures/fig-05-drift-vectors.svg" alt="Ocean Current & Wind Vectors">
-            </div>
-            <div class="gallery-body">
-              <div class="gallery-tag">Figure 5.0 &bull; Hydrodynamics</div>
-              <h3 class="gallery-title">MetOcean Vector Fields</h3>
-              <p class="gallery-desc">Quiver plot representing surface ocean current velocities (u, v) combined with 10-meter wind leeway forcing vectors.</p>
-              <div class="card-footer" style="padding: 0.75rem 0 0 0; margin-top: 0.75rem;">
-                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-blue);">CMEMS + ECMWF</span>
-                <span class="badge badge-cyan">Vector Field</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Figure 6 -->
-          <div class="gallery-card">
-            <div class="gallery-thumbnail" data-lightbox data-src="./assets/diagrams/pipeline-architecture.svg" data-caption="Figure 6: Complete TRACEOIL Multi-Modal Processing Pipeline">
-              <img src="./assets/diagrams/pipeline-architecture.svg" alt="System Architecture Diagram">
-            </div>
-            <div class="gallery-body">
-              <div class="gallery-tag">Figure 6.0 &bull; Architecture</div>
-              <h3 class="gallery-title">System Architecture</h3>
-              <p class="gallery-desc">Complete end-to-end data pipeline detailing satellite downlinks, preprocessing modules, and forensic report generation.</p>
-              <div class="card-footer" style="padding: 0.75rem 0 0 0; margin-top: 0.75rem;">
-                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-primary);">8 Pipeline Stages</span>
-                <span class="badge badge-blue">Flowchart</span>
+            <div class="card" style="padding: 1rem;">
+              <a href="#" data-lightbox data-src="./assets/images/terrain-sample-2.png" data-caption="DepthWizard 3D Flythrough Perspective View">
+                <img src="./assets/images/terrain-sample-2.png" alt="DepthWizard Terrain Reconstruction Sample 2" style="width: 100%; height: 260px; object-fit: cover; border-radius: 6px;">
+              </a>
+              <div style="margin-top: 0.75rem;">
+                <h4 style="margin: 0; font-size: 1.05rem; color: var(--text-primary);">Mixed Urban &amp; Vegetation Canopy Model</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.25rem 0 0 0;">
+                  Preserves tree canopy morphology without smoothing adjacent ground or road surfaces.
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Additional Placeholders for Future Experiments -->
-        <div class="section-header" style="margin-top: 4rem; margin-bottom: 2rem;">
-          <span class="section-subtitle">Upcoming Benchmarks</span>
-          <h2 class="section-title" style="font-size: 1.75rem;">Experimental Benchmarking Outputs</h2>
-          <p class="section-desc">Placeholder figure slots reserved for upcoming evaluation runs and model comparisons during SIH 2026 development.</p>
-        </div>
-
-        <div class="grid-3">
-          <div class="card" style="border-style: dashed; text-align: center; padding: 2rem 1.5rem;">
-            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>
-            <h4 style="margin: 0 0 0.5rem 0; color: var(--text-primary);">Model Confusion Matrix</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">[Add model confusion matrix graphic here]</p>
-            <span class="placeholder-tag">assets/figures/confusion-matrix.png</span>
+        <!-- Research Technical Figures Gallery -->
+        <div>
+          <div class="section-header">
+            <span class="badge badge-cyan">Technical Figures</span>
+            <h2 class="section-title">Scientific Architecture &amp; Analytics Diagrams</h2>
+            <p class="section-desc">Click any figure to open the high-resolution vector inspection modal.</p>
           </div>
 
-          <div class="card" style="border-style: dashed; text-align: center; padding: 2rem 1.5rem;">
-            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🗺️</div>
-            <h4 style="margin: 0 0 0.5rem 0; color: var(--text-primary);">Geospatial GIS Map Output</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">[Add interactive GIS map export here]</p>
-            <span class="placeholder-tag">assets/figures/gis-spill-map.png</span>
-          </div>
+          <div class="grid-3" style="gap: 1.5rem; margin-top: 1.5rem;">
+            <!-- Figure 1 -->
+            <div class="card">
+              <a href="#" data-lightbox data-src="./assets/figures/fig-01-sar-spill.svg" data-caption="Figure 01: Depth Anything V2 Monocular Backbone &amp; GAMUS Fine-Tuning Pipeline">
+                <img src="./assets/figures/fig-01-sar-spill.svg" alt="Figure 01" style="width: 100%; height: 180px; object-fit: cover; border-radius: 6px;">
+              </a>
+              <div style="margin-top: 0.75rem;">
+                <span class="badge badge-blue" style="font-size: 0.75rem;">Figure 01</span>
+                <h4 style="font-size: 1rem; color: var(--text-primary); margin: 0.4rem 0 0.2rem 0;">Depth Backbone &amp; GAMUS</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Resolution of nadir remote-sensing domain gap.</p>
+              </div>
+            </div>
 
-          <div class="card" style="border-style: dashed; text-align: center; padding: 2rem 1.5rem;">
-            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📑</div>
-            <h4 style="margin: 0 0 0.5rem 0; color: var(--text-primary);">Automated PDF Forensic Dossier</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">[Add forensic legal dossier preview here]</p>
-            <span class="placeholder-tag">assets/figures/forensic-report-sample.png</span>
+            <!-- Figure 2 -->
+            <div class="card">
+              <a href="#" data-lightbox data-src="./assets/figures/fig-02-segmentation.svg" data-caption="Figure 02: Innovation 1 — Per-Land-Cover Class Affine Calibration against SRTM 30m">
+                <img src="./assets/figures/fig-02-segmentation.svg" alt="Figure 02" style="width: 100%; height: 180px; object-fit: cover; border-radius: 6px;">
+              </a>
+              <div style="margin-top: 0.75rem;">
+                <span class="badge badge-teal" style="font-size: 0.75rem;">Figure 02 &bull; Innovation 1</span>
+                <h4 style="font-size: 1rem; color: var(--text-primary); margin: 0.4rem 0 0.2rem 0;">Per-Class Scale Calibration</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Independent affine regression across 6 land-cover masks.</p>
+              </div>
+            </div>
+
+            <!-- Figure 3 -->
+            <div class="card">
+              <a href="#" data-lightbox data-src="./assets/figures/fig-03-vessel-cfar.svg" data-caption="Figure 03: Innovation 2 — Monte Carlo Dropout Epistemic Uncertainty Heatmap">
+                <img src="./assets/figures/fig-03-vessel-cfar.svg" alt="Figure 03" style="width: 100%; height: 180px; object-fit: cover; border-radius: 6px;">
+              </a>
+              <div style="margin-top: 0.75rem;">
+                <span class="badge badge-indigo" style="font-size: 0.75rem;">Figure 03 &bull; Innovation 2</span>
+                <h4 style="font-size: 1rem; color: var(--text-primary); margin: 0.4rem 0 0.2rem 0;">Uncertainty Heatmap</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Variance quantification across N stochastic passes.</p>
+              </div>
+            </div>
+
+            <!-- Figure 4 -->
+            <div class="card">
+              <a href="#" data-lightbox data-src="./assets/figures/fig-04-attribution.svg" data-caption="Figure 04: Two-Point Raycaster Cross-Section Profile &amp; Point Inspector">
+                <img src="./assets/figures/fig-04-attribution.svg" alt="Figure 04" style="width: 100%; height: 180px; object-fit: cover; border-radius: 6px;">
+              </a>
+              <div style="margin-top: 0.75rem;">
+                <span class="badge badge-cyan" style="font-size: 0.75rem;">Figure 04</span>
+                <h4 style="font-size: 1rem; color: var(--text-primary); margin: 0.4rem 0 0.2rem 0;">Elevation Cross-Section Tool</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">2D elevation profiling between arbitrary terrain points.</p>
+              </div>
+            </div>
+
+            <!-- Figure 5 -->
+            <div class="card">
+              <a href="#" data-lightbox data-src="./assets/figures/fig-05-drift-vectors.svg" data-caption="Figure 05: Three.js Real-Time 3D Mesh Navigation Viewport">
+                <img src="./assets/figures/fig-05-drift-vectors.svg" alt="Figure 05" style="width: 100%; height: 180px; object-fit: cover; border-radius: 6px;">
+              </a>
+              <div style="margin-top: 0.75rem;">
+                <span class="badge badge-blue" style="font-size: 0.75rem;">Figure 05</span>
+                <h4 style="font-size: 1rem; color: var(--text-primary); margin: 0.4rem 0 0.2rem 0;">3D Flythrough Viewport</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">First-person controls with vertex displacement.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-text">
+            <span class="brand-title" style="font-size:1.3rem; color:#0f172a; font-weight:800;">DEPTHWIZARD</span>
+            <span class="brand-tag" style="display:block; color:var(--accent-blue); font-size:0.75rem; letter-spacing:1px; margin-top:2px;">RESEARCH PLATFORM</span>
+          </div>
+          <p class="footer-desc">
+            Independent scientific research project advancing single-view optical height estimation, per-land-cover scale calibration, and real-time 3D terrain flythrough.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./methodology.html">Methodology</a></li>
+            <li><a href="./dataset.html">Datasets</a></li>
+            <li><a href="./documentation/index.html">Documentation Hub</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Core Features</h4>
+          <ul>
+            <li><a href="./content/project/terrain-reconstruction.html">Mesh Generation</a></li>
+            <li><a href="./content/project/land-cover-calibration.html">Scale Calibration</a></li>
+            <li><a href="./content/project/uncertainty-estimation.html">Uncertainty Mapping</a></li>
+            <li><a href="./content/project/architecture.html">System Architecture</a></li>
+          </ul>
+        </div>
+      </div>
+
       <div class="footer-bottom">
-        <div>&copy; 2026 TRACEOIL Research Team &bull; Smart India Hackathon 2026.</div>
-        <div><a href="./documentation/index.html" class="footer-link">Next: Documentation Hub &rarr;</a></div>
+        <div class="footer-copyright">
+          &copy; 2026 DepthWizard Research Initiative. All technical rights reserved.
+        </div>
+        <div class="footer-status">
+          <span class="badge badge-teal">Status: Active Research Project</span>
+        </div>
       </div>
     </div>
   </footer>

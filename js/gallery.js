@@ -1,5 +1,5 @@
 /**
- * TRACEOIL — Research Figures Lightbox & Video Player Modal
+ * DEPTHWIZARD — Research Figures Lightbox & Video Player Modal
  * Vanilla JavaScript | Accessible & Keyboard Friendly
  */
 

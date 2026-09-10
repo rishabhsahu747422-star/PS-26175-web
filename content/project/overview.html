@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TRACEOIL Documentation: Project Overview & Research Mission — SIH 2026 Research Project.">
-  <title>Project Overview & Research Mission — TRACEOIL Documentation | SIH 2026</title>
+  <meta name="description" content="DepthWizard Documentation — Single-View Height Estimation & 3D Terrain Reconstruction.">
+  <title>DepthWizard Documentation</title>
   <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
@@ -15,11 +15,13 @@
       <a href="../../index.html" class="nav-brand">
         <div class="brand-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
           </svg>
         </div>
         <div class="brand-text">
-          <span class="brand-title">TRACEOIL</span>
+          <span class="brand-title">DEPTHWIZARD</span>
           <span class="brand-tag">DOCUMENTATION</span>
         </div>
       </a>
@@ -30,7 +32,7 @@
           <li><a href="../../research.html" class="nav-link">Research</a></li>
           <li><a href="../../methodology.html" class="nav-link">Methodology</a></li>
           <li><a href="../../dataset.html" class="nav-link">Datasets</a></li>
-          <li><a href="../../visualizations.html" class="nav-link">Visualizations</a></li>
+          <li><a href="../../visualizations.html" class="nav-link">3D Visualization</a></li>
           <li><a href="../../documentation/index.html" class="nav-link active">Documentation</a></li>
           <li><a href="../../references.html" class="nav-link">References</a></li>
           <li><a href="../../about.html" class="nav-link">About</a></li>
@@ -52,102 +54,135 @@
     <div class="container">
       <div class="doc-layout">
         <!-- Sidebar Navigation -->
-        <aside class="doc-sidebar"><nav><div class="doc-sidebar-group"><div class="doc-sidebar-title">1. Foundations</div><ul class="doc-sidebar-list"><li><a href="overview.html" class="doc-sidebar-link active">01. Project Overview</a></li><li><a href="problem.html" class="doc-sidebar-link">02. Problem Statement</a></li><li><a href="architecture.html" class="doc-sidebar-link">03. System Architecture</a></li></ul></div><div class="doc-sidebar-group"><div class="doc-sidebar-title">2. Methods & Algorithms</div><ul class="doc-sidebar-list"><li><a href="methodology.html" class="doc-sidebar-link">04. Technical Methodology</a></li><li><a href="datasets.html" class="doc-sidebar-link">05. Dataset Documentation</a></li><li><a href="oil-spill-detection.html" class="doc-sidebar-link">06. Oil-Spill Detection</a></li></ul></div><div class="doc-sidebar-group"><div class="doc-sidebar-title">3. Vessel & Attribution</div><ul class="doc-sidebar-list"><li><a href="vessel-detection.html" class="doc-sidebar-link">07. Vessel Detection</a></li><li><a href="vessel-attribution.html" class="doc-sidebar-link">08. Vessel Attribution</a></li><li><a href="geospatial-analysis.html" class="doc-sidebar-link">09. Geospatial Analysis</a></li></ul></div><div class="doc-sidebar-group"><div class="doc-sidebar-title">4. Evaluation & Roadmap</div><ul class="doc-sidebar-list"><li><a href="experiments.html" class="doc-sidebar-link">10. Experiments</a></li><li><a href="evaluation.html" class="doc-sidebar-link">11. Evaluation</a></li><li><a href="limitations.html" class="doc-sidebar-link">12. Limitations</a></li><li><a href="future-work.html" class="doc-sidebar-link">13. Future Work</a></li><li><a href="references.html" class="doc-sidebar-link">14. References</a></li><li><a href="team.html" class="doc-sidebar-link">15. Team & Credits</a></li></ul></div></nav></aside>
+        <aside class="doc-sidebar">
+          <nav>
+            <div class="doc-sidebar-group">
+              <div class="doc-sidebar-title">1. Foundations</div>
+              <ul class="doc-sidebar-list">
+                <li><a href="overview.html" class="doc-sidebar-link active">01. Project Overview</a></li>
+                <li><a href="problem.html" class="doc-sidebar-link ">02. Problem Understanding</a></li>
+                <li><a href="architecture.html" class="doc-sidebar-link ">03. System Architecture</a></li>
+              </ul>
+            </div>
+            <div class="doc-sidebar-group">
+              <div class="doc-sidebar-title">2. Methods &amp; Algorithms</div>
+              <ul class="doc-sidebar-list">
+                <li><a href="methodology.html" class="doc-sidebar-link ">04. Depth Backbone</a></li>
+                <li><a href="geospatial-analysis.html" class="doc-sidebar-link ">05. SRTM 30m Anchoring</a></li>
+                <li><a href="land-cover-calibration.html" class="doc-sidebar-link ">06. Per-Class Calibration</a></li>
+                <li><a href="uncertainty-estimation.html" class="doc-sidebar-link ">07. Uncertainty Mapping</a></li>
+                <li><a href="terrain-reconstruction.html" class="doc-sidebar-link ">08. 3D Terrain Flythrough</a></li>
+              </ul>
+            </div>
+            <div class="doc-sidebar-group">
+              <div class="doc-sidebar-title">3. Data &amp; Evaluation</div>
+              <ul class="doc-sidebar-list">
+                <li><a href="datasets.html" class="doc-sidebar-link ">09. Dataset Specifications</a></li>
+                <li><a href="experiments.html" class="doc-sidebar-link ">10. Experimental Setup</a></li>
+                <li><a href="evaluation.html" class="doc-sidebar-link ">11. Quantitative Evaluation</a></li>
+              </ul>
+            </div>
+            <div class="doc-sidebar-group">
+              <div class="doc-sidebar-title">4. Strategic Scope &amp; Context</div>
+              <ul class="doc-sidebar-list">
+                <li><a href="limitations.html" class="doc-sidebar-link ">12. Limitations</a></li>
+                <li><a href="future-work.html" class="doc-sidebar-link ">13. Future Work</a></li>
+                <li><a href="team.html" class="doc-sidebar-link ">14. Scope &amp; Deliverables</a></li>
+                <li><a href="references.html" class="doc-sidebar-link ">15. References</a></li>
+              </ul>
+            </div>
+          </nav>
+        </aside>
 
         <!-- Main Documentation Content -->
         <div class="doc-content">
+
           <div class="doc-breadcrumb">
             <a href="../../index.html">Home</a>
             <span>/</span>
             <a href="../../documentation/index.html">Documentation</a>
             <span>/</span>
-            <span>Project Overview & Research Mission</span>
+            <span>Project Overview & Mission Objectives</span>
           </div>
-
-          <article class="doc-article">
+    <article class="doc-article">
             <div style="margin-bottom: 2rem;">
-              <span class="badge badge-cyan" style="margin-bottom: 0.5rem;">1. Foundations</span>
-              <h1 style="font-size: 2.3rem; margin-bottom: 0.5rem;">Project Overview & Research Mission</h1>
-              <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.6;">High-level executive summary, mission objectives, and operational scope for SIH 2026</p>
+              <span class="badge badge-blue" style="margin-bottom: 0.5rem;">1. Foundations</span>
+              <h1 style="font-size: 2.3rem; margin-bottom: 0.5rem;">Project Overview & Mission Objectives</h1>
+              <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.6;">Executive summary of single-view optical elevation extraction, scale calibration, and 3D terrain reconstruction.</p>
             </div>
-
-            <!-- Auto Table of Contents -->
             <div class="doc-toc-card" data-doc-toc></div>
-
-            <!-- Article Body -->
-            
+    
       <section class="doc-section">
         <h2 id="executive-summary">1. Executive Summary</h2>
-        <p>
-          <strong>TRACEOIL</strong> is an open-access research initiative developed under the Smart India Hackathon 2026 framework. The project addresses the critical global challenge of marine oil pollution through spaceborne remote sensing and automated vessel attribution.
-        </p>
-        <p>
-          By bridging European Space Agency (ESA) Sentinel-1 Synthetic Aperture Radar (SAR) imagery, Sentinel-2 multi-spectral optical data, hydrodynamic ocean surface current models, and global Automatic Identification System (AIS) vessel transponder feeds, TRACEOIL provides an end-to-end framework capable of detecting surface discharges, classifying slicks against biogenic lookalikes, and tracking discharge origin corridors back in time to identify delinquent commercial vessels.
-        </p>
+        <p><strong>DepthWizard</strong> is an end-to-end scientific research system that reconstructs accurate 3D terrain and Digital Surface Models (DSMs) from single-view optical satellite and aerial imagery. By replacing multi-view photogrammetry, airborne LiDAR, and radar interferometry with deep monocular foundation models and geospatial calibration, DepthWizard enables rapid, cost-effective 3D geospatial intelligence.</p>
+        <p>The system operates entirely offline on local compute, serving predictions through a lightweight FastAPI bridge and rendering interactive textured meshes in a standalone WebGL/Three.js environment.</p>
       </section>
 
       <section class="doc-section">
-        <h2 id="sih-context">2. Smart India Hackathon 2026 Context</h2>
-        <p>
-          As maritime traffic across the Indian Ocean Region (IOR) intensifies—with over 100,000 commercial vessels traversing the Malacca Strait and Arabian Sea routes annually—sovereign coastal surveillance is of paramount strategic and ecological priority.
-        </p>
+        <h2 id="core-objectives">2. Core Research Objectives</h2>
         <div class="grid-2" style="margin: 1.5rem 0;">
           <div class="card">
-            <h4 style="color: var(--accent-cyan); margin-top:0;">Problem Statement</h4>
-            <p class="card-desc">[Add SIH 2026 Problem Statement Title & Details]</p>
-            <span class="placeholder-tag">ID: SIH-2026-TRACEOIL</span>
+            <h4 style="color: var(--accent-blue); margin-top:0;">Elevation Extraction</h4>
+            <p class="card-desc">Adapt foundation depth backbones (Depth Anything V2) to nadir remote-sensing physics by fine-tuning on 11,507 paired tiles from the GAMUS dataset.</p>
           </div>
           <div class="card">
-            <h4 style="color: var(--accent-blue); margin-top:0;">Beneficiary Agencies</h4>
-            <p class="card-desc">Indian Coast Guard (ICG), Directorate General of Shipping, Ministry of Environment, Forest and Climate Change (MoEFCC).</p>
+            <h4 style="color: #059669; margin-top:0;">Scale Calibration</h4>
+            <p class="card-desc">Resolve scale-offset ambiguity by fitting class-specific affine parameters anchored against SRTM 30m DEMs, achieving up to 44% error reduction.</p>
+          </div>
+          <div class="card">
+            <h4 style="color: #7c3aed; margin-top:0;">Uncertainty Mapping</h4>
+            <p class="card-desc">Quantify model confidence via test-time Monte Carlo Dropout, generating actionable variance maps for operational risk assessment.</p>
+          </div>
+          <div class="card">
+            <h4 style="color: #0284c7; margin-top:0;">3D Interactive Flythrough</h4>
+            <p class="card-desc">Deploy a real-time browser-based 3D terrain viewer supporting first-person flight controls, point inspection, and elevation cross-sections.</p>
           </div>
         </div>
       </section>
-
-      <section class="doc-section">
-        <h2 id="core-deliverables">3. Research Scope & Deliverables</h2>
-        <p>
-          The TRACEOIL research framework delivers five core components:
-        </p>
-        <ul style="margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
-          <li><strong>Automated Satellite Ingestion:</strong> Scheduled scraping and indexing of Sentinel-1 C-Band SAR products covering Indian coastal corridors.</li>
-          <li><strong>Dark Formation Semantic Segmentation:</strong> Deep learning model for detecting capillary wave-damped oil slicks with low false-alarm rates.</li>
-          <li><strong>Ship Extraction Engine:</strong> Constant False Alarm Rate (CFAR) radar backscatter detector identifying maritime vessel positions.</li>
-          <li><strong>Lagrangian Reverse Drift Modeling:</strong> Hydrodynamic particle trajectory simulation forced by Copernicus CMEMS current vectors and ECMWF 10m wind fields.</li>
-          <li><strong>Forensic Evidentiary Reporting:</strong> Automated generation of cryptographically timestamped attribution reports for legal enforcement.</li>
-        </ul>
-        <div class="placeholder-block">
-          <div class="placeholder-block-label"><span>[Add project timeline and milestone breakdown here]</span></div>
-          <p style="margin-bottom:0; font-size:0.9rem; color:var(--text-muted);">
-            Milestones include prototype validation, regional benchmark evaluation on Arabian Sea passes, and integration with open GIS standards.
-          </p>
-        </div>
-      </section>
-    
-
-            <!-- Prev / Next Pagination -->
-            <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-              <div>
-                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-dim); letter-spacing: 0.08em; display:block;">Previous</span>
-                <a href="../../documentation/index.html" class="btn btn-secondary btn-sm" style="margin-top: 0.25rem;">&larr; Documentation Hub</a>
-              </div>
-              <div style="text-align: right;">
-                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-dim); letter-spacing: 0.08em; display:block;">Next</span>
-                <a href="problem.html" class="btn btn-primary btn-sm" style="margin-top: 0.25rem;">Problem Statement &rarr;</a>
-              </div>
-            </div>
-          </article>
-        </div>
+</article>        </div>
       </div>
     </div>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-text">
+            <span class="brand-title" style="font-size:1.3rem; color:#0f172a; font-weight:800;">DEPTHWIZARD</span>
+            <span class="brand-tag" style="display:block; color:var(--accent-blue); font-size:0.75rem; letter-spacing:1px; margin-top:2px;">RESEARCH PLATFORM</span>
+          </div>
+          <p class="footer-desc">
+            Independent scientific research project advancing single-view optical height estimation, per-land-cover scale calibration, and real-time 3D terrain flythrough.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../research.html">Scientific Paper</a></li>
+            <li><a href="../../documentation/index.html">Documentation Hub</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Core Topics</h4>
+          <ul>
+            <li><a href="architecture.html">System Architecture</a></li>
+            <li><a href="land-cover-calibration.html">Scale Calibration</a></li>
+            <li><a href="uncertainty-estimation.html">Uncertainty Mapping</a></li>
+          </ul>
+        </div>
+      </div>
+
       <div class="footer-bottom">
-        <div>&copy; 2026 TRACEOIL Research Team &bull; Smart India Hackathon 2026.</div>
-        <div><a href="../../documentation/index.html" class="footer-link">Documentation Hub &uarr;</a></div>
+        <div class="footer-copyright">
+          &copy; 2026 DepthWizard Research Initiative. All technical rights reserved.
+        </div>
+        <div class="footer-status">
+          <span class="badge badge-teal">Status: Active Research Project</span>
+        </div>
       </div>
     </div>
   </footer>

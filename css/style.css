@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TRACEOIL — Oil Spill Detection & Vessel Attribution
+   DEPTHWIZARD — Single-View Height Estimation & 3D Terrain Reconstruction
    Research Documentation Website Stylesheet
    LIGHT RESEARCH THEME | Pure Vanilla CSS | GitHub Pages Compatible
    ========================================================================== */
@@ -23,7 +23,7 @@
   --color-text-muted: #64748b;      /* Muted secondary text */
   --color-text-dim: #94a3b8;        /* Light labels */
 
-  /* Brand Accents - Clean Blue & Cyan (Matching SIH Identity) */
+  /* Brand Accents - Clean Blue & Cyan (Geospatial Research Identity) */
   --color-primary: #2563eb;         /* Core Royal Blue */
   --color-primary-dark: #1d4ed8;
   --color-primary-light: #eff6ff;
@@ -412,7 +412,7 @@ code {
   width: fit-content;
 }
 
-.badge-sih {
+.badge-platform {
   background: var(--color-accent-amber-light);
   color: #c2410c;
   border-color: #fed7aa;

@@ -1,301 +1,128 @@
 /**
- * TRACEOIL — Centralized Project Research Data
+ * DEPTHWIZARD — Centralized Project Research Data
  * 
- * Edit this file to update project metadata, research objectives,
- * methodology pipeline details, datasets, team members, and references.
- * All pages can import or reference this data directly.
+ * Single-View Height Estimation & 3D Terrain Reconstruction
+ * Technical facts derived directly from official project documentation.
  */
 
-window.TRACEOIL_DATA = {
+window.DEPTHWIZARD_DATA = {
   meta: {
-    projectTitle: "TRACEOIL",
-    subtitle: "Oil Spill Detection and Vessel Attribution",
-    tagline: "Satellite Remote Sensing & AIS-Driven Maritime Forensics",
-    eventBadge: "Smart India Hackathon 2026",
-    edition: "SIH 2026 Research & Development",
-    problemStatementId: "SIH-2026-TRACEOIL",
-    status: "Active Research Prototype",
-    repositoryUrl: "https://github.com/your-org/traceoil-research",
-    contactEmail: "research@traceoil-project.org",
-    lastUpdated: "September 2026"
+    projectTitle: "DepthWizard",
+    subtitle: "Single-View Height Estimation & 3D Terrain Reconstruction",
+    tagline: "AI-Powered Optical Monocular Elevation Extraction & Interactive Flythrough",
+    category: "Geospatial Remote Sensing & 3D Computer Vision",
+    status: "Active Research Platform",
+    repositoryUrl: "https://github.com/depthwizard/depthwizard-research",
+    contactEmail: "research@depthwizard-platform.org",
+    lastUpdated: "2026",
+    license: "Open Academic Research"
   },
 
-  abstract: `TRACEOIL is an automated research framework for detecting marine oil spill discharges and attributing them to responsible maritime vessels using multi-modal satellite remote sensing (Synthetic Aperture Radar / Optical) correlated with Automatic Identification System (AIS) vessel kinematic trajectories and geospatial drift modeling. Designed for marine environmental compliance, oceanic ecosystem protection, and maritime surveillance.`,
+  abstract: `DepthWizard is an end-to-end scientific research system that transforms single-view optical RGB satellite and aerial imagery into accurate Digital Surface Models (DSMs) and interactive 3D terrain flythroughs. By adapting foundation monocular depth models (Depth Anything V2) to nadir remote-sensing physics and introducing per-land-cover scale calibration anchored to SRTM 30m DEMs alongside test-time uncertainty quantification, DepthWizard eliminates the need for cost-prohibitive LiDAR or stereo-pair acquisition while enabling intuitive browser-based terrain exploration.`,
 
   keyQuestions: [
     {
       id: "q1",
-      question: "How can marine oil slicks be reliably discriminated from natural lookalikes?",
-      answer: "By analyzing multi-frequency radar backscatter, dual-polarization ratios (VV/VH), wind field gradients, and morphological texture features in Synthetic Aperture Radar (SAR) imagery."
+      question: "Why is single-view height estimation fundamentally challenging in remote sensing?",
+      answer: "Single 2D optical images lack direct geometric depth cues present in stereo pairs or LiDAR. Pretrained foundational depth models are trained on natural perspective photos and suffer a severe domain gap when applied to top-down (nadir) satellite imagery where shadows and textural cues are the primary elevation indicators."
     },
     {
       id: "q2",
-      question: "How are vessels identified and tracked in open waters?",
-      answer: "Through high-resolution SAR constant false alarm rate (CFAR) target extraction combined with global historical and real-time AIS vessel telemetry broadcast decoding."
+      question: "How does relative depth map to absolute metric elevation?",
+      answer: "Through DepthWizard's Stage 2 scale calibration. For georeferenced GeoTIFF inputs, relative depth features are anchored against a 30m coarse reference DEM (SRTM 30m). Crucially, calibration is computed per-land-cover class rather than as a uniform scene constant."
     },
     {
       id: "q3",
-      question: "How does the system attribute a spill to a specific ship?",
-      answer: "By applying reverse Lagrangian hydrodynamic drift modeling with ocean current and wind vectors, temporally correlating vessel spatiotemporal corridors with the slick's origin point."
+      question: "What makes per-land-cover-class calibration innovative?",
+      answer: "Standard monocular calibration fits a single global affine transform (H = a·h + b). However, buildings, tree canopies, and bare ground exhibit systematic differences in relative depth scale. By fitting class-specific affine parameters using semantic masks, DepthWizard reduces building height error by ~44% and tree canopy error by ~35%."
+    },
+    {
+      id: "q4",
+      question: "How is estimation uncertainty surfaced to operational users?",
+      answer: "Using Monte Carlo Dropout and test-time perturbation ensembles at inference time to generate a pixel-level variance map. This is rendered as an interactive, toggleable confidence heatmap in the 3D viewer, alerting users to areas where height predictions are less certain."
     }
   ],
 
   pipelineStages: [
     {
       step: "01",
-      name: "Data Acquisition",
-      desc: "Ingestion of multi-spectral optical and Synthetic Aperture Radar (Sentinel-1 SAR C-band) imagery alongside historical and real-time AIS vessel telemetry streams.",
+      name: "Input Ingestion & GSD Normalization",
+      desc: "Ingestion of single-view optical imagery in GeoTIFF (georeferenced with CRS, bounds, and resolution) or standard PNG/JPG formats. An explicit Ground Sample Distance (GSD) normalization step standardizes pixel scale across disparate satellite sensors.",
       status: "Implemented",
-      placeholder: "[Add data acquisition API specifications here]"
+      badge: "Stage 01"
     },
     {
       step: "02",
-      name: "Preprocessing",
-      desc: "Radiometric calibration, thermal noise correction, Lee/Refined-Lee speckle filtering, precise orbit file application, and high-resolution GSHHG coastline land masking.",
+      name: "Elevation Extraction (Depth Backbone)",
+      desc: "Depth Anything V2 (ViT backbone) adapted through fine-tuning on the GAMUS dataset (11,507 paired RGB/nDSM tiles across 5 cities). Uses scale-invariant and multi-scale gradient loss with class-weighted penalties on complex structural classes.",
       status: "Implemented",
-      placeholder: "[Add preprocessing calibration parameters here]"
+      badge: "Stage 02"
     },
     {
       step: "03",
-      name: "Oil-Spill Detection",
-      desc: "Identification of dark formation areas via adaptive thresholding, multi-scale morphological filtering, and deep semantic segmentation.",
-      status: "In Progress",
-      placeholder: "[Add model name and segmentation architecture here]"
+      name: "Scale Calibration & Metric Mapping",
+      desc: "Innovation #1: Semantic-aware calibration fits independent scale and offset factors (a_k, b_k) for each land-cover class (building, tree, ground, road, water, vegetation) against SRTM 30m DEM. Generates 16-bit metric Digital Surface Model (DSM).",
+      status: "Implemented",
+      badge: "Innovation 1"
     },
     {
       step: "04",
-      name: "Feature Extraction",
-      desc: "Extraction of geometric shape descriptors, slick elongation, area, perimeter, edge gradients, radar backscatter damping ratio, and local ECMWF wind speed estimation.",
-      status: "In Progress",
-      placeholder: "[Add mathematical feature extraction details here]"
+      name: "Uncertainty & Confidence Estimation",
+      desc: "Innovation #2: Test-time Monte Carlo Dropout produces per-pixel variance/confidence maps (8-bit grayscale), highlighting structural ambiguities, occluded building shadows, and vegetation canopy variance.",
+      status: "Implemented",
+      badge: "Innovation 2"
     },
     {
       step: "05",
-      name: "Vessel Detection",
-      desc: "Detection of bright point targets in SAR backscatter using adaptive CFAR (Constant False Alarm Rate) algorithms and optical bounding box detectors.",
+      name: "3D Terrain Mesh & Flythrough Rendering",
+      desc: "Heightmap decoded into Float32 elevation grid and triangulated into GPU PlaneGeometry mesh with vertex displacement. UV-mapped with RGB texture. Navigable via first-person PointerLockControls and top-down orbit views in Three.js.",
       status: "Implemented",
-      placeholder: "[Add vessel detection model specifications here]"
-    },
-    {
-      step: "06",
-      name: "Vessel Identification",
-      desc: "Matching detected maritime targets to decoded AIS records (MMSI, IMO, vessel dimensions, navigational status, course over ground, speed over ground).",
-      status: "In Progress",
-      placeholder: "[Add AIS interpolation algorithm details here]"
-    },
-    {
-      step: "07",
-      name: "Geospatial Analysis",
-      desc: "Hydrodynamic backward-in-time drift modeling incorporating Copernicus Marine ocean current vectors and wind drift factors to reconstruct slick trajectory.",
-      status: "In Progress",
-      placeholder: "[Add hydrodynamic drift equations and parameters here]"
-    },
-    {
-      step: "08",
-      name: "Attribution & Report",
-      desc: "Computation of probabilistic attribution confidence score matrix for proximate vessels, generating cryptographically verifiable maritime forensic dossiers.",
-      status: "Upcoming",
-      placeholder: "[Add attribution scoring formula and reporting format here]"
+      badge: "Stage 03"
     }
   ],
 
   datasets: [
     {
-      name: "Sentinel-1 SAR (C-Band)",
-      purpose: "Primary Slick & Vessel Detection",
-      dataType: "Level-1 GRD (Ground Range Detected)",
-      resolution: "10m spatial resolution",
-      labels: "SAR backscatter (VV + VH)",
-      source: "European Space Agency (ESA) Copernicus",
-      usage: "All-weather day/night surface roughness and slick damping detection"
+      name: "GAMUS Dataset",
+      provider: "Earthflow / Hugging Face",
+      role: "Backbone Fine-Tuning Foundation",
+      samples: "11,507 Paired Tiles",
+      description: "Paired high-resolution optical imagery, normalized Digital Surface Models (nDSM), and 6-class land-cover ground truth across 5 diverse urban regions. Solves the remote sensing nadir domain gap.",
+      url: "https://huggingface.co/datasets/earthflow/GAMUS"
     },
     {
-      name: "Sentinel-2 MSI (Optical)",
-      purpose: "Multi-Spectral Verification",
-      dataType: "Level-2A Bottom of Atmosphere (BOA)",
-      resolution: "10m – 20m spatial resolution",
-      labels: "Multi-spectral reflectances (B2, B3, B4, B8)",
-      source: "ESA Copernicus Open Access Hub",
-      usage: "Daytime clear-sky spectral reflectance confirmation & optical validation"
+      name: "SRTM 30m DEM",
+      provider: "NASA / USGS / OpenTopography",
+      role: "Scale Calibration Reference",
+      samples: "1 Arc-Second Global Elevation",
+      description: "Shuttle Radar Topography Mission 30-meter elevation model. Anchors scale-agnostic relative depth features to absolute real-world metric elevation without requiring expensive in-situ survey control.",
+      url: "https://portal.opentopography.org/"
     },
     {
-      name: "Terrestrial & Satellite AIS",
-      purpose: "Vessel Kinematic Attribution",
-      dataType: "ITU-R M.1371 NMEA 0183 Messages",
-      resolution: "Sub-minute / interval updates",
-      labels: "MMSI, Lat, Lon, SOG, COG, Heading, Timestamp",
-      source: "MarineCadastre / Spire / Global AIS Providers",
-      usage: "Spatiotemporal ship tracking, track interpolation, and correlation"
-    },
-    {
-      name: "M4D ITI Oil Spill Benchmark",
-      purpose: "Semantic Segmentation Benchmark",
-      dataType: "Satellite SAR image patches",
-      resolution: "Variable / 10m resampled",
-      labels: "Pixel-level masks (Oil Spill, Lookalike, Land, Sea, Ship)",
-      source: "Information Technologies Institute (ITI-CERTH)",
-      usage: "Comparative benchmark control and baseline evaluation"
+      name: "Copernicus Sentinel-2",
+      provider: "European Space Agency (ESA)",
+      role: "Real-World Generalization Validation",
+      samples: "10m Multispectral Optical",
+      description: "Used to qualitatively validate generalization over diverse international geographies, including dense Indian metropolitan cities and rugged Himalayan mountain terrain.",
+      url: "https://dataspace.copernicus.eu/"
     }
   ],
 
-  figures: [
-    {
-      id: "fig-01",
-      category: "sar",
-      number: "Figure 1",
-      title: "Sentinel-1 SAR Oil Spill Damping Signature",
-      desc: "Synthetic Aperture Radar backscatter visualization illustrating capillary wave damping by surface hydrocarbon film versus surrounding rough sea surface.",
-      src: "assets/figures/fig-01-sar-spill.svg"
-    },
-    {
-      id: "fig-02",
-      category: "segmentation",
-      number: "Figure 2",
-      title: "Dark Formation Segmentation & Masking",
-      desc: "Multi-scale adaptive thresholding separating marine oil discharges from natural biogenic lookalikes and low-wind areas.",
-      src: "assets/figures/fig-02-segmentation.svg"
-    },
-    {
-      id: "fig-03",
-      category: "vessel",
-      number: "Figure 3",
-      title: "SAR Vessel Detection & Bright Target Extraction",
-      desc: "CFAR target detection locating maritime ships with associated corner reflector backscatter peaks in coastal traffic lanes.",
-      src: "assets/figures/fig-03-vessel-cfar.svg"
-    },
-    {
-      id: "fig-04",
-      category: "attribution",
-      number: "Figure 4",
-      title: "Lagrangian Reverse Drift & Vessel Corridor Attribution",
-      desc: "Spatiotemporal track corridor matching AIS vessel positions against hydrodynamic backward trajectory vectors.",
-      src: "assets/figures/fig-04-attribution.svg"
-    },
-    {
-      id: "fig-05",
-      category: "geospatial",
-      number: "Figure 5",
-      title: "Copernicus Ocean Current & Wind Vector Field",
-      desc: "Geospatial vector overlay detailing sea surface velocity components (u, v) and 10m wind speed influencing slick displacement.",
-      src: "assets/figures/fig-05-drift-vectors.svg"
-    },
-    {
-      id: "fig-06",
-      category: "architecture",
-      number: "Figure 6",
-      title: "TRACEOIL System Architecture Pipeline",
-      desc: "Complete end-to-end multi-modal data processing pipeline from satellite downlinks to evidentiary report generation.",
-      src: "assets/diagrams/pipeline-architecture.svg"
-    }
-  ],
-
-  videos: [
-    {
-      id: "vid-01",
-      title: "TRACEOIL Automated Detection Pipeline Demonstration",
-      subtitle: "End-to-End Walkthrough of Satellite Ingestion, Detection & AIS Matching",
-      poster: "assets/videos/poster-demo.svg",
-      localVideoSrc: "assets/videos/demo-pipeline.mp4",
-      youtubeUrl: "", // [Add YouTube video URL here when available]
-      caption: "Research demonstration showcasing automated satellite SAR ingestion, oil spill polygon extraction, and real-time AIS vessel trajectory correlation."
-    }
-  ],
-
-  team: {
-    name: "TRACEOIL Research Team",
-    institution: "Smart India Hackathon 2026 Initiative",
-    department: "Department of Computer Science & Geospatial Intelligence",
-    lead: "[Add Team Leader Name]",
-    members: [
-      {
-        name: "[Team Member 1]",
-        role: "Remote Sensing & SAR Preprocessing",
-        institution: "[College / Institute Name]",
-        bio: "Specializing in satellite SAR radiometric calibration, speckle filtering, and SNAP pipeline integration."
-      },
-      {
-        name: "[Team Member 2]",
-        role: "Computer Vision & Deep Learning",
-        institution: "[College / Institute Name]",
-        bio: "Focusing on semantic segmentation architectures and dark formation lookalike discrimination."
-      },
-      {
-        name: "[Team Member 3]",
-        role: "AIS Telemetry & Kinematics",
-        institution: "[College / Institute Name]",
-        bio: "Handling AIS NMEA decoding, spatiotemporal trajectory interpolation, and geospatial databases."
-      },
-      {
-        name: "[Team Member 4]",
-        role: "Hydrodynamic Modeling & Attribution",
-        institution: "[College / Institute Name]",
-        bio: "Developing Lagrangian drift simulations, ocean surface current vector integration, and confidence scoring."
-      },
-      {
-        name: "[Team Member 5]",
-        role: "Full-Stack Geospatial Systems",
-        institution: "[College / Institute Name]",
-        bio: "Architecting responsive web interfaces, GIS mapping components, and automated report rendering."
-      },
-      {
-        name: "[Team Member 6]",
-        role: "Research Documentation & Validation",
-        institution: "[College / Institute Name]",
-        bio: "Conducting benchmark validations, regulatory compliance checks, and scientific literature documentation."
-      }
-    ]
+  validationMetrics: {
+    buildingErrorReduction: "44%",
+    treeErrorReduction: "35%",
+    heightPrecisionBits: "16-bit Grayscale PNG",
+    supportedInputs: "PNG, JPG, GeoTIFF (WGS84 / UTM)",
+    renderingEngine: "Three.js GPU Vertex Displacement",
+    offlineCapability: "100% Standalone & Local Execution"
   },
 
-  references: [
-    {
-      id: 1,
-      category: "Remote Sensing & SAR",
-      title: "Synthetic Aperture Radar (SAR) Detection of Oil Spills at Sea: Review and Benchmark",
-      authors: "Brekke, C. and Solberg, A. H. S.",
-      journal: "Remote Sensing of Environment",
-      year: "2005",
-      doi: "10.1016/j.rse.2005.01.008",
-      url: "https://doi.org/10.1016/j.rse.2005.01.008"
-    },
-    {
-      id: 2,
-      category: "Dataset & Benchmark",
-      title: "Oil Spill Detection Dataset based on Sentinel-1 SAR Images",
-      authors: "Krestenitis, M., Orfanidis, G., Ioannidis, K., et al.",
-      journal: "M4D / Information Technologies Institute (ITI)",
-      year: "2019",
-      doi: "10.1016/j.isprsjprs.2019.06.009",
-      url: "https://m4d.iti.gr/oil-spill-detection-dataset/"
-    },
-    {
-      id: 3,
-      category: "AIS & Vessel Attribution",
-      title: "AIS-based Maritime Anomaly Detection and Spatiotemporal Vessel Trajectory Analysis",
-      authors: "Tu, E., Zhang, G., Mao, L., et al.",
-      journal: "IEEE Transactions on Intelligent Transportation Systems",
-      year: "2018",
-      doi: "10.1109/TITS.2017.2764952",
-      url: "https://ieeexplore.ieee.org/document/8118182"
-    },
-    {
-      id: 4,
-      category: "Hydrodynamics & Drift Modeling",
-      title: "Lagrangian Ocean Analysis: Fundamentals and Practices",
-      authors: "van Sebille, E., Griffies, S. M., Abernathey, R., et al.",
-      journal: "Ocean Modelling",
-      year: "2018",
-      doi: "10.1016/j.ocemod.2017.11.008",
-      url: "https://doi.org/10.1016/j.ocemod.2017.11.008"
-    },
-    {
-      id: 5,
-      category: "Official Satellite Programs",
-      title: "Copernicus Sentinel-1 SAR User Guide & Technical Specifications",
-      authors: "European Space Agency (ESA)",
-      journal: "ESA Earth Online Documentation",
-      year: "2024",
-      doi: "",
-      url: "https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-1-sar"
-    }
-  ]
+  sampleProfile: {
+    distance_m: [0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300],
+    elevation_m: [2.1, 2.3, 2.2, 14.8, 15.2, 14.9, 3.4, 8.2, 9.1, 8.5, 4.0, 24.1, 2.8],
+    classes: ["ground", "road", "ground", "building", "building", "building", "ground", "tree", "tree", "tree", "road", "building", "ground"]
+  }
 };
+
+// Backward-compatibility alias during component transition
+window.TRACEOIL_DATA = window.DEPTHWIZARD_DATA;

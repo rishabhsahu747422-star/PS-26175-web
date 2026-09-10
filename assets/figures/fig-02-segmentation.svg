@@ -1,57 +1,91 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
   <defs>
-    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#050a15"/>
-      <stop offset="100%" stop-color="#0a1224"/>
+    <linearGradient id="bgLight2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
     </linearGradient>
   </defs>
+  <rect width="800" height="450" fill="url(#bgLight2)"/>
+  <rect x="20" y="20" width="760" height="410" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
 
-  <rect width="800" height="500" fill="url(#bg2)"/>
+  <text x="45" y="55" fill="#059669" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" letter-spacing="1.5">FIGURE 02 &bull; INNOVATION 1: LAND-COVER SCALE CALIBRATION</text>
+  <text x="45" y="80" fill="#0f172a" font-family="Inter, sans-serif" font-size="18" font-weight="800">Per-Land-Cover Class Affine Calibration Anchored to SRTM 30m</text>
 
-  <!-- Left: Raw SAR Intensity Window -->
-  <g transform="translate(40, 60)">
-    <rect width="340" height="380" rx="8" fill="#08101d" stroke="rgba(255, 255, 255, 0.1)"/>
-    <text x="20" y="32" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">A. FILTERED SAR INTENSITY</text>
+  <!-- Left: 6 Land-Cover Classes -->
+  <g transform="translate(45, 105)">
+    <rect width="210" height="240" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="15" y="25" fill="#166534" font-family="Inter, sans-serif" font-size="12" font-weight="700">6 Semantic Masks</text>
     
-    <!-- Speckle sea surface -->
-    <rect x="20" y="50" width="300" height="300" rx="6" fill="#0c172a"/>
-    <!-- Simulated dark spot -->
-    <path d="M 80 120 C 130 90, 200 110, 250 150 C 280 180, 290 230, 250 270 C 210 300, 150 290, 100 250 C 60 210, 50 150, 80 120 Z" fill="#030712"/>
-    <path d="M 120 160 C 150 140, 190 150, 220 180 C 230 200, 220 230, 190 250 C 160 260, 130 240, 110 220 C 100 190, 100 170, 120 160 Z" fill="#010307"/>
+    <g transform="translate(15, 40)">
+      <rect x="0" y="0" width="180" height="25" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+      <circle cx="12" cy="12" r="5" fill="#ef4444"/>
+      <text x="25" y="16" fill="#0f172a" font-family="Inter, sans-serif" font-size="11">Building (Error -44%)</text>
+
+      <rect x="0" y="32" width="180" height="25" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+      <circle cx="12" cy="44" r="5" fill="#22c55e"/>
+      <text x="25" y="48" fill="#0f172a" font-family="Inter, sans-serif" font-size="11">Tree (Error -35%)</text>
+
+      <rect x="0" y="64" width="180" height="25" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+      <circle cx="12" cy="76" r="5" fill="#eab308"/>
+      <text x="25" y="80" fill="#0f172a" font-family="Inter, sans-serif" font-size="11">Ground (Bare Surface)</text>
+
+      <rect x="0" y="96" width="180" height="25" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+      <circle cx="12" cy="108" r="5" fill="#64748b"/>
+      <text x="25" y="112" fill="#0f172a" font-family="Inter, sans-serif" font-size="11">Road / Transportation</text>
+
+      <rect x="0" y="128" width="180" height="25" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+      <circle cx="12" cy="140" r="5" fill="#0284c7"/>
+      <text x="25" y="144" fill="#0f172a" font-family="Inter, sans-serif" font-size="11">Water Bodies</text>
+
+      <rect x="0" y="160" width="180" height="25" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+      <circle cx="12" cy="172" r="5" fill="#84cc16"/>
+      <text x="25" y="176" fill="#0f172a" font-family="Inter, sans-serif" font-size="11">Low Vegetation</text>
+    </g>
+  </g>
+
+  <!-- Middle: Calibration Equation & SRTM DEM -->
+  <g transform="translate(280, 105)">
+    <rect width="245" height="240" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="15" y="25" fill="#0f172a" font-family="Inter, sans-serif" font-size="12" font-weight="700">SRTM 30m Anchoring</text>
     
-    <text x="20" y="368" fill="#94a3b8" font-family="Inter, sans-serif" font-size="11">Radiometrically Calibrated Sigma-0 (dB)</text>
+    <rect x="15" y="40" width="215" height="60" rx="6" fill="#eff6ff" stroke="#bfdbfe"/>
+    <text x="25" y="62" fill="#1e40af" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">H_abs = a_k &bull; h_rel + b_k</text>
+    <text x="25" y="82" fill="#64748b" font-family="Inter, sans-serif" font-size="10">Class-dependent affine parameters (a_k, b_k)</text>
+
+    <!-- Regression Chart visual -->
+    <g transform="translate(15, 115)">
+      <rect width="215" height="110" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+      <line x1="20" y1="90" x2="195" y2="90" stroke="#94a3b8" stroke-width="1"/>
+      <line x1="20" y1="20" x2="20" y2="90" stroke="#94a3b8" stroke-width="1"/>
+      <!-- Class regression lines -->
+      <line x1="25" y1="85" x2="185" y2="30" stroke="#ef4444" stroke-width="2"/>
+      <line x1="25" y1="88" x2="185" y2="45" stroke="#22c55e" stroke-width="2"/>
+      <line x1="25" y1="89" x2="185" y2="65" stroke="#eab308" stroke-width="2"/>
+      <text x="145" y="25" fill="#ef4444" font-family="'JetBrains Mono', monospace" font-size="9">Building fit</text>
+      <text x="145" y="42" fill="#22c55e" font-family="'JetBrains Mono', monospace" font-size="9">Tree fit</text>
+    </g>
   </g>
 
-  <!-- Right: Semantic Segmentation Output Mask -->
-  <g transform="translate(420, 60)">
-    <rect width="340" height="380" rx="8" fill="#08101d" stroke="rgba(0, 240, 255, 0.3)"/>
-    <text x="20" y="32" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">B. ADAPTIVE SEGMENTATION MASK</text>
+  <!-- Right: Absolute DSM Output -->
+  <g transform="translate(545, 105)">
+    <rect width="210" height="240" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="15" y="25" fill="#0f172a" font-family="Inter, sans-serif" font-size="12" font-weight="700">Calibrated Metric DSM</text>
 
-    <!-- Sea background -->
-    <rect x="20" y="50" width="300" height="300" rx="6" fill="#0a192f"/>
-    <!-- Extracted Mask Polygon with Highlighting -->
-    <path d="M 80 120 C 130 90, 200 110, 250 150 C 280 180, 290 230, 250 270 C 210 300, 150 290, 100 250 C 60 210, 50 150, 80 120 Z" 
-          fill="rgba(0, 240, 255, 0.25)" stroke="#00f0ff" stroke-width="2.5"/>
-    <path d="M 120 160 C 150 140, 190 150, 220 180 C 230 200, 220 230, 190 250 C 160 260, 130 240, 110 220 C 100 190, 100 170, 120 160 Z" 
-          fill="rgba(16, 185, 129, 0.35)" stroke="#10b981" stroke-width="2"/>
+    <rect x="15" y="40" width="180" height="140" rx="6" fill="#e2e8f0"/>
+    <path d="M 25 150 Q 70 80 115 130 T 185 100 L 185 170 L 25 170 Z" fill="#2563eb" opacity="0.35"/>
+    <path d="M 25 150 Q 70 80 115 130 T 185 100" stroke="#2563eb" stroke-width="2" fill="none"/>
+    <circle cx="70" cy="98" r="3" fill="#ef4444"/>
+    <text x="76" y="95" fill="#0f172a" font-family="'JetBrains Mono', monospace" font-size="9">24.8m</text>
 
-    <text x="20" y="368" fill="#34d399" font-family="'JetBrains Mono', monospace" font-size="11">Class: Oil Slick (Conf: 0.94)</text>
+    <text x="15" y="200" fill="#059669" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">16-bit GeoTIFF / Grid</text>
+    <text x="15" y="218" fill="#64748b" font-family="Inter, sans-serif" font-size="10">H_min: 0.12m | H_max: 24.87m</text>
   </g>
 
-  <!-- Flow Arrow in middle -->
-  <g transform="translate(383, 230)">
-    <circle cx="17" cy="17" r="18" fill="#111f38" stroke="rgba(56, 189, 248, 0.5)"/>
-    <path d="M 12 17 L 22 17 M 18 12 L 23 17 L 18 22" stroke="#38bdf8" stroke-width="2" fill="none" stroke-linecap="round"/>
-  </g>
-
-  <!-- Legend bottom -->
-  <g transform="translate(40, 455)" font-family="Inter, sans-serif" font-size="11">
-    <rect x="0" y="0" width="12" height="12" fill="rgba(0, 240, 255, 0.3)" stroke="#00f0ff"/>
-    <text x="20" y="10" fill="#cbd5e1">Boundary Damping Zone</text>
-
-    <rect x="200" y="0" width="12" height="12" fill="rgba(16, 185, 129, 0.35)" stroke="#10b981"/>
-    <text x="220" y="10" fill="#cbd5e1">Dense Core Discharge Area</text>
-
-    <text x="520" y="10" fill="#94a3b8" font-family="'JetBrains Mono', monospace">Resolution: 10m/px</text>
+  <!-- Bottom Summary -->
+  <g transform="translate(45, 365)">
+    <rect width="710" height="50" rx="6" fill="#f0fdf4" stroke="#bbf7d0"/>
+    <text x="15" y="30" fill="#166534" font-family="Inter, sans-serif" font-size="11">
+      <tspan font-weight="700">Evaluation Stability:</tspan> Solves non-uniform bias across mixed urban/vegetation terrain, outperforming single scene-wide affine fits.
+    </text>
   </g>
 </svg>

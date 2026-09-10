@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TRACEOIL Technical Methodology — Satellite Preprocessing, Oil Spill Detection, CFAR Ship Extraction, Lagrangian Reverse Drift, and Vessel Attribution Pipeline.">
-  <title>Technical Methodology — TRACEOIL | SIH 2026</title>
+  <meta name="description" content="DepthWizard Technical Methodology — Monocular Depth Backbone Fine-Tuning, Per-Land-Cover Scale Calibration, Uncertainty Quantification, and 3D Mesh Reconstruction.">
+  <title>Technical Methodology — DepthWizard</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -15,11 +15,13 @@
       <a href="./index.html" class="nav-brand">
         <div class="brand-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
           </svg>
         </div>
         <div class="brand-text">
-          <span class="brand-title">TRACEOIL</span>
+          <span class="brand-title">DEPTHWIZARD</span>
           <span class="brand-tag">METHODOLOGY</span>
         </div>
       </a>
@@ -30,7 +32,7 @@
           <li><a href="./research.html" class="nav-link">Research</a></li>
           <li><a href="./methodology.html" class="nav-link active">Methodology</a></li>
           <li><a href="./dataset.html" class="nav-link">Datasets</a></li>
-          <li><a href="./visualizations.html" class="nav-link">Visualizations</a></li>
+          <li><a href="./visualizations.html" class="nav-link">3D Visualization</a></li>
           <li><a href="./documentation/index.html" class="nav-link">Documentation</a></li>
           <li><a href="./references.html" class="nav-link">References</a></li>
           <li><a href="./about.html" class="nav-link">About</a></li>
@@ -52,319 +54,235 @@
     <!-- Methodology Header -->
     <section class="section" style="padding-top: 3.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-subtle);">
       <div class="container-reading">
-        <span class="badge badge-sih" style="margin-bottom: 0.75rem;">SIH 2026 Technical Architecture</span>
-        <h1 style="font-size: 2.5rem; margin-bottom: 0.75rem;">Engineering Methodology &amp; Analytical Pipeline</h1>
+        <span class="badge badge-cyan" style="margin-bottom: 0.75rem;">Algorithmic Architecture</span>
+        <h1 style="font-size: 2.5rem; margin-bottom: 0.75rem;">Technical Methodology &amp; Mathematical Pipeline</h1>
         <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.6;">
-          Detailed step-by-step description of data acquisition, calibration filters, dark slick segmentation, Constant False Alarm Rate vessel extraction, Lagrangian drift simulation, and probabilistic attribution scoring.
+          Detailed step-by-step description of optical GSD normalization, Vision Transformer monocular depth adaptation, semantic per-land-cover affine calibration, Monte Carlo uncertainty mapping, and 16-bit GPU mesh reconstruction.
         </p>
       </div>
     </section>
 
-    <!-- Interactive Pipeline Diagram Banner -->
+    <!-- Pipeline Step Cards Banner -->
     <section class="section section-alt" style="padding: 3rem 0;">
       <div class="container">
         <div class="section-header text-center" style="margin-bottom: 2rem;">
           <span class="section-subtitle">System Pipeline Flow</span>
-          <h2 class="section-title">End-to-End Processing Architecture</h2>
+          <h2 class="section-title">End-to-End Processing Stages</h2>
           <p class="section-desc">
-            Input Data &rarr; Preprocessing &rarr; Oil-Spill Detection &rarr; Feature Extraction &rarr; Vessel Detection &rarr; Vessel Attribution &rarr; Geospatial Analysis &rarr; Research Output
+            Optical Input &rarr; GSD Normalization &rarr; Depth Extraction &rarr; Land-Cover Calibration &rarr; SRTM Anchoring &rarr; Uncertainty Mapping &rarr; 3D Mesh Generation
           </p>
         </div>
 
         <div class="pipeline-grid">
           <div class="pipeline-step">
-            <div class="pipeline-step-num">Step 01</div>
-            <h3 class="pipeline-step-title">Data Ingestion</h3>
-            <p class="pipeline-step-desc">Ingestion of Sentinel-1 C-band SAR products, Sentinel-2 MSI optical tiles, and NMEA AIS historical broadcasts.</p>
+            <div class="pipeline-step-num">Stage 01</div>
+            <h3 class="pipeline-step-title">GSD Ingestion</h3>
+            <p class="pipeline-step-desc">Ingestion of GeoTIFF or RGB imagery. Normalizes Ground Sample Distance to reconcile sensor discrepancies.</p>
           </div>
 
           <div class="pipeline-step">
-            <div class="pipeline-step-num">Step 02</div>
-            <h3 class="pipeline-step-title">Preprocessing</h3>
-            <p class="pipeline-step-desc">Precise orbit calibration, thermal noise correction, Refined Lee speckle filtering, and GSHHG coastline masking.</p>
+            <div class="pipeline-step-num">Stage 02</div>
+            <h3 class="pipeline-step-title">Depth Backbone</h3>
+            <p class="pipeline-step-desc">Depth Anything V2 fine-tuned on GAMUS generates relative height representations via scale-invariant loss.</p>
           </div>
 
           <div class="pipeline-step">
-            <div class="pipeline-step-num">Step 03</div>
-            <h3 class="pipeline-step-title">Spill Detection</h3>
-            <p class="pipeline-step-desc">Adaptive spatial intensity thresholding and deep semantic segmentation isolating dark formation polygons.</p>
+            <div class="pipeline-step-num">Stage 03</div>
+            <h3 class="pipeline-step-title">Scale Calibration</h3>
+            <p class="pipeline-step-desc">Innovation #1: Fits class-specific affine parameters (a_k, b_k) for 6 land-cover types anchored to SRTM 30m.</p>
           </div>
 
           <div class="pipeline-step">
-            <div class="pipeline-step-num">Step 04</div>
-            <h3 class="pipeline-step-title">Feature Extraction</h3>
-            <p class="pipeline-step-desc">Geometric aspect ratio, damping ratio \(\Delta \sigma^0\), edge gradients, and ECMWF local wind speed validation.</p>
+            <div class="pipeline-step-num">Stage 04</div>
+            <h3 class="pipeline-step-title">Uncertainty Mapping</h3>
+            <p class="pipeline-step-desc">Innovation #2: Monte Carlo Dropout samples multiple stochastic passes to build pixel-level confidence heatmaps.</p>
           </div>
 
           <div class="pipeline-step">
-            <div class="pipeline-step-num">Step 05</div>
-            <h3 class="pipeline-step-title">Vessel Detection</h3>
-            <p class="pipeline-step-desc">Adaptive 2D CA-CFAR filter extracting bright point target radar signatures against surrounding sea clutter.</p>
-          </div>
-
-          <div class="pipeline-step">
-            <div class="pipeline-step-num">Step 06</div>
-            <h3 class="pipeline-step-title">Vessel Identification</h3>
-            <p class="pipeline-step-desc">Spatial correlation with decoded AIS positions, matching MMSI/IMO identifiers, vessel dimensions, and track headers.</p>
-          </div>
-
-          <div class="pipeline-step">
-            <div class="pipeline-step-num">Step 07</div>
-            <h3 class="pipeline-step-title">Geospatial Drift</h3>
-            <p class="pipeline-step-desc">Lagrangian reverse hydrodynamic particle advection integrating CMEMS surface currents and wind drift factor \(\gamma\).</p>
-          </div>
-
-          <div class="pipeline-step">
-            <div class="pipeline-step-num">Step 08</div>
-            <h3 class="pipeline-step-title">Attribution &amp; Dossier</h3>
-            <p class="pipeline-step-desc">Probabilistic attribution scoring, confidence ranking, and legal evidentiary GeoJSON/PDF dossier packaging.</p>
-          </div>
-        </div>
-
-        <div style="margin-top: 2rem;">
-          <div class="figure-wrapper">
-            <div class="figure-media" data-lightbox data-src="./assets/diagrams/pipeline-architecture.svg" data-caption="Figure 1: Full Technical Pipeline Architecture Diagram">
-              <img src="./assets/diagrams/pipeline-architecture.svg" alt="Full Pipeline Architecture">
-              <div class="figure-overlay"><span>Click to view fullscreen diagram</span></div>
-            </div>
+            <div class="pipeline-step-num">Stage 05</div>
+            <h3 class="pipeline-step-title">3D Flythrough</h3>
+            <p class="pipeline-step-desc">Decodes 16-bit heightmaps to drive GPU vertex displacement on a textured Three.js mesh with interactive controls.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Detailed Technical Sections -->
+    <!-- Detailed Technical Deep Dives -->
     <section class="section">
       <div class="container-reading">
 
-        <!-- Stage 1: Data Acquisition -->
-        <section class="doc-section">
-          <h2 id="data-acquisition">1. Data Acquisition &amp; Multi-Modal Feeds</h2>
-          <p>
-            TRACEOIL interfaces with public earth observation catalogues and maritime telemetry streams. Primary feeds include:
+        <!-- Stage 1: Optical Ingestion & GSD Normalization -->
+        <div style="margin-bottom: 3.5rem;">
+          <h2 style="font-size: 1.6rem; color: var(--accent-blue); border-bottom: 2px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1.25rem;">
+            1. Optical Ingestion &amp; GSD Normalization
+          </h2>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;">
+            Remote sensing imagery arrives from satellites with vastly different sensor geometries and Ground Sample Distances (GSD), ranging from 0.3m (commercial aerial/Maxar) to 10m (Sentinel-2). Monocular depth networks learn scale heuristics tied to training pixel dimensions. Direct zero-shot inference on imagery with mismatched GSD leads to distorted structural height ratios.
           </p>
-          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
-            <li><strong>Copernicus Sentinel-1 SAR:</strong> Level-1 Ground Range Detected (GRD) in Interferometric Wide (IW) swath mode, featuring dual polarization (VV + VH) with a 10-meter pixel spacing and 250 km swath width.</li>
-            <li><strong>Copernicus Sentinel-2 Optical:</strong> Level-2A Bottom-Of-Atmosphere (BOA) reflectance across 13 spectral bands for daytime optical confirmation.</li>
-            <li><strong>Terrestrial &amp; Satellite AIS:</strong> Standard ITU-R M.1371 NMEA 0183 decoded messages supplying timestamped latitude, longitude, speed over ground (SOG), course over ground (COG), ship type, MMSI, and dimensions.</li>
-            <li><strong>MetOcean Hydrodynamics:</strong> Copernicus Marine (CMEMS) Global Ocean Analysis and Forecast (hourly surface current velocities \(u, v\)) and ECMWF ERA5/IFS 10-meter surface wind vectors.</li>
-          </ul>
+          <div class="card" style="margin-bottom: 1.5rem;">
+            <h4 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text-primary);">Dual Input Pathway:</h4>
+            <ul style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; padding-left: 1.25rem;">
+              <li><strong>Georeferenced RGB (GeoTIFF):</strong> Extracts CRS, spatial bounding box, affine transform matrix, and pixel resolution via <code>rasterio</code>. Enables absolute metric calibration anchored to real-world coordinates.</li>
+              <li><strong>Non-Georeferenced (PNG/JPG):</strong> Ingests standard consumer aerial crops. Generates a high-resolution Relative Digital Surface Model (rDSM) normalized directly across [0, 1] for 3D navigation.</li>
+              <li><strong>GSD Resampling:</strong> Standardizes input tiles to uniform spatial frequency priors before passing tensors into the ViT encoder.</li>
+            </ul>
+          </div>
+        </div>
 
-          <div class="placeholder-block">
-            <div class="placeholder-block-label">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-              <span>[Add data acquisition API specifications here]</span>
+        <!-- Stage 2: Monocular Depth Backbone & GAMUS Adaptation -->
+        <div style="margin-bottom: 3.5rem;">
+          <h2 style="font-size: 1.6rem; color: var(--accent-blue); border-bottom: 2px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1.25rem;">
+            2. Monocular Depth Backbone (Depth Anything V2 &amp; GAMUS)
+          </h2>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;">
+            The core depth backbone utilizes <strong>Depth Anything V2</strong> (ViT architecture with a Dense Prediction Transformer decoder). While foundational depth models exhibit powerful representations for natural perspectives, top-down satellite imagery lacks vanishing points and horizontal horizon cues.
+          </p>
+          
+          <div style="background: var(--color-surface-soft); border-left: 4px solid var(--accent-blue); border-radius: 4px; padding: 1.25rem; margin: 1.5rem 0;">
+            <div style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary);">Fine-Tuning Loss Formulation</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; color: var(--accent-blue); margin-bottom: 0.5rem;">
+              L_total = L_si + &lambda;_grad &bull; L_grad + &sum; w_k &bull; L_class(k)
             </div>
-            <p style="margin-bottom:0; font-size:0.9rem; color:var(--text-muted);">
-              Automated ingestion workers poll the Copernicus Data Space Ecosystem (CDSE) OData REST API using temporal and geographic bounding box parameters.
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+              Where <code>L_si</code> is the scale-invariant log-depth loss, <code>L_grad</code> is the multi-scale gradient loss penalizing blurred building edges, and <code>w_k</code> provides class-weighted emphasis over sparse structural classes.
             </p>
           </div>
-        </section>
 
-        <!-- Stage 2: Preprocessing -->
-        <section class="doc-section">
-          <h2 id="preprocessing">2. Satellite Imagery Preprocessing</h2>
-          <p>
-            Raw SAR intensity files cannot be used directly for computer vision segmentation due to speckle noise and radiometric distortions. The preprocessing pipeline applies five sequential transformations:
+          <p style="color: var(--text-muted); line-height: 1.7;">
+            Training was conducted on the open <strong>GAMUS dataset</strong> (11,507 paired RGB and LiDAR-derived normalized DSM tiles across 5 diverse US cities). Fine-tuning was structured by freezing the early ViT encoder layers while optimizing the late transformer blocks and DPT decoder heads, ensuring fast convergence and preserving general visual feature extraction.
           </p>
+        </div>
 
-          <div class="grid-2" style="margin: 1.5rem 0;">
-            <div class="card">
-              <h4 style="color: var(--accent-cyan); margin-top:0;">Orbit File Correction</h4>
-              <p class="card-desc">Applies precise restituted orbit state vectors from ESA to fix geometric satellite positioning down to centimeter precision.</p>
-            </div>
-            <div class="card">
-              <h4 style="color: var(--accent-cyan); margin-top:0;">Thermal Noise Removal</h4>
-              <p class="card-desc">Normalizes background thermal noise across sub-swath boundaries in both co- and cross-polarization channels.</p>
-            </div>
-            <div class="card">
-              <h4 style="color: var(--accent-cyan); margin-top:0;">Radiometric Calibration</h4>
-              <p class="card-desc">Converts raw digital pixel numbers into physical radar backscatter coefficient \(\sigma^0\) (Sigma Naught) in decibels (dB).</p>
-            </div>
-            <div class="card">
-              <h4 style="color: var(--accent-cyan); margin-top:0;">Speckle Filtering</h4>
-              <p class="card-desc">Applies a Refined Lee filter (7x7 window) to suppress granular multiplicative speckle while preserving sharp linear slick boundaries.</p>
-            </div>
+        <!-- Stage 3: Semantic Land-Cover Scale Calibration -->
+        <div style="margin-bottom: 3.5rem;">
+          <h2 style="font-size: 1.6rem; color: #059669; border-bottom: 2px solid #bbf7d0; padding-bottom: 0.5rem; margin-bottom: 1.25rem;">
+            3. Innovation #1: Per-Land-Cover-Class Scale Calibration
+          </h2>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;">
+            Conventional monocular elevation estimation maps relative predictions to absolute elevation using a single global affine transform across the entire scene:
+          </p>
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.75rem 1rem; border-radius: 6px; font-family: 'JetBrains Mono', monospace; color: #64748b; margin-bottom: 1rem;">
+            Standard Global Fit: H(x, y) = a_global &bull; h_rel(x, y) + b_global
           </div>
-
-          <p>
-            Finally, a land-masking pass removes terrestrial and shallow estuarine reflections using high-resolution Global Self-consistent, Hierarchical, High-resolution Geography (GSHHG) coastline shapefiles buffered by 500 meters.
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
+            In heterogeneous landscapes, this assumption completely fails. Vertical man-made facades produce sharp shadow cues that cause models to overestimate building heights, while diffuse tree canopies reflect optical light in ways that compress relative depth. Fitting a single constant biases either buildings or ground surfaces.
           </p>
 
-          <div class="placeholder-block">
-            <div class="placeholder-block-label">
-              <span>[Add preprocessing calibration parameters here]</span>
+          <div class="card" style="border: 1px solid #bbf7d0; background: #f0fdf4; margin-bottom: 1.5rem;">
+            <div style="font-weight: 700; color: #166534; font-size: 1.1rem; margin-bottom: 0.5rem;">
+              DepthWizard Per-Class Affine Formulation:
             </div>
-            <p style="margin-bottom:0; font-size:0.9rem; color:var(--text-muted);">
-              Target filter window: 7&times;7 Refined Lee | DEM Source: Copernicus 30m Global DEM | Polarization: VV primary, VH secondary.
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 1rem; color: #15803d; font-weight: 700; margin-bottom: 0.5rem;">
+              H_abs(x, y) = a_k &bull; h_rel(x, y) + b_k &emsp; [k = M(x, y)]
+            </div>
+            <p style="font-size: 0.9rem; color: #166534; line-height: 1.6; margin: 0;">
+              Where <code>M(x, y) &isin; {1..6}</code> represents the semantic land-cover class mask (Building, Tree, Ground, Road, Water, Vegetation). Each class is calibrated independently by downsampling predicted relative features to the SRTM 30m grid and performing robust M-estimator regression.
             </p>
           </div>
-        </section>
 
-        <!-- Stage 3: Oil Spill Detection -->
-        <section class="doc-section">
-          <h2 id="oil-spill-detection">3. Dark Formation &amp; Oil Spill Detection</h2>
-          <p>
-            Because oil slicks dampen capillary waves, their backscatter intensity is significantly lower than that of the surrounding undisturbed sea. The detection stage extracts candidate dark formations:
+          <p style="color: var(--text-muted); line-height: 1.7;">
+            Quantitative validation confirms that this semantic calibration reduces building height error by <strong>~44%</strong> and tree canopy error by <strong>~35%</strong> compared to single-fit zero-shot baselines.
           </p>
+        </div>
 
-          <div class="figure-wrapper">
-            <div class="figure-media" data-lightbox data-src="./assets/figures/fig-02-segmentation.svg" data-caption="Figure 2: Dark Formation Adaptive Segmentation">
-              <img src="./assets/figures/fig-02-segmentation.svg" alt="Dark Formation Adaptive Segmentation">
-              <div class="figure-overlay"><span>Click to preview</span></div>
+        <!-- Stage 4: Uncertainty Quantification -->
+        <div style="margin-bottom: 3.5rem;">
+          <h2 style="font-size: 1.6rem; color: #7c3aed; border-bottom: 2px solid #e9d5ff; padding-bottom: 0.5rem; margin-bottom: 1.25rem;">
+            4. Innovation #2: Monte Carlo Dropout &amp; Confidence Mapping
+          </h2>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;">
+            For critical applications such as flood boundary modeling, urban planning, or military route planning, knowing <em>where the model is unsure</em> is as essential as the elevation number itself.
+          </p>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
+            DepthWizard implements test-time Monte Carlo Dropout. During inference, dropout layers remain active across <code>N</code> stochastic forward passes, generating a distribution of depth predictions for every pixel:
+          </p>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1rem;">
+              <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.25rem;">Mean Prediction Surface:</div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; color: var(--text-primary); font-weight: 700;">
+                &mu;(x, y) = (1 / N) &sum; h_i(x, y)
+              </div>
             </div>
-            <div class="figure-caption">
-              <span class="figure-num">Figure 2:</span> Adaptive intensity thresholding segmenting oil spill core from the background clutter.
-            </div>
-          </div>
-
-          <p>
-            An adaptive local threshold \(T\) is evaluated across moving regional sub-windows:
-          </p>
-
-          <div style="background: var(--color-surface-soft); border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 1.25rem 1.5rem; margin: 1.5rem 0; font-family: var(--font-mono); font-size: 0.95rem; color: var(--color-primary); text-align: center; box-shadow: var(--shadow-sm);">
-            \(T = \mu_{\text{local}} - k \cdot \sigma_{\text{local}}\)
-          </div>
-
-          <p>
-            Where \(\mu_{\text{local}}\) and \(\sigma_{\text{local}}\) are the mean and standard deviation of background sea clutter, and \(k\) is a sensitivity parameter calibrated to local wind speeds.
-          </p>
-
-          <div class="placeholder-block">
-            <div class="placeholder-block-label">
-              <span>[Add model name and segmentation architecture here]</span>
-            </div>
-            <p style="margin-bottom:0; font-size:0.9rem; color:var(--text-muted);">
-              Ongoing benchmarking evaluates lightweight U-Net and DeepLabV3+ semantic backbones with ResNet-34 encoders trained on Sentinel-1 SAR tiles. Final model selection and mIoU scores will be posted following test suite completion.
-            </p>
-          </div>
-        </section>
-
-        <!-- Stage 4: Feature Extraction -->
-        <section class="doc-section">
-          <h2 id="feature-extraction">4. Morphological &amp; Polarimetric Feature Extraction</h2>
-          <p>
-            Once candidate dark formations are segmented, a feature descriptor vector \(\vec{F}\) is computed for each polygon to discriminate true oil spills from natural lookalikes:
-          </p>
-
-          <div class="table-responsive">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Feature Category</th>
-                  <th>Extracted Metric</th>
-                  <th>Relevance in Discrimination</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="cell-highlight">Geometric</td>
-                  <td>Area, Perimeter, Compactness \((P^2 / 4\pi A)\)</td>
-                  <td>Separates elongated plume discharges from round biogenic patches</td>
-                </tr>
-                <tr>
-                  <td class="cell-highlight">Morphological</td>
-                  <td>Elongation, Skeleton Major Axis, Curvature</td>
-                  <td>Reflects trailing wake patterns typical of moving ship discharges</td>
-                </tr>
-                <tr>
-                  <td class="cell-highlight">Physical / Radiometric</td>
-                  <td>Damping Ratio: \(\Delta \sigma^0 = \sigma^0_{\text{sea}} - \sigma^0_{\text{slick}}\)</td>
-                  <td>True oil exhibits &gt;7 dB damping; biogenic film typically 3–6 dB</td>
-                </tr>
-                <tr>
-                  <td class="cell-highlight">Polarimetric</td>
-                  <td>VV/VH Dual-Polarization Ratio</td>
-                  <td>Cross-polar channel discriminates rough water volume scattering</td>
-                </tr>
-                <tr>
-                  <td class="cell-highlight">Environmental</td>
-                  <td>ECMWF 10m Wind Velocity Magnitude</td>
-                  <td>Filters out zero-wind zones (&lt;2.5 m/s) where lookalikes dominate</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <!-- Stage 5 & 6: Vessel Detection & Identification -->
-        <section class="doc-section">
-          <h2 id="vessel-detection">5. Vessel Detection &amp; AIS Identification</h2>
-          <p>
-            Metallic ships act as strong trihedral corner reflectors in SAR imagery, generating intensely bright backscatter spikes that contrast sharply with the sea surface.
-          </p>
-
-          <div class="figure-wrapper">
-            <div class="figure-media" data-lightbox data-src="./assets/figures/fig-03-vessel-cfar.svg" data-caption="Figure 3: CFAR Vessel Extraction Window">
-              <img src="./assets/figures/fig-03-vessel-cfar.svg" alt="CFAR Vessel Extraction">
-              <div class="figure-overlay"><span>Click to preview</span></div>
-            </div>
-            <div class="figure-caption">
-              <span class="figure-num">Figure 3:</span> 2D Cell-Averaging Constant False Alarm Rate (CA-CFAR) filter isolating maritime ship targets.
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1rem;">
+              <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.25rem;">Epistemic Uncertainty:</div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; color: #7c3aed; font-weight: 700;">
+                &sigma;&sup2;(x, y) = (1 / N) &sum; [h_i - &mu;]&sup2;
+              </div>
             </div>
           </div>
 
-          <p>
-            A two-dimensional Cell-Averaging Constant False Alarm Rate (CA-CFAR) detector slides across the image. The target Cell Under Test (CUT) is declared a ship if its backscatter exceeds the threshold computed from adjacent training cells (while skipping immediate guard cells to prevent target energy leakage).
+          <p style="color: var(--text-muted); line-height: 1.7;">
+            The variance map is packaged as an 8-bit grayscale texture. In the 3D viewer, users can toggle this confidence overlay with a single keystroke to immediately spot occluded alleys, specular water bodies, and complex tree crowns where predictions require caution.
           </p>
+        </div>
 
-          <div class="placeholder-block">
-            <div class="placeholder-block-label">
-              <span>[Add vessel detection model specifications here]</span>
-            </div>
-            <p style="margin-bottom:0; font-size:0.9rem; color:var(--text-muted);">
-              CFAR detected bounding boxes are paired with optical verification. Detected coordinates are cross-referenced with AIS transponder positions interpolated to the exact satellite acquisition second.
-            </p>
-          </div>
-        </section>
-
-        <!-- Stage 7 & 8: Reverse Drift & Attribution -->
-        <section class="doc-section">
-          <h2 id="attribution">6. Reverse Drift Modeling &amp; Attribution Scoring</h2>
-          <p>
-            Because oil drifts downwind and with ocean currents, its observed location at time \(T_{\text{sat}}\) does not correspond to its release point. TRACEOIL executes a <strong>reverse Lagrangian particle tracking simulation</strong>:
+        <!-- Stage 5: 3D Mesh Generation & Navigation -->
+        <div style="margin-bottom: 3.5rem;">
+          <h2 style="font-size: 1.6rem; color: var(--accent-blue); border-bottom: 2px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1.25rem;">
+            5. 16-Bit Heightmap Decoding &amp; Three.js Mesh Generation
+          </h2>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;">
+            To eliminate stair-step banding on steep structures, DepthWizard exports the calibrated DSM as a <strong>16-bit grayscale PNG</strong> (providing 65,536 discrete vertical levels, rather than standard 8-bit 256 levels).
           </p>
-
-          <div class="figure-wrapper">
-            <div class="figure-media" data-lightbox data-src="./assets/figures/fig-05-drift-vectors.svg" data-caption="Figure 4: MetOcean Hydrodynamic Vector Fields">
-              <img src="./assets/figures/fig-05-drift-vectors.svg" alt="MetOcean Hydrodynamic Vector Fields">
-              <div class="figure-overlay"><span>Click to preview</span></div>
-            </div>
-            <div class="figure-caption">
-              <span class="figure-num">Figure 4:</span> Copernicus CMEMS ocean surface currents \((u, v)\) coupled with ECMWF 10m wind fields forcing reverse slick trajectory.
-            </div>
+          <div class="card" style="margin-bottom: 1.5rem;">
+            <h4 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text-primary);">Browser-Based Rendering Pipeline:</h4>
+            <ol style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; padding-left: 1.25rem;">
+              <li><strong>16-Bit Decoding:</strong> Decodes raw binary PNG buffers directly into a <code>Float32Array</code> elevation grid mapped linearly across <code>[height_min, height_max]</code>.</li>
+              <li><strong>Guided Edge Filtering:</strong> Applies edge-preserving guided bilateral filtering to eliminate high-frequency prediction jitter without eroding building edges.</li>
+              <li><strong>GPU Vertex Displacement:</strong> Instantiates a <code>THREE.PlaneGeometry</code> grid and displaces vertex Z coordinates in the vertex shader.</li>
+              <li><strong>RGB Texture Mapping:</strong> Projects the original optical image over the mesh with exact UV alignment.</li>
+              <li><strong>Dual Camera Controls:</strong> Provides first-person flythrough (<code>PointerLockControls</code>) and overview rotation (<code>OrbitControls</code>).</li>
+            </ol>
           </div>
-
-          <p>
-            The slick polygon is discretized into an ensemble of 500 virtual particles. Each particle is advected backward in time through numerical integration of hourly Copernicus current vectors and 3.2% wind leeway. The resulting backward trajectory forms a <strong>probability corridor of genesis</strong>.
-          </p>
-          <p>
-            Every vessel whose AIS track crosses this spatiotemporal corridor within a time tolerance \(\Delta t \le 30\) minutes is scored using the attribution probability metric:
-          </p>
-
-          <div style="background: var(--color-surface-soft); border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 1.25rem 1.5rem; margin: 1.5rem 0; font-family: var(--font-mono); font-size: 0.95rem; color: var(--color-primary); text-align: center; box-shadow: var(--shadow-sm);">
-            \(P_{\text{attribution}}(V_i) = \exp\left( - \frac{d(\vec{x}_{\text{back}}(t), \vec{x}_{\text{vessel}}(t))^2}{2\sigma_s^2} \right) \cdot \exp\left( - \frac{\Delta t^2}{2\sigma_t^2} \right) \cdot K_{\text{anomaly}}\)
-          </div>
-
-          <div class="placeholder-block">
-            <div class="placeholder-block-label">
-              <span>[Add final methodology details here]</span>
-            </div>
-            <p style="margin-bottom:0; font-size:0.9rem; color:var(--text-muted);">
-              Specific parameter tunings, empirical leeway angles for Arabian Sea / Bay of Bengal waters, and automated reporting formats will be added as experimental validation progresses.
-            </p>
-          </div>
-        </section>
+        </div>
 
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-text">
+            <span class="brand-title" style="font-size:1.3rem; color:#0f172a; font-weight:800;">DEPTHWIZARD</span>
+            <span class="brand-tag" style="display:block; color:var(--accent-blue); font-size:0.75rem; letter-spacing:1px; margin-top:2px;">RESEARCH PLATFORM</span>
+          </div>
+          <p class="footer-desc">
+            Independent scientific research project advancing single-view optical height estimation, per-land-cover scale calibration, and real-time 3D terrain flythrough.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./research.html">Scientific Paper</a></li>
+            <li><a href="./visualizations.html">3D Visualizations</a></li>
+            <li><a href="./documentation/index.html">Documentation Hub</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Key Documentation</h4>
+          <ul>
+            <li><a href="./content/project/architecture.html">System Architecture</a></li>
+            <li><a href="./content/project/land-cover-calibration.html">Per-Class Calibration</a></li>
+            <li><a href="./content/project/uncertainty-estimation.html">Uncertainty Mapping</a></li>
+            <li><a href="./content/project/terrain-reconstruction.html">3D Mesh Reconstruction</a></li>
+          </ul>
+        </div>
+      </div>
+
       <div class="footer-bottom">
-        <div>&copy; 2026 TRACEOIL Research Team &bull; Smart India Hackathon 2026.</div>
-        <div><a href="./dataset.html" class="footer-link">Next: Dataset Documentation &rarr;</a></div>
+        <div class="footer-copyright">
+          &copy; 2026 DepthWizard Research Initiative. All technical rights reserved.
+        </div>
+        <div class="footer-status">
+          <span class="badge badge-teal">Status: Active Research Project</span>
+        </div>
       </div>
     </div>
   </footer>

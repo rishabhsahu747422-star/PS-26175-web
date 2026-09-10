@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TRACEOIL — Oil Spill Detection and Vessel Attribution Research Website. Smart India Hackathon 2026. Satellite remote sensing, SAR, optical imagery, and AIS kinematic trajectory analysis.">
-  <title>TRACEOIL — Oil Spill Detection and Vessel Attribution | SIH 2026</title>
+  <meta name="description" content="DepthWizard — Single-View Height Estimation &amp; 3D Terrain Reconstruction. Automated monocular elevation extraction, per-land-cover scale calibration, and interactive 3D flythrough from optical imagery.">
+  <title>DepthWizard — Single-View Height Estimation &amp; 3D Terrain Reconstruction</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -15,11 +15,13 @@
       <a href="./index.html" class="nav-brand">
         <div class="brand-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
           </svg>
         </div>
         <div class="brand-text">
-          <span class="brand-title">TRACEOIL</span>
+          <span class="brand-title">DEPTHWIZARD</span>
           <span class="brand-tag">RESEARCH PORTAL</span>
         </div>
       </a>
@@ -31,7 +33,7 @@
           <li><a href="./research.html" class="nav-link">Research</a></li>
           <li><a href="./methodology.html" class="nav-link">Methodology</a></li>
           <li><a href="./dataset.html" class="nav-link">Datasets</a></li>
-          <li><a href="./visualizations.html" class="nav-link">Visualizations</a></li>
+          <li><a href="./visualizations.html" class="nav-link">3D Visualization</a></li>
           <li><a href="./documentation/index.html" class="nav-link">Documentation</a></li>
           <li><a href="./references.html" class="nav-link">References</a></li>
           <li><a href="./about.html" class="nav-link">About</a></li>
@@ -56,21 +58,21 @@
       <div class="container">
         <div class="hero-content">
           <div class="hero-meta-row">
-            <span class="badge badge-sih">SIH 2026 Research &amp; Development</span>
-            <span class="badge badge-cyan badge-status">Active Research Project</span>
-            <span class="badge badge-blue">Remote Sensing &bull; Maritime Forensics</span>
+            <span class="badge badge-cyan badge-status">Independent Research Platform</span>
+            <span class="badge badge-blue">Monocular Elevation Extraction</span>
+            <span class="badge" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0;">3D Terrain Reconstruction</span>
           </div>
 
           <h1 class="hero-title">
-            <span class="highlight">TRACEOIL</span>: Oil Spill Detection &amp; Vessel Attribution
+            From a Single Image to a <span class="highlight">3D Understanding</span> of Terrain.
           </h1>
 
           <p class="hero-subtitle">
-            Autonomous multi-modal satellite remote sensing, hydrodynamic reverse drift modeling, and AIS vessel trajectory matching.
+            Automated single-view height estimation, semantic-aware scale calibration, and real-time interactive 3D terrain reconstruction from optical satellite and aerial imagery.
           </p>
 
           <div class="hero-abstract">
-            <strong>Research Overview:</strong> TRACEOIL is an open scientific research initiative for Smart India Hackathon 2026. The platform investigates automated methodologies for detecting marine oil spill discharges and establishing provable, time-correlated attribution to responsible maritime vessels using Synthetic Aperture Radar (SAR), multi-spectral optical data, and historical AIS transponder telemetry.
+            <strong>System Overview:</strong> DepthWizard eliminates the dependency on cost-prohibitive stereo-pair photography, airborne LiDAR, and radar interferometry. By fine-tuning foundation vision backbones (Depth Anything V2) on top-down remote-sensing benchmarks (GAMUS) and anchoring relative predictions to coarse reference DEMs (SRTM 30m) via per-land-cover calibration, DepthWizard produces high-fidelity Digital Surface Models (DSMs) with quantifiable uncertainty and navigable in-browser 3D flythroughs.
           </div>
 
           <div class="hero-cta-group">
@@ -79,366 +81,407 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </a>
             <a href="./methodology.html" class="btn btn-secondary">
-              <span>Explore Technical Pipeline</span>
+              <span>Explore 3-Stage Pipeline</span>
             </a>
             <a href="./visualizations.html" class="btn btn-outline">
-              <span>View Research Figures &amp; Demo</span>
+              <span>Interactive 3D Viewport</span>
             </a>
           </div>
 
           <!-- Research Key Highlights / Telemetry Metrics -->
           <div class="hero-stats">
             <div class="stat-card">
-              <div class="stat-value">Sentinel-1/2</div>
-              <div class="stat-label">Primary Satellite Sensors</div>
+              <div class="stat-value">Depth Anything V2</div>
+              <div class="stat-label">Vision Foundation Backbone</div>
             </div>
             <div class="stat-card">
-              <div class="stat-value">10m / px</div>
-              <div class="stat-label">SAR Spatial Resolution</div>
+              <div class="stat-value">11,507 Tiles</div>
+              <div class="stat-label">GAMUS Fine-Tuning Corpus</div>
             </div>
             <div class="stat-card">
-              <div class="stat-value">Lagrangian</div>
-              <div class="stat-label">Reverse Drift Modeling</div>
+              <div class="stat-value">-44% Error</div>
+              <div class="stat-label">Building Calibration Gain</div>
             </div>
             <div class="stat-card">
-              <div class="stat-value">AIS + MMSI</div>
-              <div class="stat-label">Vessel Correlation Engine</div>
+              <div class="stat-value">16-bit DSM</div>
+              <div class="stat-label">Sub-Meter Height Precision</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Problem Statement Summary Section -->
+    <!-- Fundamental Problem Section -->
+    <section class="section" style="border-top: 1px solid var(--border-subtle); background: var(--color-surface);">
+      <div class="container-reading">
+        <span class="badge badge-cyan" style="margin-bottom: 0.75rem;">The Core Challenge</span>
+        <h2 style="font-size: 2rem; margin-bottom: 1rem;">Why Single-View Height Estimation is Difficult</h2>
+        <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem;">
+          Traditional elevation mapping relies on multi-view geometry (stereo-photogrammetry), laser scanning (LiDAR), or Interferometric Synthetic Aperture Radar (InSAR). These methods are sensor-dependent, flight-intensive, and computationally demanding. Single optical images are abundant, but converting a 2D image into 3D topography presents two severe physical hurdles:
+        </p>
+
+        <div class="grid-2" style="gap: 1.5rem; margin-bottom: 2.5rem;">
+          <div class="card" style="border-left: 4px solid var(--accent-blue);">
+            <h3 style="font-size: 1.2rem; color: var(--accent-blue); margin-bottom: 0.5rem;">1. The Nadir Domain Gap</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+              Foundational monocular depth models are trained almost exclusively on egocentric, horizontal perspective photos (e.g., indoor rooms, driving sequences). In nadir (top-down) remote sensing, conventional perspective vanishing points vanish. The model must learn structural height primarily from sun shadows, rooftop geometries, and textural gradients.
+            </p>
+          </div>
+
+          <div class="card" style="border-left: 4px solid var(--accent-cyan);">
+            <h3 style="font-size: 1.2rem; color: var(--accent-cyan); margin-bottom: 0.5rem;">2. Scale &amp; Offset Ambiguity</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+              Monocular vision models predict <em>relative depth</em> (scale-agnostic structural variation) rather than true metric height. A tall skyscraper in a low-resolution tile and a low bungalow in an ultra-high-resolution crop can produce identical relative gradients. Without external anchoring, relative depth cannot be used for engineering or disaster risk assessment.
+            </p>
+          </div>
+        </div>
+
+        <!-- Transformation Flow Diagram -->
+        <div style="background: var(--color-surface-soft); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem; text-align: center;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem;">
+            THE DEPTHWIZARD TRANSLATION PATHWAY
+          </div>
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.75rem;">
+            <span style="background: #ffffff; border: 1px solid #cbd5e1; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600;">Optical RGB Image</span>
+            <span style="color: var(--accent-blue); font-weight: 800;">&rarr;</span>
+            <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600;">Relative Depth (nDSM)</span>
+            <span style="color: var(--accent-blue); font-weight: 800;">&rarr;</span>
+            <span style="background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600;">SRTM 30m Calibration</span>
+            <span style="color: var(--accent-blue); font-weight: 800;">&rarr;</span>
+            <span style="background: #faf5ff; border: 1px solid #e9d5ff; color: #6b21a8; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600;">Absolute Metric DSM</span>
+            <span style="color: var(--accent-blue); font-weight: 800;">&rarr;</span>
+            <span style="background: #ffffff; border: 1px solid #cbd5e1; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600;">Navigable 3D Mesh</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Pipeline Section -->
     <section class="section">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-subtitle">Research Motivation &amp; Context</span>
-          <h2 class="section-title">Why Maritime Oil Spill Attribution Matters</h2>
+          <span class="badge badge-blue">System Engineering</span>
+          <h2 class="section-title">The 3-Stage End-to-End Architecture</h2>
           <p class="section-desc">
-            Marine oil pollution inflicts catastrophic, long-lasting damage on oceanic ecosystems, coastal coral reefs, and fisheries. Illegal bilge dumping and accidental discharges frequently go unpunished due to jurisdictional ambiguities and attribution lag.
+            DepthWizard operates via three mathematically decoupled stages, converting raw optical pixels into georeferenced metric surfaces and navigable 3D scenes.
           </p>
         </div>
 
-        <div class="grid-3">
-          <div class="card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            </div>
-            <h3 class="card-title">Deliberate Bilge Discharges</h3>
-            <p class="card-desc">
-              Over 80% of marine oil contamination results from operational tank-cleaning and illicit oily wastewater dumping under the cover of darkness, evading traditional maritime patrols.
-            </p>
-            <div class="card-footer">
-              <span class="badge badge-amber">Operational Challenge</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-            </div>
-            <h3 class="card-title">Attribution Lag &amp; Drift</h3>
-            <p class="card-desc">
-              By the time a slick is discovered, oceanic currents and wind forcing have displaced the oil miles from the release point, making direct visual linking to passing ships impossible without hydrodynamic drift modeling.
-            </p>
-            <div class="card-footer">
-              <span class="badge badge-cyan">Physical Challenge</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            </div>
-            <h3 class="card-title">Enforceable Forensics</h3>
-            <p class="card-desc">
-              Regulatory agencies and maritime coast guards require mathematically rigorous, time-synchronized evidentiary packages capable of holding rogue vessel operators accountable under international maritime law (MARPOL 73/78).
-            </p>
-            <div class="card-footer">
-              <span class="badge badge-green">Regulatory Impact</span>
-            </div>
-          </div>
+        <div style="margin: 2rem 0; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+          <img src="./assets/diagrams/pipeline-architecture.svg" alt="DepthWizard System Architecture Pipeline" style="width: 100%; height: auto; border-radius: var(--radius-md);">
         </div>
 
-        <div class="callout callout-info" style="margin-top: 2.5rem;">
-          <div class="callout-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-          </div>
-          <div class="callout-content">
-            <div class="callout-title">The TRACEOIL Approach</div>
-            <p style="margin-bottom:0;">
-              Rather than treating oil spill detection and vessel surveillance as isolated tasks, TRACEOIL couples spaceborne radar imaging, automated ship extraction, reverse-time ocean current advection, and AIS corridor reconstruction into a unified, reproducible forensic chain.
+        <div class="grid-3" style="margin-top: 2.5rem; gap: 1.5rem;">
+          <div class="card">
+            <div class="card-icon" style="color: var(--accent-blue);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            </div>
+            <span class="badge badge-blue" style="margin-bottom: 0.5rem;">Stage 01</span>
+            <h3 class="card-title">Elevation Extraction</h3>
+            <p class="card-desc">
+              Deploys Depth Anything V2 (Vision Transformer backbone) fine-tuned on GAMUS. Enforces scale-invariant depth loss and multi-scale gradient constraints to sharply preserve building boundaries and terrain breaks.
             </p>
+            <div class="card-footer">
+              <a href="./content/project/methodology.html" class="ref-link-item">Explore Stage 1 Details &rarr;</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon" style="color: var(--accent-teal);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <span class="badge badge-teal" style="margin-bottom: 0.5rem;">Stage 02 &bull; Innovation 1</span>
+            <h3 class="card-title">Scale Calibration</h3>
+            <p class="card-desc">
+              Replaces conventional single global affine transforms with class-specific regression. Anchored against SRTM 30m, fitting unique scale and offset parameters for buildings, trees, and ground surfaces.
+            </p>
+            <div class="card-footer">
+              <a href="./content/project/land-cover-calibration.html" class="ref-link-item">Explore Calibration Details &rarr;</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon" style="color: var(--accent-indigo);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </div>
+            <span class="badge badge-indigo" style="margin-bottom: 0.5rem;">Stage 03 &bull; Innovation 2</span>
+            <h3 class="card-title">3D Flythrough &amp; Uncertainty</h3>
+            <p class="card-desc">
+              Decodes 16-bit heightmaps to drive GPU vertex displacement on a textured Three.js mesh. Supports first-person WASD flythrough, cross-section profiling, and toggleable MC-dropout confidence heatmaps.
+            </p>
+            <div class="card-footer">
+              <a href="./visualizations.html" class="ref-link-item">Explore 3D Flythrough &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- System Overview & Pipeline Architecture Preview -->
-    <section class="section section-alt">
+    <!-- Key Technical Innovations Section -->
+    <section class="section" style="background: var(--color-surface); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-subtitle">Technical Architecture</span>
-          <h2 class="section-title">The TRACEOIL Research Pipeline</h2>
-          <p class="section-desc">
-            A modular multi-modal architecture bridging remote sensing data ingestion, computer vision segmentation, and spatiotemporal vessel kinematic analysis.
-          </p>
+          <span class="badge badge-cyan">Research Contributions</span>
+          <h2 class="section-title">Two Major Technical Breakthroughs</h2>
+          <p class="section-desc">DepthWizard introduces specific methodological solutions to remote sensing limitations.</p>
         </div>
 
-        <!-- Pipeline Flowchart Strip -->
-        <div class="pipeline-strip">
-          <div class="pipeline-strip-item">
-            <div class="step-idx">STEP 01</div>
-            <div class="step-name">Data Ingestion</div>
-          </div>
-          <div class="pipeline-arrow">&rarr;</div>
-          <div class="pipeline-strip-item">
-            <div class="step-idx">STEP 02</div>
-            <div class="step-name">Preprocessing</div>
-          </div>
-          <div class="pipeline-arrow">&rarr;</div>
-          <div class="pipeline-strip-item">
-            <div class="step-idx">STEP 03</div>
-            <div class="step-name">Spill Detection</div>
-          </div>
-          <div class="pipeline-arrow">&rarr;</div>
-          <div class="pipeline-strip-item">
-            <div class="step-idx">STEP 04</div>
-            <div class="step-name">Feature Extraction</div>
-          </div>
-          <div class="pipeline-arrow">&rarr;</div>
-          <div class="pipeline-strip-item">
-            <div class="step-idx">STEP 05</div>
-            <div class="step-name">Vessel Detection</div>
-          </div>
-          <div class="pipeline-arrow">&rarr;</div>
-          <div class="pipeline-strip-item">
-            <div class="step-idx">STEP 06</div>
-            <div class="step-name">Vessel ID</div>
-          </div>
-          <div class="pipeline-arrow">&rarr;</div>
-          <div class="pipeline-strip-item">
-            <div class="step-idx">STEP 07</div>
-            <div class="step-name">Reverse Drift</div>
-          </div>
-          <div class="pipeline-arrow">&rarr;</div>
-          <div class="pipeline-strip-item">
-            <div class="step-idx">STEP 08</div>
-            <div class="step-name">Attribution Dossier</div>
-          </div>
-        </div>
-
-        <!-- Figure / Architecture Diagram Display -->
-        <div class="figure-wrapper" style="margin-top: 2rem;">
-          <div class="figure-media" data-lightbox data-src="./assets/diagrams/pipeline-architecture.svg" data-caption="Figure 1: TRACEOIL Multi-Modal Data Processing and Attribution Pipeline Architecture">
-            <img src="./assets/diagrams/pipeline-architecture.svg" alt="TRACEOIL Multi-Modal Architecture Pipeline">
-            <div class="figure-overlay">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-              <span>Click to view fullscreen diagram</span>
+        <div class="grid-2" style="gap: 2rem; margin-top: 2rem;">
+          <!-- Innovation 1 Card -->
+          <div class="card" style="border: 1px solid #bbf7d0; background: #ffffff;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <span class="badge badge-teal" style="font-size: 0.8rem;">INNOVATION #1</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: #166534; font-weight: 700;">Error Drop: -44%</span>
             </div>
-          </div>
-          <div class="figure-caption">
-            <span class="figure-num">Figure 1.0</span>
-            <strong>TRACEOIL System Pipeline Architecture:</strong> Demonstrates data paths from raw Sentinel-1 C-Band SAR products and AIS streams through radiometric calibration, semantic dark spot segmentation, CFAR ship extraction, Lagrangian backtrack drift simulation, and final probabilistic attribution report generation.
-          </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 1.5rem;">
-          <a href="./methodology.html" class="btn btn-outline">
-            <span>Read Complete Technical Methodology</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Research Objectives & Scope -->
-    <section class="section">
-      <div class="container">
-        <div class="grid-2">
-          <div>
-            <span class="section-subtitle">Core Objectives</span>
-            <h2 class="section-title">Research Goals &amp; Deliverables</h2>
-            <p>
-              The primary aim of TRACEOIL under the Smart India Hackathon 2026 framework is to develop a scientific and technical baseline for sovereign coastal surveillance and environmental law enforcement.
+            <h3 style="font-size: 1.35rem; color: #0f172a; margin-bottom: 0.75rem;">Per-Land-Cover-Class Scale Calibration</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+              Existing methods attempt a single affine fit <code>H = a &bull; h_rel + b</code> across the entire satellite scene. However, neural depth models produce systematic biases depending on material reflectance and vertical morphology. Man-made buildings, permeable tree canopies, and flat tarmac experience divergent relative-depth scaling.
             </p>
-
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
-              <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
-                <span style="color: var(--accent-cyan); font-weight: 700; font-family: var(--font-mono);">01.</span>
-                <div>
-                  <strong>All-Weather Slick Detection:</strong> Leverage day-and-night C-band Synthetic Aperture Radar (SAR) to identify capillary wave suppression without dependence on daylight or clear skies.
-                </div>
-              </li>
-              <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
-                <span style="color: var(--accent-cyan); font-weight: 700; font-family: var(--font-mono);">02.</span>
-                <div>
-                  <strong>Lookalike Damping Discrimination:</strong> Isolate true hydrocarbon spills from biogenic monomolecular slicks, low-wind grease areas, and internal waves using dual-polarization ratios and wind-speed thresholds.
-                </div>
-              </li>
-              <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
-                <span style="color: var(--accent-cyan); font-weight: 700; font-family: var(--font-mono);">03.</span>
-                <div>
-                  <strong>Reverse-Time Drift Reconstruction:</strong> Backtrack slick movement through reverse Lagrangian particle physics fueled by ocean surface currents (Copernicus CMEMS) and ECMWF surface wind fields.
-                </div>
-              </li>
-              <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
-                <span style="color: var(--accent-cyan); font-weight: 700; font-family: var(--font-mono);">04.</span>
-                <div>
-                  <strong>Automated AIS Spatiotemporal Corroboration:</strong> Intersect backtracked slick origin corridors with historical vessel tracks to rank candidate vessels with confidence scores.
-                </div>
-              </li>
+            <div style="background: #f0fdf4; border-radius: 6px; padding: 1rem; margin-bottom: 1rem; border: 1px solid #dcfce7;">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; font-weight: 700; color: #15803d; margin-bottom: 0.25rem;">
+                H_abs(x, y) = a_k &bull; h_rel(x, y) + b_k  [k &isin; Classes]
+              </div>
+              <div style="font-size: 0.85rem; color: #166534;">
+                Classes: Building, Tree, Ground, Road, Water, Vegetation
+              </div>
+            </div>
+            <ul style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; padding-left: 1.25rem;">
+              <li><strong>Building Height Error:</strong> Reduced by ~44% vs global scene-wide fit.</li>
+              <li><strong>Tree Canopy Height Error:</strong> Reduced by ~35% vs baseline.</li>
+              <li><strong>Robust Regression:</strong> Iterative re-weighted least squares against SRTM 30m grid.</li>
             </ul>
           </div>
 
-          <div>
-            <span class="section-subtitle">Key Research Questions</span>
-            <h2 class="section-title">Scientific Hypotheses</h2>
-            
-            <div class="card" style="margin-bottom: 1rem;">
-              <h4 style="color: var(--accent-blue); margin-top:0;">Q1: Lookalike Discrimination</h4>
-              <p class="card-desc" style="margin-bottom:0;">
-                Can cross-polarization ratio \(\sigma^0_{VH} / \sigma^0_{VV}\) combined with ECMWF wind speed bounds reliably segregate biogenic film slicks from crude oil discharges?
-              </p>
+          <!-- Innovation 2 Card -->
+          <div class="card" style="border: 1px solid #e9d5ff; background: #ffffff;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <span class="badge badge-indigo" style="font-size: 0.8rem;">INNOVATION #2</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: #6b21a8; font-weight: 700;">Variance Mapping</span>
             </div>
-
-            <div class="card" style="margin-bottom: 1rem;">
-              <h4 style="color: var(--accent-cyan); margin-top:0;">Q2: Drift Error Quantification</h4>
-              <p class="card-desc" style="margin-bottom:0;">
-                What is the maximum backward time horizon (e.g., 6h, 12h, 24h) within which reverse Lagrangian advection preserves a vessel attribution confidence exceeding 90%?
-              </p>
-            </div>
-
-            <div class="card">
-              <h4 style="color: var(--accent-emerald); margin-top:0;">Q3: Dark Ship Countermeasures</h4>
-              <p class="card-desc" style="margin-bottom:0;">
-                When a delinquent vessel intentionally disables its AIS transponder, can SAR CFAR geometric length and wake angle analysis reconstruct the missing vessel track?
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Visualizations & Demonstration Preview -->
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="section-subtitle">Visual Outputs</span>
-          <h2 class="section-title">Scientific Figures &amp; Video Preview</h2>
-          <p class="section-desc">
-            Direct visual evidence, segmentation output masks, CFAR target extractions, and video demonstrations developed during research milestones.
-          </p>
-        </div>
-
-        <div class="gallery-grid">
-          <!-- Card 1 -->
-          <div class="gallery-card">
-            <div class="gallery-thumbnail" data-lightbox data-src="./assets/figures/fig-01-sar-spill.svg" data-caption="Figure 1: Sentinel-1 SAR Oil Spill Damping Signature">
-              <img src="./assets/figures/fig-01-sar-spill.svg" alt="SAR Oil Spill Damping">
-            </div>
-            <div class="gallery-body">
-              <div class="gallery-tag">SAR Analysis</div>
-              <h3 class="gallery-title">Capillary Wave Damping</h3>
-              <p class="gallery-desc">Synthetic Aperture Radar backscatter visualization contrasting wave-damped dark formations with rough open sea.</p>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="gallery-card">
-            <div class="gallery-thumbnail" data-lightbox data-src="./assets/figures/fig-02-segmentation.svg" data-caption="Figure 2: Adaptive Dark Formation Semantic Segmentation">
-              <img src="./assets/figures/fig-02-segmentation.svg" alt="Dark Formation Segmentation">
-            </div>
-            <div class="gallery-body">
-              <div class="gallery-tag">Segmentation</div>
-              <h3 class="gallery-title">Dark Formation Masking</h3>
-              <p class="gallery-desc">Adaptive intensity thresholding isolating the core discharge slick polygon from surrounding background noise.</p>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="gallery-card">
-            <div class="gallery-thumbnail" data-lightbox data-src="./assets/figures/fig-04-attribution.svg" data-caption="Figure 4: Reverse Drift and AIS Vessel Track Corridor Attribution">
-              <img src="./assets/figures/fig-04-attribution.svg" alt="Attribution Corridor">
-            </div>
-            <div class="gallery-body">
-              <div class="gallery-tag">Attribution</div>
-              <h3 class="gallery-title">Reverse Drift Matching</h3>
-              <p class="gallery-desc">Time-stamped backward Lagrangian drift vectors intersecting historical AIS vessel navigation tracks.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Video Demonstration Card -->
-        <div class="card" style="margin-top: 2.5rem; background: var(--color-surface); border-color: var(--border-subtle); box-shadow: var(--shadow-md);">
-          <div class="grid-2" style="align-items: center;">
-            <div>
-              <span class="badge badge-amber" style="margin-bottom: 0.75rem;">Interactive Demonstration</span>
-              <h3 style="font-size: 1.5rem; margin-top: 0; margin-bottom: 0.75rem;">Research Video Demonstration</h3>
-              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-                Watch our research walkthrough demonstrating the end-to-end flow: from automated satellite ingestion and dark slick boundary extraction to backward drift modeling and AIS correlation.
-              </p>
-              <div style="display: flex; gap: 0.75rem; margin-top: 1.25rem;">
-                <button class="btn btn-primary" data-video-trigger data-video-src="./assets/videos/demo-pipeline.mp4" data-video-title="TRACEOIL Automated Detection Pipeline Demonstration" data-video-caption="SIH 2026 Walkthrough of automated SAR ingestion, oil spill boundary extraction, and AIS ship attribution matching.">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                  <span>Play Demonstration</span>
-                </button>
-                <a href="./visualizations.html" class="btn btn-secondary">
-                  <span>Browse All Figures</span>
-                </a>
+            <h3 style="font-size: 1.35rem; color: #0f172a; margin-bottom: 0.75rem;">MC-Dropout &amp; Confidence Quantification</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+              A depth estimate is not equally reliable across all regions. Monocular predictions frequently degrade inside cast shadows, dark water bodies, or dense foliage. Instead of presenting the Digital Surface Model as uniformly certain, DepthWizard generates an explicit confidence variance map.
+            </p>
+            <div style="background: #faf5ff; border-radius: 6px; padding: 1rem; margin-bottom: 1rem; border: 1px solid #f3e8ff;">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; font-weight: 700; color: #7c3aed; margin-bottom: 0.25rem;">
+                &sigma;&sup2;(x, y) = (1 / N) &sum; [ h_i(x, y) - &mu;(x, y) ]&sup2;
+              </div>
+              <div style="font-size: 0.85rem; color: #6b21a8;">
+                Computed via N stochastic Monte Carlo forward passes at inference
               </div>
             </div>
-            <div style="cursor: pointer; border-radius: var(--radius-sm); overflow: hidden;" data-video-trigger data-video-src="./assets/videos/demo-pipeline.mp4" data-video-title="TRACEOIL Automated Detection Pipeline Demonstration" data-video-caption="SIH 2026 Walkthrough of automated SAR ingestion, oil spill boundary extraction, and AIS ship attribution matching.">
-              <img src="./assets/videos/poster-demo.svg" alt="TRACEOIL Video Demonstration Poster">
-            </div>
+            <ul style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; padding-left: 1.25rem;">
+              <li><strong>Interactive Heatmap:</strong> Toggleable in the 3D viewer (RGB &harr; Confidence).</li>
+              <li><strong>Disaster Risk Governance:</strong> Informs decision-makers where predictions are trustworthy.</li>
+              <li><strong>Zero Cloud Overhead:</strong> Lightweight inference-time perturbation.</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Documentation & Knowledge Hub Preview -->
+    <!-- Interactive Live Simulation & Profile Tool -->
     <section class="section">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-subtitle">Documentation Hub</span>
-          <h2 class="section-title">Open Technical Documentation</h2>
+          <span class="badge badge-blue">Interactive Verification</span>
+          <h2 class="section-title">Terrain Cross-Section &amp; Profile Analysis</h2>
           <p class="section-desc">
-            Complete technical papers, dataset specifications, mathematical formulas, and system limitations are published openly for researchers and evaluators.
+            Test DepthWizard's real output data generated from the benchmark tile: click points along the distance axis to inspect calculated metric elevation.
           </p>
         </div>
 
-        <div class="grid-4">
-          <a href="./content/project/overview.html" class="card">
-            <h4 class="card-title">01. Project Overview</h4>
-            <p class="card-desc">Executive summary, problem boundaries, and mission scope for SIH 2026.</p>
-            <div class="card-footer"><span class="badge badge-cyan">Doc Article &rarr;</span></div>
-          </a>
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); max-width: 960px; margin: 0 auto;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem;">
+            <div>
+              <div style="font-weight: 700; font-size: 1.1rem; color: var(--text-primary);">Two-Point Cross-Section Tool</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Transect line from Point A (Ground) to Point B (High-Rise Rooftop)</div>
+            </div>
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+              <span class="badge badge-teal">H_min: 0.12m</span>
+              <span class="badge badge-blue">H_max: 24.87m</span>
+              <span class="badge badge-indigo">GSD: 0.30m</span>
+            </div>
+          </div>
 
-          <a href="./content/project/architecture.html" class="card">
-            <h4 class="card-title">02. System Architecture</h4>
-            <p class="card-desc">Decoupled microservice topology, data schemas, and pipeline specifications.</p>
-            <div class="card-footer"><span class="badge badge-cyan">Doc Article &rarr;</span></div>
-          </a>
+          <!-- Interactive Profile Canvas / SVG -->
+          <div style="position: relative; width: 100%; height: 260px; background: var(--color-surface-soft); border-radius: var(--radius-md); border: 1px solid var(--color-border); overflow: hidden;">
+            <svg id="profile-interactive-svg" viewBox="0 0 800 240" width="100%" height="100%" style="display: block;">
+              <!-- Grid Lines -->
+              <line x1="50" y1="30" x2="750" y2="30" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,4"/>
+              <line x1="50" y1="80" x2="750" y2="80" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,4"/>
+              <line x1="50" y1="130" x2="750" y2="130" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,4"/>
+              <line x1="50" y1="180" x2="750" y2="180" stroke="#cbd5e1" stroke-width="1.5"/>
 
-          <a href="./content/project/oil-spill-detection.html" class="card">
-            <h4 class="card-title">03. Spill Detection</h4>
-            <p class="card-desc">Radar physics, threshold segmentation, and lookalike discrimination.</p>
-            <div class="card-footer"><span class="badge badge-cyan">Doc Article &rarr;</span></div>
-          </a>
+              <!-- Labels Y -->
+              <text x="18" y="34" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">25m</text>
+              <text x="18" y="84" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">15m</text>
+              <text x="18" y="134" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">5m</text>
+              <text x="18" y="184" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">0m</text>
 
-          <a href="./content/project/vessel-attribution.html" class="card">
-            <h4 class="card-title">04. Vessel Attribution</h4>
-            <p class="card-desc">AIS track interpolation, reverse drift matching, and forensic scoring.</p>
-            <div class="card-footer"><span class="badge badge-cyan">Doc Article &rarr;</span></div>
-          </a>
+              <!-- Profile Area Fill -->
+              <path d="M 60 180 L 110 178 L 135 177 L 140 85 L 210 85 L 215 177 L 290 174 L 340 115 L 390 135 L 415 175 L 515 172 L 520 50 L 605 50 L 610 176 L 740 178 L 740 180 Z" fill="rgba(37, 99, 235, 0.12)"/>
+
+              <!-- Profile Line -->
+              <path d="M 60 180 L 110 178 L 135 177 L 140 85 L 210 85 L 215 177 L 290 174 L 340 115 L 390 135 L 415 175 L 515 172 L 520 50 L 605 50 L 610 176 L 740 178" stroke="#2563eb" stroke-width="3" fill="none"/>
+
+              <!-- Clickable Sample Points -->
+              <g class="profile-point" data-dist="0m" data-elev="2.1m" data-class="Ground" transform="translate(60, 180)">
+                <circle cx="0" cy="0" r="5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+              </g>
+              <g class="profile-point" data-dist="75m" data-elev="15.2m" data-class="Commercial Building" transform="translate(175, 85)">
+                <circle cx="0" cy="0" r="6" fill="#ef4444" stroke="#ffffff" stroke-width="2"/>
+              </g>
+              <g class="profile-point" data-dist="150m" data-elev="8.4m" data-class="Tree Canopy" transform="translate(365, 125)">
+                <circle cx="0" cy="0" r="6" fill="#22c55e" stroke="#ffffff" stroke-width="2"/>
+              </g>
+              <g class="profile-point" data-dist="240m" data-elev="24.8m" data-class="High-Rise Tower" transform="translate(560, 50)">
+                <circle cx="0" cy="0" r="6" fill="#0284c7" stroke="#ffffff" stroke-width="2"/>
+              </g>
+              <g class="profile-point" data-dist="300m" data-elev="2.8m" data-class="Paved Road" transform="translate(740, 178)">
+                <circle cx="0" cy="0" r="5" fill="#64748b" stroke="#ffffff" stroke-width="2"/>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Inspector readout -->
+          <div style="margin-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 0.75rem 1.25rem;">
+            <div>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Inspected Target:</span>
+              <strong id="inspector-target" style="margin-left: 0.5rem; color: var(--text-primary);">Commercial Building (Click point above)</strong>
+            </div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.95rem;">
+              <span style="color: var(--text-muted);">Height:</span>
+              <strong id="inspector-elev" style="color: #2563eb; margin-left: 0.25rem;">15.2m</strong>
+              <span style="color: var(--text-muted); margin-left: 1rem;">Transect Dist:</span>
+              <strong id="inspector-dist" style="color: #0f172a; margin-left: 0.25rem;">75m</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Architecture & Technology Differentiation -->
+    <section class="section" style="background: var(--color-surface); border-top: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="badge badge-teal">Technology Stack</span>
+          <h2 class="section-title">Decoupled Engineering Stack</h2>
+          <p class="section-desc">
+            Clear separation between the main DepthWizard ML/processing backend and this independent research evidence portal.
+          </p>
         </div>
 
-        <div style="text-align: center; margin-top: 2rem;">
-          <a href="./documentation/index.html" class="btn btn-primary">
-            <span>Explore All 15 Documentation Articles</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          </a>
+        <div class="grid-2" style="gap: 2rem; margin-top: 2rem;">
+          <!-- Main Application Stack -->
+          <div class="card">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+              <div class="card-icon" style="margin: 0; color: #2563eb;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+              </div>
+              <div>
+                <h3 style="font-size: 1.25rem; color: #0f172a; margin: 0;">Main DepthWizard Software Application</h3>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Operational Processing Engine</span>
+              </div>
+            </div>
+
+            <table class="data-table" style="margin-top: 1rem;">
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  <th>Technology</th>
+                  <th>Role</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Backbone</strong></td>
+                  <td>PyTorch / Depth Anything V2</td>
+                  <td>Vision Transformer monocular depth</td>
+                </tr>
+                <tr>
+                  <td><strong>Training</strong></td>
+                  <td>GAMUS Dataset</td>
+                  <td>11,507 paired tiles for nadir domain gap</td>
+                </tr>
+                <tr>
+                  <td><strong>Calibration</strong></td>
+                  <td>SRTM 30m / SciPy / NumPy</td>
+                  <td>Per-land-cover affine regression</td>
+                </tr>
+                <tr>
+                  <td><strong>Geospatial I/O</strong></td>
+                  <td>Rasterio / GDAL</td>
+                  <td>GeoTIFF CRS, bounds &amp; GSD parsing</td>
+                </tr>
+                <tr>
+                  <td><strong>Local Bridge</strong></td>
+                  <td>FastAPI</td>
+                  <td>Offline REST API (<code>/upload</code>, <code>/process</code>)</td>
+                </tr>
+                <tr>
+                  <td><strong>3D Engine</strong></td>
+                  <td>Three.js</td>
+                  <td>GPU vertex displacement &amp; Flythrough</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Research Website Stack -->
+          <div class="card">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+              <div class="card-icon" style="margin: 0; color: #059669;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </div>
+              <div>
+                <h3 style="font-size: 1.25rem; color: #0f172a; margin: 0;">This Research &amp; Documentation Portal</h3>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Independent Evidence Website</span>
+              </div>
+            </div>
+
+            <table class="data-table" style="margin-top: 1rem;">
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  <th>Technology</th>
+                  <th>Role</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Structure</strong></td>
+                  <td>Semantic HTML5</td>
+                  <td>Zero build steps, 100% accessible</td>
+                </tr>
+                <tr>
+                  <td><strong>Styling</strong></td>
+                  <td>CSS3 (Custom Properties)</td>
+                  <td>Light research theme, responsive grids</td>
+                </tr>
+                <tr>
+                  <td><strong>Interactivity</strong></td>
+                  <td>Vanilla JavaScript</td>
+                  <td>Native DOM, SVG profiling &amp; modals</td>
+                </tr>
+                <tr>
+                  <td><strong>Hosting</strong></td>
+                  <td>Static GitHub Pages</td>
+                  <td>Direct push deployment, no server needed</td>
+                </tr>
+                <tr>
+                  <td><strong>Dependencies</strong></td>
+                  <td>Zero external dependencies</td>
+                  <td>No npm, no bundlers, no frameworks</td>
+                </tr>
+                <tr>
+                  <td><strong>Portability</strong></td>
+                  <td>Relative Paths</td>
+                  <td>Works offline and directly via <code>file:///</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
@@ -448,50 +491,58 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div>
-          <div class="footer-brand-title">TRACEOIL</div>
-          <p class="footer-brand-desc">
-            Autonomous Oil Spill Detection and Vessel Attribution Research Framework. Developed for Smart India Hackathon (SIH) 2026.
+        <div class="footer-brand">
+          <div class="brand-text">
+            <span class="brand-title" style="font-size:1.3rem; color:#0f172a; font-weight:800;">DEPTHWIZARD</span>
+            <span class="brand-tag" style="display:block; color:var(--accent-blue); font-size:0.75rem; letter-spacing:1px; margin-top:2px;">RESEARCH PLATFORM</span>
+          </div>
+          <p class="footer-desc">
+            Independent scientific research project advancing single-view optical height estimation, per-land-cover scale calibration, and real-time 3D terrain flythrough.
           </p>
-          <span class="badge badge-sih">Smart India Hackathon 2026</span>
+          <div class="footer-meta">
+            <span>&bull; Pure HTML5 / CSS3 / Vanilla JS</span>
+            <span>&bull; GitHub Pages Static Deployment</span>
+          </div>
         </div>
 
-        <div>
-          <div class="footer-heading">Research</div>
-          <ul class="footer-list">
-            <li><a href="./research.html" class="footer-link">Research Article</a></li>
-            <li><a href="./methodology.html" class="footer-link">Methodology</a></li>
-            <li><a href="./dataset.html" class="footer-link">Datasets</a></li>
-            <li><a href="./visualizations.html" class="footer-link">Visual Figures</a></li>
-            <li><a href="./references.html" class="footer-link">References</a></li>
+        <div class="footer-links">
+          <h4>Core Research</h4>
+          <ul>
+            <li><a href="./research.html">Scientific Paper</a></li>
+            <li><a href="./methodology.html">3-Stage Methodology</a></li>
+            <li><a href="./dataset.html">GAMUS &amp; SRTM Datasets</a></li>
+            <li><a href="./visualizations.html">3D Terrain Flythrough</a></li>
           </ul>
         </div>
 
-        <div>
-          <div class="footer-heading">Documentation</div>
-          <ul class="footer-list">
-            <li><a href="./documentation/index.html" class="footer-link">Docs Hub</a></li>
-            <li><a href="./content/project/overview.html" class="footer-link">Project Overview</a></li>
-            <li><a href="./content/project/architecture.html" class="footer-link">System Architecture</a></li>
-            <li><a href="./content/project/oil-spill-detection.html" class="footer-link">Oil-Spill Detection</a></li>
-            <li><a href="./content/project/vessel-attribution.html" class="footer-link">Vessel Attribution</a></li>
+        <div class="footer-links">
+          <h4>Documentation</h4>
+          <ul>
+            <li><a href="./documentation/index.html">Documentation Portal</a></li>
+            <li><a href="./content/project/architecture.html">System Architecture</a></li>
+            <li><a href="./content/project/land-cover-calibration.html">Per-Class Calibration</a></li>
+            <li><a href="./content/project/uncertainty-estimation.html">Uncertainty Mapping</a></li>
           </ul>
         </div>
 
-        <div>
-          <div class="footer-heading">Project &amp; Team</div>
-          <ul class="footer-list">
-            <li><a href="./about.html" class="footer-link">Team Members</a></li>
-            <li><a href="./about.html#contact" class="footer-link">Contact &amp; Institution</a></li>
-            <li><a href="https://github.com/your-org/traceoil-research" target="_blank" rel="noopener" class="footer-link">GitHub Repository &#8599;</a></li>
-            <li><span class="badge badge-blue" style="margin-top: 0.5rem;">Open Science</span></li>
+        <div class="footer-links">
+          <h4>Project Information</h4>
+          <ul>
+            <li><a href="./about.html">About DepthWizard</a></li>
+            <li><a href="./references.html">Academic References</a></li>
+            <li><a href="./content/project/evaluation.html">Validation Metrics</a></li>
+            <li><a href="./content/project/limitations.html">Mitigation Strategies</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 TRACEOIL Research Team &bull; Smart India Hackathon 2026. All rights reserved.</div>
-        <div>Engineered with pure HTML5, CSS3, and Vanilla JavaScript. Built for GitHub Pages.</div>
+        <div class="footer-copyright">
+          &copy; 2026 DepthWizard Research Initiative. All technical rights reserved. Distributed under open scientific research documentation principles.
+        </div>
+        <div class="footer-status">
+          <span class="badge badge-teal">Status: Active Research Project</span>
+        </div>
       </div>
     </div>
   </footer>
@@ -501,5 +552,18 @@
   <script src="./js/navigation.js"></script>
   <script src="./js/gallery.js"></script>
   <script src="./js/main.js"></script>
+  <script>
+    // Interactive inspector hook on home page
+    document.querySelectorAll('.profile-point').forEach(pt => {
+      pt.addEventListener('click', () => {
+        const dist = pt.getAttribute('data-dist');
+        const elev = pt.getAttribute('data-elev');
+        const target = pt.getAttribute('data-class');
+        document.getElementById('inspector-target').textContent = target;
+        document.getElementById('inspector-elev').textContent = elev;
+        document.getElementById('inspector-dist').textContent = dist;
+      });
+    });
+  </script>
 </body>
 </html>

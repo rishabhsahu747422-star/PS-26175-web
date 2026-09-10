@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About TRACEOIL — Research Team, Institution, Mentorship, SIH 2026 Context, Project Status, and Contact Information.">
-  <title>About &amp; Research Team — TRACEOIL | SIH 2026</title>
+  <meta name="description" content="About DepthWizard — Single-View Optical Height Estimation &amp; 3D Terrain Reconstruction Platform. Mission, Architecture, and Software Deliverables.">
+  <title>About DepthWizard — Project &amp; Engineering Scope</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
-  <!-- Site Header -->
   <header class="site-header">
     <div class="nav-container">
       <a href="./index.html" class="nav-brand">
         <div class="brand-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
           </svg>
         </div>
         <div class="brand-text">
-          <span class="brand-title">TRACEOIL</span>
-          <span class="brand-tag">ABOUT TEAM</span>
+          <span class="brand-title">DEPTHWIZARD</span>
+          <span class="brand-tag">ABOUT</span>
         </div>
       </a>
 
@@ -30,7 +31,7 @@
           <li><a href="./research.html" class="nav-link">Research</a></li>
           <li><a href="./methodology.html" class="nav-link">Methodology</a></li>
           <li><a href="./dataset.html" class="nav-link">Datasets</a></li>
-          <li><a href="./visualizations.html" class="nav-link">Visualizations</a></li>
+          <li><a href="./visualizations.html" class="nav-link">3D Visualization</a></li>
           <li><a href="./documentation/index.html" class="nav-link">Documentation</a></li>
           <li><a href="./references.html" class="nav-link">References</a></li>
           <li><a href="./about.html" class="nav-link active">About</a></li>
@@ -49,187 +50,113 @@
   </header>
 
   <main>
-    <!-- About Header -->
     <section class="section" style="padding-top: 3.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-subtle);">
       <div class="container-reading">
-        <span class="badge badge-sih" style="margin-bottom: 0.75rem;">Smart India Hackathon 2026</span>
-        <h1 style="font-size: 2.5rem; margin-bottom: 0.75rem;">About the TRACEOIL Research Initiative</h1>
+        <span class="badge badge-blue" style="margin-bottom: 0.75rem;">Project Scope</span>
+        <h1 style="font-size: 2.5rem; margin-bottom: 0.75rem;">About DepthWizard</h1>
         <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.6;">
-          Developed by our undergraduate research cohort for Smart India Hackathon 2026. Dedicated to autonomous oceanic environmental protection and spaceborne maritime surveillance.
+          An independent scientific research platform focused on democratizing 3D elevation data extraction from ubiquitous optical satellite and aerial imagery.
         </p>
       </div>
     </section>
 
-    <!-- Project Context & SIH 2026 Mission -->
     <section class="section">
       <div class="container-reading">
-        <h2 id="sih-context">1. Hackathon &amp; Problem Context</h2>
-        <p>
-          TRACEOIL is formulated as a response to real-world maritime operational challenges under the <strong>Smart India Hackathon 2026</strong> framework. The project addresses the critical gap between early satellite detection of marine pollution and prompt, legally viable vessel attribution.
-        </p>
-
-        <div class="grid-2" style="margin: 1.5rem 0;">
-          <div class="card">
-            <h4 style="color: var(--accent-cyan); margin-top: 0;">Problem Statement</h4>
-            <p class="card-desc" style="margin-bottom: 0.5rem;">[Add Official Problem Statement Title / ID Here]</p>
-            <span class="placeholder-tag">ID: SIH-2026-TRACEOIL</span>
-          </div>
-
-          <div class="card">
-            <h4 style="color: var(--accent-blue); margin-top: 0;">Target Organization / Ministry</h4>
-            <p class="card-desc" style="margin-bottom: 0.5rem;">[Add Ministry / Organization Name Here]</p>
-            <span class="placeholder-tag">Domain: Space Tech / Marine Defense</span>
-          </div>
-        </div>
-
-        <div class="callout callout-info">
-          <div class="callout-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-          </div>
-          <div class="callout-content">
-            <div class="callout-title">Open Research Philosophy</div>
-            <p style="margin-bottom:0;">
-              In accordance with open science practices, all documentation, pipeline architectures, and mathematical formulations developed during this project are publicly published on this portal for academic peer review and continuous engineering improvement.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Research Team Members -->
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="section-subtitle">Collaborators</span>
-          <h2 class="section-title">Research Team Members</h2>
-          <p class="section-desc">
-            Multi-disciplinary team combining expertise in satellite remote sensing, computer vision, physical oceanography, and geospatial systems.
+        
+        <div style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.5rem; color: var(--text-primary); border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+            Mission &amp; Core Objectives
+          </h2>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;">
+            Elevation models (DSMs and DEMs) form the bedrock of flood disaster mitigation, structural urban planning, telecom line-of-sight propagation, and tactical reconnaissance. Traditional sensor-heavy approaches (stereo imagery, LiDAR, InSAR) cannot scale fast enough to meet real-time emergency needs.
+          </p>
+          <p style="color: var(--text-muted); line-height: 1.7;">
+            DepthWizard bridges this gap by proving that single optical satellite passes can yield reliable metric elevations and immersive 3D terrain meshes using modern Vision Transformers and semantic calibration.
           </p>
         </div>
 
-        <div class="team-grid">
-          <!-- Member 1 -->
-          <div class="team-card">
-            <div class="team-avatar">01</div>
-            <div class="team-name">[Team Member 1]</div>
-            <div class="team-role">Remote Sensing &amp; SAR Pipeline</div>
-            <div class="team-institution">[College / Institute Name]</div>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.5;">
-              Focusing on Sentinel-1 C-band radiometric calibration, Refined Lee speckle filtering, and SNAP workflow integration.
-            </p>
-          </div>
+        <div style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.5rem; color: var(--text-primary); border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+            Expected Deliverables &amp; Software Suite
+          </h2>
 
-          <!-- Member 2 -->
-          <div class="team-card">
-            <div class="team-avatar">02</div>
-            <div class="team-name">[Team Member 2]</div>
-            <div class="team-role">Computer Vision &amp; Segmentation</div>
-            <div class="team-institution">[College / Institute Name]</div>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.5;">
-              Developing adaptive intensity thresholding and deep semantic segmentation architectures for dark formation extraction.
-            </p>
-          </div>
+          <div class="grid-2" style="gap: 1.5rem; margin-top: 1rem;">
+            <div class="card">
+              <h3 style="font-size: 1.2rem; color: var(--accent-blue); margin-bottom: 0.5rem;">1. Elevation Estimation Engine</h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                A high-performance Python/FastAPI module that accepts single optical imagery (GeoTIFF, PNG, JPG) and exports calibrated 16-bit Digital Surface Models (DSMs) in standard geospatial formats.
+              </p>
+            </div>
 
-          <!-- Member 3 -->
-          <div class="team-card">
-            <div class="team-avatar">03</div>
-            <div class="team-name">[Team Member 3]</div>
-            <div class="team-role">AIS Kinematics &amp; Telemetry</div>
-            <div class="team-institution">[College / Institute Name]</div>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.5;">
-              Ingesting NMEA 0183 broadcasts, handling trajectory spline interpolation, and building spatiotemporal spatial indexes.
-            </p>
-          </div>
-
-          <!-- Member 4 -->
-          <div class="team-card">
-            <div class="team-avatar">04</div>
-            <div class="team-name">[Team Member 4]</div>
-            <div class="team-role">Hydrodynamics &amp; Drift Modeling</div>
-            <div class="team-institution">[College / Institute Name]</div>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.5;">
-              Engineering backward-in-time Lagrangian drift simulations forced by Copernicus CMEMS current vectors and ECMWF winds.
-            </p>
-          </div>
-
-          <!-- Member 5 -->
-          <div class="team-card">
-            <div class="team-avatar">05</div>
-            <div class="team-name">[Team Member 5]</div>
-            <div class="team-role">Geospatial Engineering &amp; UI</div>
-            <div class="team-institution">[College / Institute Name]</div>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.5;">
-              Architecting responsive documentation, GIS mapping components, and automated PDF evidentiary dossier generation.
-            </p>
-          </div>
-
-          <!-- Member 6 -->
-          <div class="team-card">
-            <div class="team-avatar">06</div>
-            <div class="team-name">[Team Member 6]</div>
-            <div class="team-role">Testing &amp; Research Documentation</div>
-            <div class="team-institution">[College / Institute Name]</div>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.5;">
-              Validating benchmark controls, cross-checking regulatory MARPOL standards, and structuring scientific literature reports.
-            </p>
-          </div>
-        </div>
-
-        <div style="margin-top: 2.5rem; text-align: center;">
-          <span class="placeholder-tag">[Edit team details in js/project-data.js or directly in about.html]</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Institution, Mentorship & Contact -->
-    <section class="section" id="contact">
-      <div class="container-reading">
-        <h2>2. Institution, Mentorship &amp; Contact</h2>
-        <p>
-          This research is being conducted under the academic guidance of our faculty advisors:
-        </p>
-
-        <div class="card" style="margin: 1.5rem 0;">
-          <h4 style="color: var(--accent-cyan); margin-top: 0;">Faculty Mentorship</h4>
-          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
-            <strong>Mentor Name:</strong> [Add Faculty Advisor / Mentor Name Here]<br>
-            <strong>Designation:</strong> [Professor / Department Head]<br>
-            <strong>Department:</strong> [Department of Computer Science / Aerospace / Marine Engineering]<br>
-            <strong>Institution:</strong> [College / University Name, City, State]
-          </p>
-        </div>
-
-        <div class="grid-2" style="margin-top: 2rem;">
-          <div class="card">
-            <h4 style="color: var(--text-primary); margin-top: 0;">Code &amp; Artifact Repository</h4>
-            <p class="card-desc">
-              All documentation source files and open reproducible experiments are tracked on GitHub.
-            </p>
-            <a href="https://github.com/your-org/traceoil-research" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="margin-top: 0.75rem;">
-              <span>GitHub Repository Placeholder &#8599;</span>
-            </a>
-          </div>
-
-          <div class="card">
-            <h4 style="color: var(--text-primary); margin-top: 0;">Research Inquiries</h4>
-            <p class="card-desc">
-              For academic collaboration, benchmark dataset inquiries, or evaluator correspondence:
-            </p>
-            <div style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent-cyan); margin-top: 0.75rem;">
-              [Add research contact email: research@traceoil-project.org]
+            <div class="card">
+              <h3 style="font-size: 1.2rem; color: #059669; margin-bottom: 0.5rem;">2. Interactive 3D Platform</h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                A browser-deployable WebGL/Three.js viewer enabling users to fly through reconstructed terrain in first-person, inspect spot elevations, generate 2D transects, and toggle confidence overlays.
+              </p>
             </div>
           </div>
         </div>
+
+        <div style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.5rem; color: var(--text-primary); border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+            Contact &amp; Repository
+          </h2>
+          <div class="card" style="background: var(--color-surface-soft);">
+            <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;">
+              DepthWizard is maintained as an open-access scientific research initiative. For academic collaboration, technical documentation queries, or benchmarking reproduction:
+            </p>
+            <ul style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; padding-left: 1.25rem;">
+              <li><strong>Documentation:</strong> <a href="./documentation/index.html">Complete 15-Article Technical Index</a></li>
+              <li><strong>Repository:</strong> <code>github.com/depthwizard/depthwizard-research</code></li>
+              <li><strong>Contact:</strong> <code>research@depthwizard-platform.org</code></li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-text">
+            <span class="brand-title" style="font-size:1.3rem; color:#0f172a; font-weight:800;">DEPTHWIZARD</span>
+            <span class="brand-tag" style="display:block; color:var(--accent-blue); font-size:0.75rem; letter-spacing:1px; margin-top:2px;">RESEARCH PLATFORM</span>
+          </div>
+          <p class="footer-desc">
+            Independent scientific research project advancing single-view optical height estimation, per-land-cover scale calibration, and real-time 3D terrain flythrough.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./research.html">Scientific Paper</a></li>
+            <li><a href="./methodology.html">Methodology</a></li>
+            <li><a href="./documentation/index.html">Documentation Hub</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Research Details</h4>
+          <ul>
+            <li><a href="./content/project/architecture.html">System Architecture</a></li>
+            <li><a href="./content/project/land-cover-calibration.html">Scale Calibration</a></li>
+            <li><a href="./references.html">References</a></li>
+          </ul>
+        </div>
+      </div>
+
       <div class="footer-bottom">
-        <div>&copy; 2026 TRACEOIL Research Team &bull; Smart India Hackathon 2026.</div>
-        <div><a href="./index.html" class="footer-link">Back to Home &uarr;</a></div>
+        <div class="footer-copyright">
+          &copy; 2026 DepthWizard Research Initiative. All technical rights reserved.
+        </div>
+        <div class="footer-status">
+          <span class="badge badge-teal">Status: Active Research Project</span>
+        </div>
       </div>
     </div>
   </footer>

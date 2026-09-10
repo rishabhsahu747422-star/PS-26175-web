@@ -1,5 +1,5 @@
 /**
- * TRACEOIL — Main Site Utilities & Documentation Enhancements
+ * DEPTHWIZARD — Main Site Utilities & Documentation Enhancements
  * Vanilla JavaScript | Accessible & Fast
  */
 

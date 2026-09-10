@@ -3,23 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TRACEOIL Academic References & Literature Bibliography — Remote Sensing, SAR Oil Spill Detection, Hydrodynamic Drift, and AIS Vessel Tracking.">
-  <title>References &amp; Bibliography — TRACEOIL | SIH 2026</title>
+  <meta name="description" content="DepthWizard Scientific Bibliography — Peer-reviewed papers, foundational depth models, and official open datasets.">
+  <title>References &amp; Scientific Bibliography — DepthWizard</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
-  <!-- Site Header -->
   <header class="site-header">
     <div class="nav-container">
       <a href="./index.html" class="nav-brand">
         <div class="brand-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
           </svg>
         </div>
         <div class="brand-text">
-          <span class="brand-title">TRACEOIL</span>
+          <span class="brand-title">DEPTHWIZARD</span>
           <span class="brand-tag">REFERENCES</span>
         </div>
       </a>
@@ -30,7 +31,7 @@
           <li><a href="./research.html" class="nav-link">Research</a></li>
           <li><a href="./methodology.html" class="nav-link">Methodology</a></li>
           <li><a href="./dataset.html" class="nav-link">Datasets</a></li>
-          <li><a href="./visualizations.html" class="nav-link">Visualizations</a></li>
+          <li><a href="./visualizations.html" class="nav-link">3D Visualization</a></li>
           <li><a href="./documentation/index.html" class="nav-link">Documentation</a></li>
           <li><a href="./references.html" class="nav-link active">References</a></li>
           <li><a href="./about.html" class="nav-link">About</a></li>
@@ -49,183 +50,141 @@
   </header>
 
   <main>
-    <!-- References Header -->
     <section class="section" style="padding-top: 3.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-subtle);">
       <div class="container-reading">
-        <span class="badge badge-sih" style="margin-bottom: 0.75rem;">SIH 2026 Academic Foundations</span>
+        <span class="badge badge-cyan" style="margin-bottom: 0.75rem;">Academic Foundations</span>
         <h1 style="font-size: 2.5rem; margin-bottom: 0.75rem;">References &amp; Scientific Bibliography</h1>
         <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.6;">
-          Peer-reviewed journal articles, official satellite mission documentation, open dataset publications, and international maritime legal frameworks underpinning the TRACEOIL research initiative.
+          Peer-reviewed journal articles, foundational monocular depth models, open dataset publications, and geospatial elevation resources underpinning the DepthWizard initiative.
         </p>
       </div>
     </section>
 
-    <!-- References List -->
     <section class="section">
       <div class="container-reading">
 
-        <!-- Category 1: Remote Sensing & SAR Physics -->
+        <!-- Category 1: Monocular Depth Foundation Models -->
         <div style="margin-bottom: 3rem;">
-          <h2 style="font-size: 1.35rem; color: var(--accent-cyan); border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1.25rem;">
-            1. Remote Sensing &amp; SAR Oil Spill Detection
+          <h2 style="font-size: 1.35rem; color: var(--accent-blue); border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1.25rem;">
+            1. Monocular Depth Estimation &amp; Vision Transformers
           </h2>
 
-          <!-- Reference 1 -->
           <div class="reference-card">
             <div class="ref-num">[01]</div>
             <div class="ref-content">
-              <div class="ref-title">Oil Spill Detection by Satellite Remote Sensing: Challenges and Perspectives</div>
+              <div class="ref-title">Depth Anything V2: A More Capable Foundation Model for Monocular Depth Estimation</div>
               <div class="ref-meta">
-                Brekke, C. and Solberg, A. H. S. &bull; <em>Remote Sensing of Environment</em>, 95(1), 1-13 (2005).
+                Yang, L., Kang, B., Huang, Z., et al. &bull; <em>arXiv:2406.09414</em> (2024).
               </div>
               <div class="ref-links">
-                <a href="https://doi.org/10.1016/j.rse.2005.01.008" target="_blank" rel="noopener" class="ref-link-item">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                  <span>DOI: 10.1016/j.rse.2005.01.008</span>
+                <a href="https://arxiv.org/abs/2406.09414" target="_blank" rel="noopener" class="ref-link-item">
+                  <span>arXiv: 2406.09414 &rarr;</span>
                 </a>
               </div>
             </div>
           </div>
 
-          <!-- Reference 2 -->
           <div class="reference-card">
             <div class="ref-num">[02]</div>
             <div class="ref-content">
-              <div class="ref-title">Oil Spill Detection Dataset based on Sentinel-1 SAR Images</div>
+              <div class="ref-title">Vision Transformers for Dense Prediction (DPT)</div>
               <div class="ref-meta">
-                Krestenitis, M., Orfanidis, G., Ioannidis, K., et al. &bull; <em>ISPRS Journal of Photogrammetry and Remote Sensing</em> (2019).
+                Ranftl, R., Bochkovskiy, A., and Koltun, V. &bull; <em>IEEE International Conference on Computer Vision (ICCV)</em> (2021).
               </div>
               <div class="ref-links">
-                <a href="https://m4d.iti.gr/oil-spill-detection-dataset/" target="_blank" rel="noopener" class="ref-link-item">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                  <span>Dataset Portal: m4d.iti.gr/oil-spill-detection-dataset</span>
+                <a href="https://arxiv.org/abs/2103.13413" target="_blank" rel="noopener" class="ref-link-item">
+                  <span>arXiv: 2103.13413 &rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Remote Sensing Height Estimation -->
+        <div style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.35rem; color: #059669; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1.25rem;">
+            2. Remote Sensing Single-View Height Estimation &amp; Datasets
+          </h2>
+
+          <div class="reference-card">
+            <div class="ref-num">[03]</div>
+            <div class="ref-content">
+              <div class="ref-title">GAMUS: A Multi-Source Urban Remote Sensing Dataset for Monocular Depth and Semantic Segmentation</div>
+              <div class="ref-meta">
+                Earthflow Research &bull; <em>Hugging Face Datasets &amp; arXiv:2305.14914</em> (2023).
+              </div>
+              <div class="ref-links">
+                <a href="https://huggingface.co/datasets/earthflow/GAMUS" target="_blank" rel="noopener" class="ref-link-item">
+                  <span>huggingface.co/datasets/earthflow/GAMUS &rarr;</span>
                 </a>
               </div>
             </div>
           </div>
 
-          <!-- Placeholder 1 -->
-          <div class="reference-card" style="border-style: dashed; background: var(--color-surface-soft);">
-            <div class="ref-num" style="background: var(--color-border); color: var(--text-muted);">[03]</div>
-            <div class="ref-content">
-              <div class="ref-title" style="color: var(--text-muted);">[Add SAR polarimetric decomposition reference here]</div>
-              <div class="ref-meta">[Author names, Journal / Conference, Year]</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Category 2: Hydrodynamic Drift & Ocean Modeling -->
-        <div style="margin-bottom: 3rem;">
-          <h2 style="font-size: 1.35rem; color: var(--accent-blue); border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1.25rem;">
-            2. Hydrodynamic Drift &amp; Lagrangian Modeling
-          </h2>
-
-          <!-- Reference 3 -->
           <div class="reference-card">
             <div class="ref-num">[04]</div>
             <div class="ref-content">
-              <div class="ref-title">Lagrangian Ocean Analysis: Fundamentals and Practices</div>
+              <div class="ref-title">IM2HEIGHT: Height Estimation from Single Monocular Aerial Images</div>
               <div class="ref-meta">
-                van Sebille, E., Griffies, S. M., Abernathey, R., et al. &bull; <em>Ocean Modelling</em>, 121, 49-75 (2018).
+                Mou, L. and Zhu, X. X. &bull; <em>IEEE Transactions on Geoscience and Remote Sensing (TGRS)</em>, 56(11), 6611-6620 (2018).
               </div>
               <div class="ref-links">
-                <a href="https://doi.org/10.1016/j.ocemod.2017.11.008" target="_blank" rel="noopener" class="ref-link-item">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                  <span>DOI: 10.1016/j.ocemod.2017.11.008</span>
+                <a href="https://ieeexplore.ieee.org/document/8404099" target="_blank" rel="noopener" class="ref-link-item">
+                  <span>IEEE TGRS: 8404099 &rarr;</span>
                 </a>
               </div>
             </div>
           </div>
 
-          <!-- Placeholder 2 -->
-          <div class="reference-card" style="border-style: dashed; background: var(--color-surface-soft);">
-            <div class="ref-num" style="background: var(--color-border); color: var(--text-muted);">[05]</div>
+          <div class="reference-card">
+            <div class="ref-num">[05]</div>
             <div class="ref-content">
-              <div class="ref-title" style="color: var(--text-muted);">[Add oil drift model / leeway wind factor reference here]</div>
-              <div class="ref-meta">[Author names, Journal / Conference, Year]</div>
+              <div class="ref-title">HieraRS: Hierarchical Multi-Modal Remote Sensing Vision Models</div>
+              <div class="ref-meta">
+                arXiv preprint &bull; <em>arXiv:2507.08741</em> (2025).
+              </div>
+              <div class="ref-links">
+                <a href="https://arxiv.org/abs/2507.08741" target="_blank" rel="noopener" class="ref-link-item">
+                  <span>arXiv: 2507.08741 &rarr;</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Category 3: AIS & Maritime Tracking -->
+        <!-- Category 3: Elevation Models & Calibration -->
         <div style="margin-bottom: 3rem;">
           <h2 style="font-size: 1.35rem; color: #7c3aed; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1.25rem;">
-            3. AIS Trajectory Analysis &amp; Vessel Detection
+            3. Digital Elevation Models &amp; Geospatial Anchoring
           </h2>
 
-          <!-- Reference 4 -->
           <div class="reference-card">
             <div class="ref-num">[06]</div>
             <div class="ref-content">
-              <div class="ref-title">AIS-based Maritime Anomaly Detection and Spatiotemporal Vessel Trajectory Analysis</div>
+              <div class="ref-title">The Shuttle Radar Topography Mission (SRTM) Global Digital Elevation Model</div>
               <div class="ref-meta">
-                Tu, E., Zhang, G., Mao, L., et al. &bull; <em>IEEE Transactions on Intelligent Transportation Systems</em>, 19(9), 2793-2805 (2018).
+                Farr, T. G., Rosen, P. A., Caro, E., et al. &bull; <em>Reviews of Geophysics</em>, 45(2) (2007).
               </div>
               <div class="ref-links">
-                <a href="https://ieeexplore.ieee.org/document/8118182" target="_blank" rel="noopener" class="ref-link-item">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                  <span>IEEE Xplore: 8118182</span>
+                <a href="https://portal.opentopography.org/" target="_blank" rel="noopener" class="ref-link-item">
+                  <span>OpenTopography SRTM 30m &rarr;</span>
                 </a>
               </div>
             </div>
           </div>
 
-          <!-- Placeholder 3 -->
-          <div class="reference-card" style="border-style: dashed; background: var(--color-surface-soft);">
-            <div class="ref-num" style="background: var(--color-border); color: var(--text-muted);">[07]</div>
-            <div class="ref-content">
-              <div class="ref-title" style="color: var(--text-muted);">[Add vessel CFAR target detection paper here]</div>
-              <div class="ref-meta">[Author names, Journal / Conference, Year]</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Category 4: Official Satellite & Government Documentation -->
-        <div style="margin-bottom: 3rem;">
-          <h2 style="font-size: 1.35rem; color: #059669; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1.25rem;">
-            4. Satellite Mission Guides &amp; Regulatory Frameworks
-          </h2>
-
-          <!-- Reference 5 -->
           <div class="reference-card">
-            <div class="ref-num">[08]</div>
+            <div class="ref-num">[07]</div>
             <div class="ref-content">
-              <div class="ref-title">Copernicus Sentinel-1 SAR User Guide &amp; Technical Specifications</div>
+              <div class="ref-title">Copernicus Sentinel-2 User Guide &amp; Technical Specifications</div>
               <div class="ref-meta">
                 European Space Agency (ESA) &bull; <em>ESA Earth Online Documentation</em> (2024).
               </div>
               <div class="ref-links">
-                <a href="https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-1-sar" target="_blank" rel="noopener" class="ref-link-item">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                  <span>sentinels.copernicus.eu</span>
+                <a href="https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-2-msi" target="_blank" rel="noopener" class="ref-link-item">
+                  <span>sentinels.copernicus.eu &rarr;</span>
                 </a>
               </div>
-            </div>
-          </div>
-
-          <!-- Reference 6 -->
-          <div class="reference-card">
-            <div class="ref-num">[09]</div>
-            <div class="ref-content">
-              <div class="ref-title">MARPOL 73/78: International Convention for the Prevention of Pollution from Ships</div>
-              <div class="ref-meta">
-                International Maritime Organization (IMO) &bull; <em>Annex I: Regulations for the Prevention of Pollution by Oil</em>.
-              </div>
-              <div class="ref-links">
-                <a href="https://www.imo.org/" target="_blank" rel="noopener" class="ref-link-item">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                  <span>imo.org</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Placeholder 4 -->
-          <div class="reference-card" style="border-style: dashed; background: var(--color-surface-soft);">
-            <div class="ref-num" style="background: var(--color-border); color: var(--text-muted);">[10]</div>
-            <div class="ref-content">
-              <div class="ref-title" style="color: var(--text-muted);">[Add national coast guard / ministry environmental regulation reference here]</div>
-              <div class="ref-meta">[Agency name, Document Title, Year]</div>
             </div>
           </div>
         </div>
@@ -234,12 +193,46 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-text">
+            <span class="brand-title" style="font-size:1.3rem; color:#0f172a; font-weight:800;">DEPTHWIZARD</span>
+            <span class="brand-tag" style="display:block; color:var(--accent-blue); font-size:0.75rem; letter-spacing:1px; margin-top:2px;">RESEARCH PLATFORM</span>
+          </div>
+          <p class="footer-desc">
+            Independent scientific research project advancing single-view optical height estimation, per-land-cover scale calibration, and real-time 3D terrain flythrough.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./research.html">Scientific Paper</a></li>
+            <li><a href="./methodology.html">Methodology</a></li>
+            <li><a href="./visualizations.html">3D Visualizations</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Documentation</h4>
+          <ul>
+            <li><a href="./content/project/architecture.html">System Architecture</a></li>
+            <li><a href="./content/project/datasets.html">Dataset Details</a></li>
+            <li><a href="./documentation/index.html">Documentation Hub</a></li>
+          </ul>
+        </div>
+      </div>
+
       <div class="footer-bottom">
-        <div>&copy; 2026 TRACEOIL Research Team &bull; Smart India Hackathon 2026.</div>
-        <div><a href="./about.html" class="footer-link">Next: About &amp; Team &rarr;</a></div>
+        <div class="footer-copyright">
+          &copy; 2026 DepthWizard Research Initiative. All technical rights reserved.
+        </div>
+        <div class="footer-status">
+          <span class="badge badge-teal">Status: Active Research Project</span>
+        </div>
       </div>
     </div>
   </footer>

@@ -61,7 +61,7 @@
               <ul class="doc-sidebar-list">
                 <li><a href="overview.html" class="doc-sidebar-link ">01. Project Overview</a></li>
                 <li><a href="problem.html" class="doc-sidebar-link ">02. Problem Understanding</a></li>
-                <li><a href="architecture.html" class="doc-sidebar-link active">03. System Architecture</a></li>
+                <li><a href="architecture.html" class="doc-sidebar-link ">03. System Architecture</a></li>
               </ul>
             </div>
             <div class="doc-sidebar-group">
@@ -71,7 +71,7 @@
                 <li><a href="geospatial-analysis.html" class="doc-sidebar-link ">05. SRTM 30m Anchoring</a></li>
                 <li><a href="land-cover-calibration.html" class="doc-sidebar-link ">06. Per-Class Calibration</a></li>
                 <li><a href="uncertainty-estimation.html" class="doc-sidebar-link ">07. Uncertainty Mapping</a></li>
-                <li><a href="terrain-reconstruction.html" class="doc-sidebar-link ">08. 3D Terrain Flythrough</a></li>
+                <li><a href="terrain-reconstruction.html" class="doc-sidebar-link active">08. 3D Terrain Flythrough</a></li>
               </ul>
             </div>
             <div class="doc-sidebar-group">
@@ -102,40 +102,27 @@
             <span>/</span>
             <a href="../../documentation/index.html">Documentation</a>
             <span>/</span>
-            <span>System Architecture & Interface Contract</span>
+            <span>3D Terrain Mesh Generation & Flythrough Rendering</span>
           </div>
     <article class="doc-article">
             <div style="margin-bottom: 2rem;">
-              <span class="badge badge-blue" style="margin-bottom: 0.5rem;">1. Foundations</span>
-              <h1 style="font-size: 2.3rem; margin-bottom: 0.5rem;">System Architecture & Interface Contract</h1>
-              <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.6;">3-stage offline pipeline, data structures, and local REST API interface.</p>
+              <span class="badge badge-blue" style="margin-bottom: 0.5rem;">2. Methods & Algorithms</span>
+              <h1 style="font-size: 2.3rem; margin-bottom: 0.5rem;">3D Terrain Mesh Generation & Flythrough Rendering</h1>
+              <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.6;">16-bit heightmap decoding, GPU vertex displacement, and Three.js flight controls.</p>
             </div>
             <div class="doc-toc-card" data-doc-toc></div>
     
       <section class="doc-section">
-        <h2 id="pipeline-overview">1. Decoupled 3-Stage Pipeline</h2>
-        <p>DepthWizard separates computational workloads into three discrete execution stages:</p>
-        <ol>
-          <li><strong>Stage 1 (Elevation Extraction):</strong> Ingests optical images, performs GSD normalization, and runs Depth Anything V2 inference to output a relative depth map.</li>
-          <li><strong>Stage 2 (Scale Calibration):</strong> Fits per-land-cover affine parameters against SRTM 30m reference DEMs, generating a 16-bit metric DSM.</li>
-          <li><strong>Stage 3 (Visualization Layer):</strong> Packages heightmap, confidence texture, and RGB imagery into a Three.js textured PlaneGeometry mesh for real-time navigation.</li>
-        </ol>
+        <h2 id="16bit-decoding">1. 16-Bit Grayscale Heightmap Decoding</h2>
+        <p>Standard 8-bit PNG images offer only 256 discrete height steps, causing severe terracing and banding on tall structures. DepthWizard utilizes <strong>16-bit grayscale PNGs</strong> (65,536 levels), decoded directly into a <code>Float32Array</code> buffer:</p>
+        <div style="background: var(--color-surface-soft); padding: 1rem; border-radius: 6px; font-family: 'JetBrains Mono', monospace; margin: 1rem 0;">
+          elevation = height_min + (raw16 / 65535.0) &bull; (height_max - height_min)
+        </div>
       </section>
 
       <section class="doc-section">
-        <h2 id="api-contract">2. Local REST API Contract (FastAPI)</h2>
-        <p>The backend serves inference results locally over <code>localhost:8000</code> via three fixed endpoints:</p>
-        <div class="card" style="margin-bottom: 1rem;">
-          <code>POST /upload</code> &bull; Multipart form (<code>file</code>)<br>
-          <span style="font-size:0.85rem; color:var(--text-muted);">Returns: <code>{ "image_id": "uuid", "input_type": "georeferenced" | "non_georeferenced", "metadata": {...} }</code></span>
-        </div>
-        <div class="card" style="margin-bottom: 1rem;">
-          <code>POST /process/{image_id}?with_uncertainty=true</code> &bull; Single blocking call<br>
-          <span style="font-size:0.85rem; color:var(--text-muted);">Returns: <code>{ "heightmap_png_b64": "...", "confidence_png_b64": "...", "texture_png_b64": "...", "height_min": 0.12, "height_max": 24.87 }</code></span>
-        </div>
-        <div class="card">
-          <code>GET /result/{image_id}</code> &bull; Retrieve packaged result or processing status.
-        </div>
+        <h2 id="threejs-rendering">2. Real-Time WebGL Rendering (Three.js)</h2>
+        <p>The decoded elevation buffer drives vertex displacement on a <code>THREE.PlaneGeometry</code> mesh. The original optical RGB image is projected as the diffuse texture map. Navigation supports first-person flight (<code>PointerLockControls</code>), 360&deg; orbit overview, and interactive vertical exaggeration scaling.</p>
       </section>
 </article>        </div>
       </div>

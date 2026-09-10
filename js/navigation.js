@@ -1,5 +1,5 @@
 /**
- * TRACEOIL — Navigation & Responsive Header Script
+ * DEPTHWIZARD — Navigation & Responsive Header Script
  * Vanilla JavaScript | Works on GitHub Pages and file:/// URLs
  */
 

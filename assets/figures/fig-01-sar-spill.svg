@@ -1,76 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
   <defs>
-    <radialGradient id="sarBg" cx="50%" cy="50%" r="70%">
-      <stop offset="0%" stop-color="#0b172a"/>
-      <stop offset="100%" stop-color="#030712"/>
-    </radialGradient>
-    <filter id="speckle" x="0%" y="0%" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.25" numOctaves="3" result="noise"/>
-      <feColorMatrix type="matrix" values="0.3 0 0 0 0.1  0 0.4 0 0 0.15  0 0 0.5 0 0.25  0 0 0 0.75 0" in="noise" result="coloredNoise"/>
-      <feBlend mode="screen" in="SourceGraphic" in2="coloredNoise"/>
-    </filter>
+    <linearGradient id="bgLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <linearGradient id="depthGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="25%" stop-color="#1d4ed8"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="75%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#facc15"/>
+    </linearGradient>
   </defs>
-
-  <!-- Background with SAR Texture -->
-  <rect width="800" height="500" fill="url(#sarBg)"/>
-
-  <!-- Simulated Rough Sea Backscatter (Lighter Speckle Texture) -->
-  <g opacity="0.35" stroke="#38bdf8" stroke-width="0.75">
-    <path d="M 0 50 Q 50 40 100 55 T 200 45 T 300 60 T 400 48 T 500 62 T 600 50 T 700 58 T 800 52" fill="none"/>
-    <path d="M 0 100 Q 50 90 100 105 T 200 95 T 300 110 T 400 98 T 500 112 T 600 100 T 700 108 T 800 102" fill="none"/>
-    <path d="M 0 150 Q 50 140 100 155 T 200 145 T 300 160 T 400 148 T 500 162 T 600 150 T 700 158 T 800 152" fill="none"/>
-    <path d="M 0 200 Q 50 190 100 205 T 200 195 T 300 210 T 400 198 T 500 212 T 600 200 T 700 208 T 800 202" fill="none"/>
-    <path d="M 0 250 Q 50 240 100 255 T 200 245 T 300 260 T 400 248 T 500 262 T 600 250 T 700 258 T 800 252" fill="none"/>
-    <path d="M 0 300 Q 50 290 100 305 T 200 295 T 300 310 T 400 298 T 500 312 T 600 300 T 700 308 T 800 302" fill="none"/>
-    <path d="M 0 350 Q 50 340 100 355 T 200 345 T 300 360 T 400 348 T 500 362 T 600 350 T 700 358 T 800 352" fill="none"/>
-    <path d="M 0 400 Q 50 390 100 405 T 200 395 T 300 410 T 400 398 T 500 412 T 600 400 T 700 408 T 800 402" fill="none"/>
-    <path d="M 0 450 Q 50 440 100 455 T 200 445 T 300 460 T 400 448 T 500 462 T 600 450 T 700 458 T 800 452" fill="none"/>
-  </g>
-
-  <!-- Dark Formation: Oil Slick (Smoothed Capillary Waves = Low Backscatter) -->
-  <!-- Outer Damped Slick -->
-  <path d="M 220 160 C 270 120, 390 130, 480 170 C 560 210, 620 260, 600 320 C 580 380, 470 410, 380 390 C 290 370, 240 330, 210 270 C 180 210, 180 190, 220 160 Z" 
-        fill="#030712" stroke="#00f0ff" stroke-width="2" stroke-dasharray="6,4"/>
+  <rect width="800" height="450" fill="url(#bgLight)"/>
+  <rect x="20" y="20" width="760" height="410" rx="12" fill="url(#cardGrad)" stroke="#e2e8f0" stroke-width="1.5"/>
   
-  <!-- Thickest Core of Discharge -->
-  <path d="M 280 210 C 330 180, 420 190, 470 230 C 510 260, 520 310, 470 340 C 420 370, 340 360, 290 320 C 250 280, 240 240, 280 210 Z" 
-        fill="#010409" stroke="#38bdf8" stroke-width="1.5"/>
+  <!-- Header -->
+  <text x="45" y="55" fill="#2563eb" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" letter-spacing="1.5">FIGURE 01 &bull; STAGE 1: ELEVATION EXTRACTION</text>
+  <text x="45" y="80" fill="#0f172a" font-family="Inter, sans-serif" font-size="18" font-weight="800">Depth Anything V2 Monocular Backbone &amp; GAMUS Fine-Tuning</text>
 
-  <!-- High-Backscatter Ship Target (Corner Reflector) -->
-  <circle cx="580" cy="180" r="6" fill="#ffffff"/>
-  <circle cx="580" cy="180" r="14" fill="none" stroke="#f59e0b" stroke-width="2"/>
-  <line x1="580" y1="160" x2="580" y2="150" stroke="#f59e0b" stroke-width="1.5"/>
-  <line x1="580" y1="200" x2="580" y2="210" stroke="#f59e0b" stroke-width="1.5"/>
-  <line x1="560" y1="180" x2="550" y2="180" stroke="#f59e0b" stroke-width="1.5"/>
-  <line x1="600" y1="180" x2="610" y2="180" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="605" y="165" fill="#f59e0b" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">TARGET: SHIP</text>
-  <text x="605" y="180" fill="#cbd5e1" font-family="'JetBrains Mono', monospace" font-size="10">High Radar Reflectance</text>
-
-  <!-- Labels & Telemetry Overlay -->
-  <g transform="translate(30, 30)">
-    <rect width="260" height="70" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(56, 189, 248, 0.3)"/>
-    <text x="12" y="24" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">SENTINEL-1 C-BAND SAR (VV)</text>
-    <text x="12" y="44" fill="#f8fafc" font-family="Inter, sans-serif" font-size="12">Pixel Damping: -12.4 dB</text>
-    <text x="12" y="60" fill="#94a3b8" font-family="Inter, sans-serif" font-size="11">Capillary Wave Suppression</text>
+  <!-- Left Panel: Optical RGB Input -->
+  <g transform="translate(45, 105)">
+    <rect width="210" height="240" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+    <text x="15" y="25" fill="#1e40af" font-family="Inter, sans-serif" font-size="12" font-weight="700">01. Optical Input (RGB)</text>
+    <!-- Simulated Top-down Satellite Image -->
+    <rect x="15" y="40" width="180" height="150" rx="6" fill="#cbd5e1"/>
+    <!-- Buildings & Roads -->
+    <path d="M 15 110 L 195 110" stroke="#94a3b8" stroke-width="8"/>
+    <path d="M 105 40 L 105 190" stroke="#94a3b8" stroke-width="8"/>
+    <rect x="30" y="55" width="50" height="40" fill="#64748b" rx="2"/>
+    <rect x="125" y="55" width="55" height="40" fill="#475569" rx="2"/>
+    <rect x="30" y="130" width="55" height="45" fill="#334155" rx="2"/>
+    <circle cx="150" cy="150" r="22" fill="#15803d"/>
+    <text x="15" y="215" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">512x512 &bull; GSD ~0.3m</text>
   </g>
 
-  <!-- Slick Indicator Callout -->
-  <line x1="360" y1="280" x2="330" y2="340" stroke="#00f0ff" stroke-width="1.5"/>
-  <line x1="330" y1="340" x2="190" y2="340" stroke="#00f0ff" stroke-width="1.5"/>
-  <rect x="50" y="320" width="135" height="40" rx="4" fill="rgba(15, 23, 42, 0.9)" stroke="rgba(0, 240, 255, 0.4)"/>
-  <text x="60" y="338" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">DARK FORMATION</text>
-  <text x="60" y="352" fill="#cbd5e1" font-family="Inter, sans-serif" font-size="9">Marine Oil Discharge Slick</text>
+  <!-- Middle Arrow & Model Box -->
+  <g transform="translate(275, 180)">
+    <rect width="220" height="90" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="110" y="30" fill="#2563eb" font-family="Inter, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Depth Anything V2</text>
+    <text x="110" y="50" fill="#64748b" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">ViT Encoder + DPT Decoder</text>
+    <text x="110" y="70" fill="#059669" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" text-anchor="middle">Fine-Tuned on GAMUS (11.5k)</text>
+    
+    <path d="M -15 45 L -2 45" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M 222 45 L 235 45" stroke="#2563eb" stroke-width="2"/>
+  </g>
 
-  <!-- Surrounding Sea Callout -->
-  <line x1="500" y1="80" x2="520" y2="100" stroke="#38bdf8" stroke-width="1.5"/>
-  <line x1="520" y1="100" x2="620" y2="100" stroke="#38bdf8" stroke-width="1.5"/>
-  <rect x="625" y="85" width="145" height="36" rx="4" fill="rgba(15, 23, 42, 0.9)" stroke="rgba(56, 189, 248, 0.4)"/>
-  <text x="635" y="102" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">ROUGH SEA SURFACE</text>
-  <text x="635" y="115" fill="#cbd5e1" font-family="Inter, sans-serif" font-size="9">Bragg Scattering Active</text>
+  <!-- Right Panel: Relative Depth Map -->
+  <g transform="translate(525, 105)">
+    <rect width="230" height="240" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="15" y="25" fill="#0f172a" font-family="Inter, sans-serif" font-size="12" font-weight="700">02. Relative Depth (nDSM)</text>
+    
+    <!-- Heatmap representation -->
+    <rect x="15" y="40" width="200" height="150" rx="6" fill="#1e293b"/>
+    <rect x="30" y="55" width="50" height="40" fill="#facc15" rx="2"/>
+    <rect x="125" y="55" width="55" height="40" fill="#fb923c" rx="2"/>
+    <rect x="30" y="130" width="55" height="45" fill="#f87171" rx="2"/>
+    <circle cx="150" cy="150" r="22" fill="#22c55e"/>
+    
+    <!-- Colorbar -->
+    <rect x="15" y="200" width="200" height="10" rx="3" fill="url(#depthGrad)"/>
+    <text x="15" y="224" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">Ground (0.0)</text>
+    <text x="175" y="224" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">Peak (1.0)</text>
+  </g>
 
-  <!-- Coordinate Grid Overlay -->
-  <g fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">
-    <text x="30" y="480">18° 54' 20" N, 72° 48' 10" E</text>
-    <text x="660" y="480">POL: VV | INC: 34.2°</text>
+  <!-- Bottom Details -->
+  <g transform="translate(45, 370)">
+    <rect width="710" height="45" rx="6" fill="#f1f5f9"/>
+    <text x="15" y="27" fill="#334155" font-family="Inter, sans-serif" font-size="11">
+      <tspan font-weight="700">Key Takeaway:</tspan> Resolves nadir perspective gap without stereo pairs. Fine-tuned with scale-invariant loss + multi-scale gradient loss.
+    </text>
   </g>
 </svg>

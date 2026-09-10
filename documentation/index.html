@@ -3,23 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TRACEOIL Documentation Hub — Open Technical Documentation, System Architecture, Algorithms, Datasets, and Experiments for SIH 2026.">
-  <title>Documentation Hub — TRACEOIL | SIH 2026</title>
+  <meta name="description" content="DepthWizard Documentation Hub — Open Technical Documentation, System Architecture, Algorithms, Datasets, and Experiments.">
+  <title>Documentation Hub — DepthWizard</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-  <!-- Site Header -->
   <header class="site-header">
     <div class="nav-container">
       <a href="../index.html" class="nav-brand">
         <div class="brand-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
           </svg>
         </div>
         <div class="brand-text">
-          <span class="brand-title">TRACEOIL</span>
+          <span class="brand-title">DEPTHWIZARD</span>
           <span class="brand-tag">DOCUMENTATION HUB</span>
         </div>
       </a>
@@ -30,7 +31,7 @@
           <li><a href="../research.html" class="nav-link">Research</a></li>
           <li><a href="../methodology.html" class="nav-link">Methodology</a></li>
           <li><a href="../dataset.html" class="nav-link">Datasets</a></li>
-          <li><a href="../visualizations.html" class="nav-link">Visualizations</a></li>
+          <li><a href="../visualizations.html" class="nav-link">3D Visualization</a></li>
           <li><a href="../documentation/index.html" class="nav-link active">Documentation</a></li>
           <li><a href="../references.html" class="nav-link">References</a></li>
           <li><a href="../about.html" class="nav-link">About</a></li>
@@ -49,154 +50,148 @@
   </header>
 
   <main>
-    <!-- Documentation Hub Header -->
     <section class="section" style="padding-top: 3.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-subtle);">
       <div class="container-reading">
         <span class="badge badge-cyan" style="margin-bottom: 0.75rem;">Technical Knowledge Base</span>
-        <h1 style="font-size: 2.5rem; margin-bottom: 0.75rem;">TRACEOIL Documentation Portal</h1>
+        <h1 style="font-size: 2.5rem; margin-bottom: 0.75rem;">DepthWizard Documentation Portal</h1>
         <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.6;">
-          Complete technical index containing 15 in-depth documentation articles detailing system architecture, radar physics, detection algorithms, reverse drift mathematics, and validation protocols.
+          Complete technical index containing 15 in-depth documentation articles detailing system architecture, Vision Transformer depth extraction, semantic land-cover calibration, Monte Carlo uncertainty quantification, and 3D mesh reconstruction.
         </p>
       </div>
     </section>
 
-    <!-- Categories & Documentation Cards -->
     <section class="section">
       <div class="container">
         
         <!-- Category 1: Foundations & Context -->
         <div style="margin-bottom: 3rem;">
-          <h2 style="font-size: 1.4rem; color: var(--accent-cyan); border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
-            1. Research Foundations &amp; Motivation
+          <h2 style="font-size: 1.4rem; color: var(--accent-blue); border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
+            1. Research Foundations &amp; System Concepts
           </h2>
           <div class="grid-3">
             <a href="../content/project/overview.html" class="card">
               <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></div>
               <h3 class="card-title">01. Project Overview</h3>
-              <p class="card-desc">High-level executive summary, mission objectives, and SIH 2026 scope.</p>
-              <div class="card-footer"><span class="badge badge-cyan">Article 01 &rarr;</span></div>
+              <p class="card-desc">Executive summary, mission goals, and single-view 3D elevation extraction objectives.</p>
+              <div class="card-footer"><span class="badge badge-blue">Article 01 &rarr;</span></div>
             </a>
 
             <a href="../content/project/problem.html" class="card">
               <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg></div>
-              <h3 class="card-title">02. Problem Statement</h3>
-              <p class="card-desc">Marine oil pollution challenges, MARPOL 73/78 violations, and surveillance limits.</p>
-              <div class="card-footer"><span class="badge badge-cyan">Article 02 &rarr;</span></div>
+              <h3 class="card-title">02. Problem Understanding</h3>
+              <p class="card-desc">Nadir domain gap, scale-offset ambiguity, and limitations of LiDAR/stereo systems.</p>
+              <div class="card-footer"><span class="badge badge-blue">Article 02 &rarr;</span></div>
             </a>
 
             <a href="../content/project/architecture.html" class="card">
               <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg></div>
               <h3 class="card-title">03. System Architecture</h3>
-              <p class="card-desc">Decoupled data pipelines, ingestion microservices, and evidentiary formats.</p>
-              <div class="card-footer"><span class="badge badge-cyan">Article 03 &rarr;</span></div>
+              <p class="card-desc">3-Stage offline decoupled architecture and local REST API contract (/upload, /process, /result).</p>
+              <div class="card-footer"><span class="badge badge-blue">Article 03 &rarr;</span></div>
             </a>
           </div>
         </div>
 
         <!-- Category 2: Core Engineering & Methods -->
         <div style="margin-bottom: 3rem;">
-          <h2 style="font-size: 1.4rem; color: var(--accent-blue); border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
-            2. Core Engineering &amp; Detection Modules
+          <h2 style="font-size: 1.4rem; color: #059669; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
+            2. Core Engineering &amp; Algorithmic Modules
           </h2>
           <div class="grid-3">
             <a href="../content/project/methodology.html" class="card">
               <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
-              <h3 class="card-title">04. Technical Methodology</h3>
-              <p class="card-desc">End-to-end analytical steps from raw orbit downlinks to final probability scoring.</p>
-              <div class="card-footer"><span class="badge badge-blue">Article 04 &rarr;</span></div>
-            </a>
-
-            <a href="../content/project/datasets.html" class="card">
-              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg></div>
-              <h3 class="card-title">05. Dataset Documentation</h3>
-              <p class="card-desc">Sentinel-1/2 products, AIS NMEA decoding, ground truth annotations, and splits.</p>
-              <div class="card-footer"><span class="badge badge-blue">Article 05 &rarr;</span></div>
-            </a>
-
-            <a href="../content/project/oil-spill-detection.html" class="card">
-              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path></svg></div>
-              <h3 class="card-title">06. Oil-Spill Detection</h3>
-              <p class="card-desc">Capillary wave damping physics, adaptive thresholding, and lookalike rejection.</p>
-              <div class="card-footer"><span class="badge badge-blue">Article 06 &rarr;</span></div>
-            </a>
-          </div>
-        </div>
-
-        <!-- Category 3: Vessel Attribution & Geospatial Analysis -->
-        <div style="margin-bottom: 3rem;">
-          <h2 style="font-size: 1.4rem; color: #a78bfa; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
-            3. Vessel Detection &amp; Geospatial Attribution
-          </h2>
-          <div class="grid-3">
-            <a href="../content/project/vessel-detection.html" class="card">
-              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></div>
-              <h3 class="card-title">07. Vessel Detection</h3>
-              <p class="card-desc">Constant False Alarm Rate (CFAR) filters, radar cross-section, and optical bounding boxes.</p>
-              <div class="card-footer"><span class="badge badge-purple">Article 07 &rarr;</span></div>
-            </a>
-
-            <a href="../content/project/vessel-attribution.html" class="card">
-              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
-              <h3 class="card-title">08. Vessel Attribution</h3>
-              <p class="card-desc">Reverse Lagrangian particle advection, AIS track corridors, and confidence scoring.</p>
-              <div class="card-footer"><span class="badge badge-purple">Article 08 &rarr;</span></div>
+              <h3 class="card-title">04. Depth Backbone</h3>
+              <p class="card-desc">Depth Anything V2 adaptation, GAMUS fine-tuning, and multi-scale gradient loss.</p>
+              <div class="card-footer"><span class="badge badge-teal">Article 04 &rarr;</span></div>
             </a>
 
             <a href="../content/project/geospatial-analysis.html" class="card">
-              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg></div>
-              <h3 class="card-title">09. Geospatial Analysis</h3>
-              <p class="card-desc">Copernicus CMEMS ocean currents, ECMWF wind fields, and spatial coordinate projections.</p>
-              <div class="card-footer"><span class="badge badge-purple">Article 09 &rarr;</span></div>
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
+              <h3 class="card-title">05. SRTM 30m Anchoring</h3>
+              <p class="card-desc">Geospatial coordinate mapping and coarse elevation trend integration for GeoTIFFs.</p>
+              <div class="card-footer"><span class="badge badge-teal">Article 05 &rarr;</span></div>
+            </a>
+
+            <a href="../content/project/land-cover-calibration.html" class="card">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon></svg></div>
+              <h3 class="card-title">06. Per-Class Calibration</h3>
+              <p class="card-desc">Innovation #1: Semantic land-cover masking reducing building errors by ~44%.</p>
+              <div class="card-footer"><span class="badge badge-teal">Article 06 &bull; Innovation 1 &rarr;</span></div>
+            </a>
+
+            <a href="../content/project/uncertainty-estimation.html" class="card">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></div>
+              <h3 class="card-title">07. Uncertainty Mapping</h3>
+              <p class="card-desc">Innovation #2: Monte Carlo Dropout variance mapping for confidence visualization.</p>
+              <div class="card-footer"><span class="badge badge-indigo">Article 07 &bull; Innovation 2 &rarr;</span></div>
+            </a>
+
+            <a href="../content/project/terrain-reconstruction.html" class="card">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg></div>
+              <h3 class="card-title">08. 3D Terrain Flythrough</h3>
+              <p class="card-desc">16-bit heightmap decoding, GPU vertex displacement, and Three.js flight controls.</p>
+              <div class="card-footer"><span class="badge badge-teal">Article 08 &rarr;</span></div>
             </a>
           </div>
         </div>
 
-        <!-- Category 4: Validation, Evaluation & Roadmaps -->
-        <div>
-          <h2 style="font-size: 1.4rem; color: #34d399; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
-            4. Evaluation, Limitations &amp; Team
+        <!-- Category 3: Data, Experiments & Evaluation -->
+        <div style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.4rem; color: #7c3aed; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
+            3. Datasets, Benchmarks &amp; Empirical Validation
           </h2>
           <div class="grid-3">
+            <a href="../content/project/datasets.html" class="card">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg></div>
+              <h3 class="card-title">09. Dataset Specifications</h3>
+              <p class="card-desc">GAMUS 11,507 paired tiles, SRTM 30m grid, and Sentinel-2 test data formats.</p>
+              <div class="card-footer"><span class="badge badge-indigo">Article 09 &rarr;</span></div>
+            </a>
+
             <a href="../content/project/experiments.html" class="card">
-              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg></div>
-              <h3 class="card-title">10. Experiments</h3>
-              <p class="card-desc">Experimental test matrix, simulation scenarios, and calibration runs.</p>
-              <div class="card-footer"><span class="badge badge-green">Article 10 &rarr;</span></div>
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v18"></path><path d="M15 3v18"></path><path d="M3 9h18"></path><path d="M3 15h18"></path></svg></div>
+              <h3 class="card-title">10. Experimental Setup</h3>
+              <p class="card-desc">Training ablation protocols, learning schedules, and GSD normalization experiments.</p>
+              <div class="card-footer"><span class="badge badge-indigo">Article 10 &rarr;</span></div>
             </a>
 
             <a href="../content/project/evaluation.html" class="card">
-              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
-              <h3 class="card-title">11. Evaluation</h3>
-              <p class="card-desc">Benchmarking protocols, IoU metrics, F1-scores, and false alarm analysis.</p>
-              <div class="card-footer"><span class="badge badge-green">Article 11 &rarr;</span></div>
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg></div>
+              <h3 class="card-title">11. Quantitative Evaluation</h3>
+              <p class="card-desc">RMSE, MAE, and Pearson correlation benchmarking against airborne LiDAR truth.</p>
+              <div class="card-footer"><span class="badge badge-indigo">Article 11 &rarr;</span></div>
             </a>
+          </div>
+        </div>
 
+        <!-- Category 4: Strategic Scope & Governance -->
+        <div style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.4rem; color: #0284c7; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
+            4. Strategic Scope, Limitations &amp; Literature
+          </h2>
+          <div class="grid-4">
             <a href="../content/project/limitations.html" class="card">
-              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
-              <h3 class="card-title">12. Limitations</h3>
-              <p class="card-desc">Wind speed operational envelopes, revisit rates, and AIS transponder disabling.</p>
-              <div class="card-footer"><span class="badge badge-green">Article 12 &rarr;</span></div>
+              <h3 class="card-title" style="font-size: 1.1rem;">12. Limitations</h3>
+              <p class="card-desc" style="font-size: 0.85rem;">Known failure modes in cast shadows, steep relief, and mitigation strategies.</p>
+              <div class="card-footer"><span class="badge badge-cyan">Article 12 &rarr;</span></div>
             </a>
 
             <a href="../content/project/future-work.html" class="card">
-              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg></div>
-              <h3 class="card-title">13. Future Work</h3>
-              <p class="card-desc">Hyperspectral integration, PINN physics drift modeling, and command-center webhooks.</p>
-              <div class="card-footer"><span class="badge badge-green">Article 13 &rarr;</span></div>
-            </a>
-
-            <a href="../content/project/references.html" class="card">
-              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg></div>
-              <h3 class="card-title">14. References</h3>
-              <p class="card-desc">Academic citations, literature bibliography, dataset repositories, and papers.</p>
-              <div class="card-footer"><span class="badge badge-green">Article 14 &rarr;</span></div>
+              <h3 class="card-title" style="font-size: 1.1rem;">13. Future Work</h3>
+              <p class="card-desc" style="font-size: 0.85rem;">Multi-sensor optical/radar fusion and cross-regional Indian geography training.</p>
+              <div class="card-footer"><span class="badge badge-cyan">Article 13 &rarr;</span></div>
             </a>
 
             <a href="../content/project/team.html" class="card">
-              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-              <h3 class="card-title">15. Team &amp; Credits</h3>
-              <p class="card-desc">Student researchers, academic advisors, institution details, and SIH context.</p>
-              <div class="card-footer"><span class="badge badge-green">Article 15 &rarr;</span></div>
+              <h3 class="card-title" style="font-size: 1.1rem;">14. Scope &amp; Deliverables</h3>
+              <p class="card-desc" style="font-size: 0.85rem;">Core modular architecture, software suite deliverables, and evaluation rubric.</p>
+              <div class="card-footer"><span class="badge badge-cyan">Article 14 &rarr;</span></div>
+            </a>
+
+            <a href="../content/project/references.html" class="card">
+              <h3 class="card-title" style="font-size: 1.1rem;">15. References</h3>
+              <p class="card-desc" style="font-size: 0.85rem;">Full academic bibliography of peer-reviewed articles and dataset citations.</p>
+              <div class="card-footer"><span class="badge badge-cyan">Article 15 &rarr;</span></div>
             </a>
           </div>
         </div>
@@ -205,12 +200,47 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-text">
+            <span class="brand-title" style="font-size:1.3rem; color:#0f172a; font-weight:800;">DEPTHWIZARD</span>
+            <span class="brand-tag" style="display:block; color:var(--accent-blue); font-size:0.75rem; letter-spacing:1px; margin-top:2px;">RESEARCH PLATFORM</span>
+          </div>
+          <p class="footer-desc">
+            Independent scientific research project advancing single-view optical height estimation, per-land-cover scale calibration, and real-time 3D terrain flythrough.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../research.html">Scientific Paper</a></li>
+            <li><a href="../methodology.html">Methodology</a></li>
+            <li><a href="../visualizations.html">3D Visualizations</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Core Topics</h4>
+          <ul>
+            <li><a href="../content/project/architecture.html">System Architecture</a></li>
+            <li><a href="../content/project/land-cover-calibration.html">Scale Calibration</a></li>
+            <li><a href="../content/project/uncertainty-estimation.html">Uncertainty Mapping</a></li>
+            <li><a href="../content/project/datasets.html">GAMUS Dataset</a></li>
+          </ul>
+        </div>
+      </div>
+
       <div class="footer-bottom">
-        <div>&copy; 2026 TRACEOIL Research Team &bull; Smart India Hackathon 2026.</div>
-        <div><a href="../index.html" class="footer-link">Back to Home &uarr;</a></div>
+        <div class="footer-copyright">
+          &copy; 2026 DepthWizard Research Initiative. All technical rights reserved.
+        </div>
+        <div class="footer-status">
+          <span class="badge badge-teal">Status: Active Research Project</span>
+        </div>
       </div>
     </div>
   </footer>

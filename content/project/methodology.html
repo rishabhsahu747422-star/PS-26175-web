@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TRACEOIL Documentation: Technical Methodology & Pipeline — SIH 2026 Research Project.">
-  <title>Technical Methodology & Pipeline — TRACEOIL Documentation | SIH 2026</title>
+  <meta name="description" content="DepthWizard Documentation — Single-View Height Estimation & 3D Terrain Reconstruction.">
+  <title>DepthWizard Documentation</title>
   <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
@@ -15,11 +15,13 @@
       <a href="../../index.html" class="nav-brand">
         <div class="brand-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
           </svg>
         </div>
         <div class="brand-text">
-          <span class="brand-title">TRACEOIL</span>
+          <span class="brand-title">DEPTHWIZARD</span>
           <span class="brand-tag">DOCUMENTATION</span>
         </div>
       </a>
@@ -30,7 +32,7 @@
           <li><a href="../../research.html" class="nav-link">Research</a></li>
           <li><a href="../../methodology.html" class="nav-link">Methodology</a></li>
           <li><a href="../../dataset.html" class="nav-link">Datasets</a></li>
-          <li><a href="../../visualizations.html" class="nav-link">Visualizations</a></li>
+          <li><a href="../../visualizations.html" class="nav-link">3D Visualization</a></li>
           <li><a href="../../documentation/index.html" class="nav-link active">Documentation</a></li>
           <li><a href="../../references.html" class="nav-link">References</a></li>
           <li><a href="../../about.html" class="nav-link">About</a></li>
@@ -52,99 +54,122 @@
     <div class="container">
       <div class="doc-layout">
         <!-- Sidebar Navigation -->
-        <aside class="doc-sidebar"><nav><div class="doc-sidebar-group"><div class="doc-sidebar-title">1. Foundations</div><ul class="doc-sidebar-list"><li><a href="overview.html" class="doc-sidebar-link">01. Project Overview</a></li><li><a href="problem.html" class="doc-sidebar-link">02. Problem Statement</a></li><li><a href="architecture.html" class="doc-sidebar-link">03. System Architecture</a></li></ul></div><div class="doc-sidebar-group"><div class="doc-sidebar-title">2. Methods & Algorithms</div><ul class="doc-sidebar-list"><li><a href="methodology.html" class="doc-sidebar-link active">04. Technical Methodology</a></li><li><a href="datasets.html" class="doc-sidebar-link">05. Dataset Documentation</a></li><li><a href="oil-spill-detection.html" class="doc-sidebar-link">06. Oil-Spill Detection</a></li></ul></div><div class="doc-sidebar-group"><div class="doc-sidebar-title">3. Vessel & Attribution</div><ul class="doc-sidebar-list"><li><a href="vessel-detection.html" class="doc-sidebar-link">07. Vessel Detection</a></li><li><a href="vessel-attribution.html" class="doc-sidebar-link">08. Vessel Attribution</a></li><li><a href="geospatial-analysis.html" class="doc-sidebar-link">09. Geospatial Analysis</a></li></ul></div><div class="doc-sidebar-group"><div class="doc-sidebar-title">4. Evaluation & Roadmap</div><ul class="doc-sidebar-list"><li><a href="experiments.html" class="doc-sidebar-link">10. Experiments</a></li><li><a href="evaluation.html" class="doc-sidebar-link">11. Evaluation</a></li><li><a href="limitations.html" class="doc-sidebar-link">12. Limitations</a></li><li><a href="future-work.html" class="doc-sidebar-link">13. Future Work</a></li><li><a href="references.html" class="doc-sidebar-link">14. References</a></li><li><a href="team.html" class="doc-sidebar-link">15. Team & Credits</a></li></ul></div></nav></aside>
+        <aside class="doc-sidebar">
+          <nav>
+            <div class="doc-sidebar-group">
+              <div class="doc-sidebar-title">1. Foundations</div>
+              <ul class="doc-sidebar-list">
+                <li><a href="overview.html" class="doc-sidebar-link ">01. Project Overview</a></li>
+                <li><a href="problem.html" class="doc-sidebar-link ">02. Problem Understanding</a></li>
+                <li><a href="architecture.html" class="doc-sidebar-link ">03. System Architecture</a></li>
+              </ul>
+            </div>
+            <div class="doc-sidebar-group">
+              <div class="doc-sidebar-title">2. Methods &amp; Algorithms</div>
+              <ul class="doc-sidebar-list">
+                <li><a href="methodology.html" class="doc-sidebar-link active">04. Depth Backbone</a></li>
+                <li><a href="geospatial-analysis.html" class="doc-sidebar-link ">05. SRTM 30m Anchoring</a></li>
+                <li><a href="land-cover-calibration.html" class="doc-sidebar-link ">06. Per-Class Calibration</a></li>
+                <li><a href="uncertainty-estimation.html" class="doc-sidebar-link ">07. Uncertainty Mapping</a></li>
+                <li><a href="terrain-reconstruction.html" class="doc-sidebar-link ">08. 3D Terrain Flythrough</a></li>
+              </ul>
+            </div>
+            <div class="doc-sidebar-group">
+              <div class="doc-sidebar-title">3. Data &amp; Evaluation</div>
+              <ul class="doc-sidebar-list">
+                <li><a href="datasets.html" class="doc-sidebar-link ">09. Dataset Specifications</a></li>
+                <li><a href="experiments.html" class="doc-sidebar-link ">10. Experimental Setup</a></li>
+                <li><a href="evaluation.html" class="doc-sidebar-link ">11. Quantitative Evaluation</a></li>
+              </ul>
+            </div>
+            <div class="doc-sidebar-group">
+              <div class="doc-sidebar-title">4. Strategic Scope &amp; Context</div>
+              <ul class="doc-sidebar-list">
+                <li><a href="limitations.html" class="doc-sidebar-link ">12. Limitations</a></li>
+                <li><a href="future-work.html" class="doc-sidebar-link ">13. Future Work</a></li>
+                <li><a href="team.html" class="doc-sidebar-link ">14. Scope &amp; Deliverables</a></li>
+                <li><a href="references.html" class="doc-sidebar-link ">15. References</a></li>
+              </ul>
+            </div>
+          </nav>
+        </aside>
 
         <!-- Main Documentation Content -->
         <div class="doc-content">
+
           <div class="doc-breadcrumb">
             <a href="../../index.html">Home</a>
             <span>/</span>
             <a href="../../documentation/index.html">Documentation</a>
             <span>/</span>
-            <span>Technical Methodology & Pipeline</span>
+            <span>Depth Backbone Adaptation & GAMUS Fine-Tuning</span>
           </div>
-
-          <article class="doc-article">
+    <article class="doc-article">
             <div style="margin-bottom: 2rem;">
-              <span class="badge badge-cyan" style="margin-bottom: 0.5rem;">2. Methods & Algorithms</span>
-              <h1 style="font-size: 2.3rem; margin-bottom: 0.5rem;">Technical Methodology & Pipeline</h1>
-              <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.6;">End-to-end analytical steps from raw orbit downlinks to final probability scoring</p>
+              <span class="badge badge-blue" style="margin-bottom: 0.5rem;">2. Methods & Algorithms</span>
+              <h1 style="font-size: 2.3rem; margin-bottom: 0.5rem;">Depth Backbone Adaptation & GAMUS Fine-Tuning</h1>
+              <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.6;">Adapting Vision Transformers for nadir remote sensing via scale-invariant and multi-scale gradient losses.</p>
             </div>
-
-            <!-- Auto Table of Contents -->
             <div class="doc-toc-card" data-doc-toc></div>
-
-            <!-- Article Body -->
-            
-      <section class="doc-section">
-        <h2 id="pipeline-overview">1. Pipeline Flow Breakdown</h2>
-        <p>
-          The TRACEOIL methodology encompasses eight strictly sequenced pipeline operations designed to handle multi-sensor remote sensing imagery and asynchronous vessel tracking records:
-        </p>
-        <div class="pipeline-strip" style="margin: 1.5rem 0;">
-          <div class="pipeline-strip-item"><div class="step-idx">01</div><div class="step-name">Data Ingest</div></div>
-          <div class="pipeline-arrow">&rarr;</div>
-          <div class="pipeline-strip-item"><div class="step-idx">02</div><div class="step-name">Preprocess</div></div>
-          <div class="pipeline-arrow">&rarr;</div>
-          <div class="pipeline-strip-item"><div class="step-idx">03</div><div class="step-name">Detection</div></div>
-          <div class="pipeline-arrow">&rarr;</div>
-          <div class="pipeline-strip-item"><div class="step-idx">04</div><div class="step-name">Features</div></div>
-          <div class="pipeline-arrow">&rarr;</div>
-          <div class="pipeline-strip-item"><div class="step-idx">05</div><div class="step-name">Vessel Det</div></div>
-          <div class="pipeline-arrow">&rarr;</div>
-          <div class="pipeline-strip-item"><div class="step-idx">06</div><div class="step-name">Vessel ID</div></div>
-          <div class="pipeline-arrow">&rarr;</div>
-          <div class="pipeline-strip-item"><div class="step-idx">07</div><div class="step-name">Drift Model</div></div>
-          <div class="pipeline-arrow">&rarr;</div>
-          <div class="pipeline-strip-item"><div class="step-idx">08</div><div class="step-name">Attribution</div></div>
-        </div>
-      </section>
-
-      <section class="doc-section">
-        <h2 id="stage-details">2. Mathematical Operations Per Stage</h2>
-        <p>
-          Each stage executes mathematically verified transformations:
-        </p>
-        <ol style="margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
-          <li><strong>Radiometric Calibration:</strong> Converting digital numbers to calibrated physical backscatter coefficient.</li>
-          <li><strong>Speckle Suppression:</strong> 7x7 Refined Lee filter preserving edge boundaries while reducing granular speckle variance.</li>
-          <li><strong>Adaptive Segmentation:</strong> Moving spatial threshold isolating capillary wave suppression.</li>
-          <li><strong>CFAR Bright Target Extraction:</strong> Constant False Alarm Rate hypothesis test for metallic ship corner reflectors.</li>
-          <li><strong>Lagrangian Reverse Advection:</strong> Integrating reverse trajectory with ocean currents and wind leeway.</li>
-          <li><strong>AIS Track Correlation:</strong> Temporal and spatial distance weighting producing attribution probability vectors.</li>
-        </ol>
-        <div class="placeholder-block">
-          <div class="placeholder-block-label"><span>[Add final methodology details here]</span></div>
-          <p style="margin-bottom:0; font-size:0.9rem; color:var(--text-muted);">
-            Detailed parameter tuning for Arabian Sea current speeds and Indian Coast Guard operational integration.
-          </p>
-        </div>
-      </section>
     
+      <section class="doc-section">
+        <h2 id="vit-backbone">1. Depth Anything V2 Backbone</h2>
+        <p>Depth Anything V2 employs a Vision Transformer (ViT) encoder coupled with a Dense Prediction Transformer (DPT) multi-resolution decoder. To retain the robust semantic feature extractors of the foundational model while adapting to satellite geometry, the early transformer blocks are frozen, optimizing only the final transformer stages and the DPT decoder heads.</p>
+      </section>
 
-            <!-- Prev / Next Pagination -->
-            <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-              <div>
-                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-dim); letter-spacing: 0.08em; display:block;">Previous</span>
-                <a href="architecture.html" class="btn btn-secondary btn-sm" style="margin-top: 0.25rem;">&larr; System Architecture</a>
-              </div>
-              <div style="text-align: right;">
-                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-dim); letter-spacing: 0.08em; display:block;">Next</span>
-                <a href="datasets.html" class="btn btn-primary btn-sm" style="margin-top: 0.25rem;">Dataset Documentation &rarr;</a>
-              </div>
-            </div>
-          </article>
-        </div>
+      <section class="doc-section">
+        <h2 id="loss-functions">2. Composite Loss Formulation</h2>
+        <p>The backbone is fine-tuned using a multi-term objective:</p>
+        <ul>
+          <li><strong>Scale-Invariant Logarithmic Loss (L_si):</strong> Evaluates relative depth deviations irrespective of scene-wide scalar multipliers.</li>
+          <li><strong>Multi-Scale Gradient Loss (L_grad):</strong> Penalizes blurred edges at 1/2, 1/4, and 1/8 spatial scales, forcing sharp delineation along building facades.</li>
+          <li><strong>Class-Weighted Penalty:</strong> Weights structural classes (buildings and infrastructure) more heavily than background bare earth.</li>
+        </ul>
+      </section>
+</article>        </div>
       </div>
     </div>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-text">
+            <span class="brand-title" style="font-size:1.3rem; color:#0f172a; font-weight:800;">DEPTHWIZARD</span>
+            <span class="brand-tag" style="display:block; color:var(--accent-blue); font-size:0.75rem; letter-spacing:1px; margin-top:2px;">RESEARCH PLATFORM</span>
+          </div>
+          <p class="footer-desc">
+            Independent scientific research project advancing single-view optical height estimation, per-land-cover scale calibration, and real-time 3D terrain flythrough.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../research.html">Scientific Paper</a></li>
+            <li><a href="../../documentation/index.html">Documentation Hub</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Core Topics</h4>
+          <ul>
+            <li><a href="architecture.html">System Architecture</a></li>
+            <li><a href="land-cover-calibration.html">Scale Calibration</a></li>
+            <li><a href="uncertainty-estimation.html">Uncertainty Mapping</a></li>
+          </ul>
+        </div>
+      </div>
+
       <div class="footer-bottom">
-        <div>&copy; 2026 TRACEOIL Research Team &bull; Smart India Hackathon 2026.</div>
-        <div><a href="../../documentation/index.html" class="footer-link">Documentation Hub &uarr;</a></div>
+        <div class="footer-copyright">
+          &copy; 2026 DepthWizard Research Initiative. All technical rights reserved.
+        </div>
+        <div class="footer-status">
+          <span class="badge badge-teal">Status: Active Research Project</span>
+        </div>
       </div>
     </div>
   </footer>
