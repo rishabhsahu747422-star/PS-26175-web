@@ -61,12 +61,13 @@ The website is engineered from scratch to be **100% compatible with GitHub Pages
 ```
 /
 ├── index.html                      # Flagship Home & Interactive Profile Explorer
-├── methodology.html                # 3-Stage Engineering Pipeline & Formulations
-├── visualizations.html             # 3D Flythrough Viewport & Technical Figures
-├── dataset.html                    # Datasets (GAMUS, SRTM 30m, Sentinel-2)
-├── research.html                   # Scientific Research Paper & Literature
-├── references.html                 # Peer-Reviewed Citations & Bibliography
-├── about.html                      # Project Scope, Architecture & Deliverables
+├── pages/                          # Top-level site pages
+│   ├── methodology.html            # 3-Stage Engineering Pipeline & Formulations
+│   ├── visualizations.html         # 3D Flythrough Viewport & Technical Figures
+│   ├── dataset.html                # Datasets (GAMUS, SRTM 30m, Sentinel-2)
+│   ├── research.html               # Scientific Research Paper & Literature
+│   ├── references.html             # Peer-Reviewed Citations & Bibliography
+│   └── about.html                  # Project Scope, Architecture & Deliverables
 ├── documentation/
 │   └── index.html                  # Documentation Portal (15-Article Hub)
 ├── content/

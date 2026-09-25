@@ -12,8 +12,8 @@ window.DEPTHWIZARD_DATA = {
     tagline: "AI-Powered Optical Monocular Elevation Extraction & Interactive Flythrough",
     category: "Geospatial Remote Sensing & 3D Computer Vision",
     status: "Active Research Platform",
-    repositoryUrl: "https://github.com/depthwizard/depthwizard-research",
-    contactEmail: "research@depthwizard-platform.org",
+    repositoryUrl: "https://github.com/YOUR-TEAM/depthwizard",
+    contactEmail: "team-email@example.edu",
     lastUpdated: "2026",
     license: "Open Academic Research"
   },
